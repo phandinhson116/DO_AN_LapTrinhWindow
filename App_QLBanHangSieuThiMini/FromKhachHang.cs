@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini
 {
-    public partial class FromKhachHnag : Form
+    public partial class FromKhachHang : Form
     {
-        public FromKhachHnag()
+        public FromKhachHang()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace App_QLBanHangSieuThiMini
 {
-    partial class FromKhachHnag
+    partial class FromKhachHang
     {
         /// <summary>
         /// Required designer variable.
