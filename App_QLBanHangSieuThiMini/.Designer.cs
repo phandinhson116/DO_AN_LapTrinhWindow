@@ -42,6 +42,12 @@
             this.txtDVCungCap = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
+            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlChucNang = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnHuyBo = new System.Windows.Forms.Button();
@@ -52,12 +58,6 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.pnlChucNang.SuspendLayout();
@@ -146,7 +146,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(2, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(975, 142);
+            this.panel1.Size = new System.Drawing.Size(975, 192);
             this.panel1.TabIndex = 2;
             // 
             // dtpNgayCungCap
@@ -231,9 +231,52 @@
             this.dgvHangHoa.Location = new System.Drawing.Point(6, 27);
             this.dgvHangHoa.Name = "dgvHangHoa";
             this.dgvHangHoa.RowTemplate.Height = 24;
-            this.dgvHangHoa.Size = new System.Drawing.Size(963, 399);
+            this.dgvHangHoa.Size = new System.Drawing.Size(963, 449);
             this.dgvHangHoa.TabIndex = 3;
             this.dgvHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHangHoa_CellClick);
+            // 
+            // MaHang
+            // 
+            this.MaHang.DataPropertyName = "MaHang";
+            this.MaHang.FillWeight = 200F;
+            this.MaHang.HeaderText = "Mã Hàng";
+            this.MaHang.Name = "MaHang";
+            this.MaHang.Width = 200;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.HeaderText = "Tên Hàng";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.Width = 200;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 200;
+            // 
+            // DVCungCap
+            // 
+            this.DVCungCap.DataPropertyName = "DVCungCap";
+            this.DVCungCap.HeaderText = "Dịch Vụ Cung Cấp";
+            this.DVCungCap.Name = "DVCungCap";
+            this.DVCungCap.Width = 200;
+            // 
+            // NgayNhapHang
+            // 
+            this.NgayNhapHang.DataPropertyName = "NgayNhapHang";
+            this.NgayNhapHang.HeaderText = "Ngày Nhập Hàng";
+            this.NgayNhapHang.Name = "NgayNhapHang";
+            this.NgayNhapHang.Width = 200;
             // 
             // pnlChucNang
             // 
@@ -251,7 +294,7 @@
             this.pnlChucNang.Controls.Add(this.button3);
             this.pnlChucNang.Location = new System.Drawing.Point(2, 160);
             this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(975, 97);
+            this.pnlChucNang.Size = new System.Drawing.Size(975, 147);
             this.pnlChucNang.TabIndex = 5;
             // 
             // btnXoa
@@ -373,59 +416,16 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(8, 263);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(969, 432);
+            this.groupBox1.Size = new System.Drawing.Size(969, 482);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DANH MỤC HÀNG HÓA";
-            // 
-            // MaHang
-            // 
-            this.MaHang.DataPropertyName = "MaHang";
-            this.MaHang.FillWeight = 200F;
-            this.MaHang.HeaderText = "Mã Hàng";
-            this.MaHang.Name = "MaHang";
-            this.MaHang.Width = 200;
-            // 
-            // TenHang
-            // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.Width = 200;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 200;
-            // 
-            // DVCungCap
-            // 
-            this.DVCungCap.DataPropertyName = "DVCungCap";
-            this.DVCungCap.HeaderText = "Dịch Vụ Cung Cấp";
-            this.DVCungCap.Name = "DVCungCap";
-            this.DVCungCap.Width = 200;
-            // 
-            // NgayNhapHang
-            // 
-            this.NgayNhapHang.DataPropertyName = "NgayNhapHang";
-            this.NgayNhapHang.HeaderText = "Ngày Nhập Hàng";
-            this.NgayNhapHang.Name = "NgayNhapHang";
-            this.NgayNhapHang.Width = 200;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 707);
+            this.ClientSize = new System.Drawing.Size(989, 757);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlChucNang);
             this.Controls.Add(this.panel1);
