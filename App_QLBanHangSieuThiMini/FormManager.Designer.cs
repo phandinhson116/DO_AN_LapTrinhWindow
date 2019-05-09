@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.qlHangHoa = new System.Windows.Forms.TabControl();
+            this.tabconNguoiQuanLy = new System.Windows.Forms.TabControl();
             this.qlbieudo = new System.Windows.Forms.TabPage();
             this.plManager = new System.Windows.Forms.Panel();
             this.lblSort = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
             this.rbSold = new System.Windows.Forms.RadioButton();
             this.rbWarehouse = new System.Windows.Forms.RadioButton();
             this.rbEmployees = new System.Windows.Forms.RadioButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tp_qlHangHoa = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,26 +69,30 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtMaHang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.qlHangHoa.SuspendLayout();
+            this.tp_qlNhanVien = new System.Windows.Forms.TabPage();
+            this.tp_qlHoaDon = new System.Windows.Forms.TabPage();
+            this.tabconNguoiQuanLy.SuspendLayout();
             this.qlbieudo.SuspendLayout();
             this.plManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tp_qlHangHoa.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.pnlChucNang.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // qlHangHoa
+            // tabconNguoiQuanLy
             // 
-            this.qlHangHoa.Controls.Add(this.qlbieudo);
-            this.qlHangHoa.Controls.Add(this.tabPage2);
-            this.qlHangHoa.Location = new System.Drawing.Point(12, 12);
-            this.qlHangHoa.Name = "qlHangHoa";
-            this.qlHangHoa.SelectedIndex = 0;
-            this.qlHangHoa.Size = new System.Drawing.Size(1148, 683);
-            this.qlHangHoa.TabIndex = 0;
+            this.tabconNguoiQuanLy.Controls.Add(this.qlbieudo);
+            this.tabconNguoiQuanLy.Controls.Add(this.tp_qlHangHoa);
+            this.tabconNguoiQuanLy.Controls.Add(this.tp_qlNhanVien);
+            this.tabconNguoiQuanLy.Controls.Add(this.tp_qlHoaDon);
+            this.tabconNguoiQuanLy.Location = new System.Drawing.Point(12, 12);
+            this.tabconNguoiQuanLy.Name = "tabconNguoiQuanLy";
+            this.tabconNguoiQuanLy.SelectedIndex = 0;
+            this.tabconNguoiQuanLy.Size = new System.Drawing.Size(1148, 683);
+            this.tabconNguoiQuanLy.TabIndex = 0;
             // 
             // qlbieudo
             // 
@@ -110,10 +114,10 @@
             this.plManager.Controls.Add(this.rbSold);
             this.plManager.Controls.Add(this.rbWarehouse);
             this.plManager.Controls.Add(this.rbEmployees);
-            this.plManager.Location = new System.Drawing.Point(-7, -5);
+            this.plManager.Location = new System.Drawing.Point(7, 7);
             this.plManager.Margin = new System.Windows.Forms.Padding(4);
             this.plManager.Name = "plManager";
-            this.plManager.Size = new System.Drawing.Size(1035, 493);
+            this.plManager.Size = new System.Drawing.Size(1126, 640);
             this.plManager.TabIndex = 1;
             // 
             // lblSort
@@ -155,7 +159,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(199, 14);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(846, 469);
+            this.dataGridView1.Size = new System.Drawing.Size(914, 605);
             this.dataGridView1.TabIndex = 3;
             // 
             // rbSold
@@ -200,18 +204,18 @@
             this.rbEmployees.Text = "Nhân Viên";
             this.rbEmployees.UseVisualStyleBackColor = false;
             // 
-            // tabPage2
+            // tp_qlHangHoa
             // 
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.pnlChucNang);
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1140, 654);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Quản Lý Hàng Hóa";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tp_qlHangHoa.Controls.Add(this.groupBox1);
+            this.tp_qlHangHoa.Controls.Add(this.pnlChucNang);
+            this.tp_qlHangHoa.Controls.Add(this.panel1);
+            this.tp_qlHangHoa.Location = new System.Drawing.Point(4, 25);
+            this.tp_qlHangHoa.Name = "tp_qlHangHoa";
+            this.tp_qlHangHoa.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_qlHangHoa.Size = new System.Drawing.Size(1140, 654);
+            this.tp_qlHangHoa.TabIndex = 1;
+            this.tp_qlHangHoa.Text = "Quản Lý Hàng Hóa";
+            this.tp_qlHangHoa.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -564,21 +568,39 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Hàng :";
             // 
+            // tp_qlNhanVien
+            // 
+            this.tp_qlNhanVien.Location = new System.Drawing.Point(4, 25);
+            this.tp_qlNhanVien.Name = "tp_qlNhanVien";
+            this.tp_qlNhanVien.Size = new System.Drawing.Size(1140, 654);
+            this.tp_qlNhanVien.TabIndex = 2;
+            this.tp_qlNhanVien.Text = "Quản lý Nhân Viên";
+            this.tp_qlNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // tp_qlHoaDon
+            // 
+            this.tp_qlHoaDon.Location = new System.Drawing.Point(4, 25);
+            this.tp_qlHoaDon.Name = "tp_qlHoaDon";
+            this.tp_qlHoaDon.Size = new System.Drawing.Size(1140, 654);
+            this.tp_qlHoaDon.TabIndex = 3;
+            this.tp_qlHoaDon.Text = "Quản lý Hóa Đơn";
+            this.tp_qlHoaDon.UseVisualStyleBackColor = true;
+            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 730);
-            this.Controls.Add(this.qlHangHoa);
+            this.Controls.Add(this.tabconNguoiQuanLy);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormManager";
             this.Text = "Quản lý";
-            this.qlHangHoa.ResumeLayout(false);
+            this.tabconNguoiQuanLy.ResumeLayout(false);
             this.qlbieudo.ResumeLayout(false);
             this.plManager.ResumeLayout(false);
             this.plManager.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tp_qlHangHoa.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.pnlChucNang.ResumeLayout(false);
@@ -590,7 +612,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl qlHangHoa;
+        private System.Windows.Forms.TabControl tabconNguoiQuanLy;
         private System.Windows.Forms.TabPage qlbieudo;
         private System.Windows.Forms.Panel plManager;
         private System.Windows.Forms.Label lblSort;
@@ -600,7 +622,7 @@
         private System.Windows.Forms.RadioButton rbSold;
         private System.Windows.Forms.RadioButton rbWarehouse;
         private System.Windows.Forms.RadioButton rbEmployees;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tp_qlHangHoa;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvHangHoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
@@ -631,5 +653,7 @@
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtMaHang;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tp_qlNhanVien;
+        private System.Windows.Forms.TabPage tp_qlHoaDon;
     }
 }
