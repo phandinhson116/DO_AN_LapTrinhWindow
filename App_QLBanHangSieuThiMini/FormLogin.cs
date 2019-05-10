@@ -91,9 +91,17 @@ namespace App_QLBanHangSieuThiMini
                 }
                 else
                 {
-                    MessageBox.Show("Không đúng tên người dùng / mật khẩu !!!",
-                    "Thông báo");
-                    txtAccount.Focus();
+                    if (txtAccount.Text == "Enter Your ID" || txtPassword.Text == "Enter Password")
+                    {
+                        MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo");
+                        txtAccount.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài khoản hoặc mật khẩu bạn không chính xác. Xin hãy nhập lại!!",
+                        "Thông báo");
+                        txtAccount.Focus();
+                    }
                 }
 
             }

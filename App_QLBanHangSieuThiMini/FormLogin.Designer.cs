@@ -77,7 +77,7 @@
             this.gbDangNhap.Controls.Add(this.txtAccount);
             this.gbDangNhap.Controls.Add(this.txtPassword);
             this.gbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDangNhap.Location = new System.Drawing.Point(348, 150);
+            this.gbDangNhap.Location = new System.Drawing.Point(313, 152);
             this.gbDangNhap.Name = "gbDangNhap";
             this.gbDangNhap.Size = new System.Drawing.Size(517, 185);
             this.gbDangNhap.TabIndex = 4;
