@@ -45,10 +45,9 @@
             this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(251, 91);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Location = new System.Drawing.Point(188, 74);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(221, 26);
+            this.txtPassword.Size = new System.Drawing.Size(166, 23);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
@@ -59,10 +58,9 @@
             this.txtAccount.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccount.Location = new System.Drawing.Point(251, 59);
-            this.txtAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAccount.Location = new System.Drawing.Point(188, 48);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(221, 26);
+            this.txtAccount.Size = new System.Drawing.Size(166, 23);
             this.txtAccount.TabIndex = 2;
             this.txtAccount.Enter += new System.EventHandler(this.txtAccount_Enter);
             this.txtAccount.Leave += new System.EventHandler(this.txtAccount_Leave);
@@ -77,9 +75,11 @@
             this.gbDangNhap.Controls.Add(this.txtAccount);
             this.gbDangNhap.Controls.Add(this.txtPassword);
             this.gbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDangNhap.Location = new System.Drawing.Point(313, 152);
+            this.gbDangNhap.Location = new System.Drawing.Point(188, 135);
+            this.gbDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbDangNhap.Name = "gbDangNhap";
-            this.gbDangNhap.Size = new System.Drawing.Size(517, 185);
+            this.gbDangNhap.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbDangNhap.Size = new System.Drawing.Size(388, 150);
             this.gbDangNhap.TabIndex = 4;
             this.gbDangNhap.TabStop = false;
             this.gbDangNhap.Text = "USER LOGIN";
@@ -88,9 +88,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(132, 93);
+            this.label2.Location = new System.Drawing.Point(99, 76);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 24);
+            this.label2.Size = new System.Drawing.Size(83, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Password :";
             // 
@@ -98,9 +99,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(132, 59);
+            this.label1.Location = new System.Drawing.Point(99, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 24);
+            this.label1.Size = new System.Drawing.Size(88, 18);
             this.label1.TabIndex = 6;
             this.label1.Text = "Account ID :";
             // 
@@ -108,17 +110,19 @@
             // 
             this.pictureBox1.BackgroundImage = global::App_QLBanHangSieuThiMini.Properties.Resources.login;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 83);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(305, 135);
+            this.btnLogin.Location = new System.Drawing.Point(229, 110);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(88, 39);
+            this.btnLogin.Size = new System.Drawing.Size(66, 32);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -126,9 +130,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(399, 135);
+            this.btnExit.Location = new System.Drawing.Point(299, 110);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 39);
+            this.btnExit.Size = new System.Drawing.Size(66, 32);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -136,13 +141,12 @@
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImage = global::App_QLBanHangSieuThiMini.Properties.Resources.backgroundlogin;
-            this.ClientSize = new System.Drawing.Size(1025, 554);
+            this.ClientSize = new System.Drawing.Size(769, 450);
             this.Controls.Add(this.gbDangNhap);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.FormLogin_Load);
