@@ -12,7 +12,7 @@ using App_QLBanHangSieuThiMini.BS_Player;
 
 namespace App_QLBanHangSieuThiMini
 {
-    public partial class Form1 : Form
+    public partial class fNhapHang : Form
     {
         DataTable dtHangHoa = null;
         bool Them;
@@ -21,7 +21,7 @@ namespace App_QLBanHangSieuThiMini
        
            
 
-        public Form1()
+        public fNhapHang()
         {
             InitializeComponent();
         }

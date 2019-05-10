@@ -1,6 +1,6 @@
 ﻿namespace App_QLBanHangSieuThiMini
 {
-    partial class Form1
+    partial class fNhapHang
     {
         /// <summary>
         /// Required designer variable.
@@ -421,7 +421,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DANH MỤC HÀNG HÓA";
             // 
-            // Form1
+            // fNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -429,7 +429,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlChucNang);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "fNhapHang";
             this.Text = "Quản Lý Hàng Hóa";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
