@@ -86,8 +86,17 @@ namespace App_QLBanHangSieuThiMini
                 data = cmd.ExecuteReader();
                 if (data.Read() == true)
                 {
-                    Form fManager = new FormManager();
-                    fManager.ShowDialog();
+                    if(account=="0001"&&pass=="1161999")
+                    {
+                        Form fManager = new FormManager();
+                        fManager.ShowDialog();
+                    }
+                    else if((account=="0003"&&pass=="12345")||(account=="0005"&&pass=="12345"))
+                    {
+                        Form fNhapHang = new fNhapHang();
+                        fNhapHang.ShowDialog();
+                    }
+                   
                 }
                 else
                 {
