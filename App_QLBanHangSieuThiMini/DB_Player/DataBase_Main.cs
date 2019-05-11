@@ -10,7 +10,7 @@ namespace App_QLBanHangSieuThiMini.DB_Player
 {
     class DataBase_Main
     {
-        string ConnStr = "Data Source=DESKTOP-LRIE6A1;Initial Catalog=QL_BanHang;Integrated Security=True ";
+        string ConnStr = "Data Source=DESKTOP-K2PNA2M;Initial Catalog=QL_BanHang;Integrated Security=True ";
         SqlConnection conn = null;
         SqlCommand comn = null;
         SqlDataAdapter da = null;
