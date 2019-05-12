@@ -13,8 +13,8 @@ namespace App_QLBanHangSieuThiMini
 
         private QL_HangHoa dbHH = new QL_HangHoa();
         private QL_NhanVien dbNV = new QL_NhanVien();
-       // private bool AddNV;
-       
+        // private bool AddNV;
+
         private QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
 
         public FormManager()
@@ -110,7 +110,7 @@ namespace App_QLBanHangSieuThiMini
 
                 this.txtDVCungCap.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
-                this.btnLuu.Enabled = false;
+
                 this.btnHuyBo.Enabled = false;
                 this.panel1.Enabled = false;
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
@@ -153,7 +153,7 @@ namespace App_QLBanHangSieuThiMini
 
             this.btnTrove.Enabled = true;
             //Khong cho thao tac tren cac nut Luu/ Huy/ Panel
-            this.btnLuu.Enabled = false;
+
             this.btnHuyBo.Enabled = false;
             this.panel1.Enabled = false;
             dgvHangHoa_CellClick(null, null);
