@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS_Player\QL_NhanVien.cs" />
     <Compile Include="BS_Player\QL_ThongKeDoanhThu.cs" />
     <Compile Include="BS_Player\QL_HangHoa.cs" />
     <Compile Include="DB_Player\DataBase_Main.cs" />

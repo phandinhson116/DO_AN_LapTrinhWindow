@@ -1,36 +1,101 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using App_QLBanHangSieuThiMini.BS_Player;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using App_QLBanHangSieuThiMini.BS_Player;
 
 namespace App_QLBanHangSieuThiMini
 {
     public partial class FormManager : Form
     {
+        private DataTable dtHangHoa = null;
+        private DataTable dtNhanVien = null;
+        // DataTable dtThongKeDoanhThu = null;
 
-        DataTable dtHangHoa = null;
-        DataTable dtThongKeDoanhThu = null;
-        bool Them;
-        string err;
-
-        QL_HangHoa dbHH = new QL_HangHoa();
-        QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
+        private QL_HangHoa dbHH = new QL_HangHoa();
+        private QL_NhanVien dbNV = new QL_NhanVien();
+       // private bool AddNV;
+       
+        private QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
 
         public FormManager()
         {
             InitializeComponent();
         }
-        void LoadData()
+
+        #region QLNhanVien
+
+        private void LoadDataNV()
         {
             try
             {
-                
+                dtNhanVien = new DataTable();
+                dtNhanVien.Clear();
+                DataSet ds = dbNV.LayNhanVien();
+                dtNhanVien = ds.Tables[0];
+                // Dua du lieu len DataGridView
+                dgvNhanVien.DataSource = dtNhanVien;
+                // Thay doi do rong cot
+                dgvNhanVien.AutoResizeColumns();
+                // Xoa cac doi tuong trong Panel
+                this.txtMaNV.ResetText();
+                this.txtTenNV.ResetText();
+
+                this.txtDiaChi.ResetText();
+                this.txtSDT.ResetText();
+                this.txtMatkhau.ResetText();
+                this.txtChucdanh.ResetText();
+                // Khong cho thao tac tren cac nut Luu/ Huy
+                this.btnLuuNV.Enabled = false;
+                this.btnHuyNV.Enabled = false;
+
+                // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
+                this.btnThemNV.Enabled = true;
+                this.btnSuaNV.Enabled = true;
+
+                dgvNhanVien_CellClick(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Thu tu dong hien hanh
+            int r = dgvNhanVien.CurrentCell.RowIndex;
+            // Chuyen thong tin len Panel
+            this.txtMaNV.Text = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
+            this.txtTenNV.Text = dgvNhanVien.Rows[r].Cells[1].Value.ToString();
+
+            if (dgvNhanVien.Rows[r].Cells[2].Value.ToString().Trim() == "Nam")
+            {
+                this.rdbNam.Checked = true;
+                this.rdbNu.Checked = false;
+            }
+            if (dgvNhanVien.Rows[r].Cells[2].Value.ToString().Trim() == "Nữ")
+            {
+                this.rdbNu.Checked = true;
+                this.rdbNam.Checked = false;
+            }
+
+            this.txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[3].Value.ToString();
+            this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[4].Value.ToString();
+            this.txtMatkhau.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
+            this.txtChucdanh.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+        }
+
+        private void btnLoadNV_Click(object sender, EventArgs e)
+        {
+            LoadDataNV();
+        }
+
+        #endregion QLNhanVien
+
+        private void LoadDataHH()
+        {
+            try
+            {
                 dtHangHoa = new DataTable();
                 dtHangHoa.Clear();
                 DataSet ds = dbHH.LayHangHoa();
@@ -42,26 +107,28 @@ namespace App_QLBanHangSieuThiMini
                 // Xoa cac doi tuong trong Panel
                 this.txtMaHang.ResetText();
                 this.txtTenHang.ResetText();
-                this.txtSoLuong.ResetText();
-                this.txtDonGia.ResetText();
+
                 this.txtDVCungCap.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuu.Enabled = false;
                 this.btnHuyBo.Enabled = false;
                 this.panel1.Enabled = false;
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
-                this.btnAdd.Enabled = true;
-                this.btnSua.Enabled = true;
+
                 this.btnTrove.Enabled = true;
                 dgvHangHoa_CellClick(null, null);
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadDataHH();
+        }
+
         private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Thu tu dong hien hanh
@@ -69,37 +136,9 @@ namespace App_QLBanHangSieuThiMini
             // Chuyen thong tin len Panel
             this.txtMaHang.Text = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
             this.txtTenHang.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
-            this.txtDonGia.Text = dgvHangHoa.Rows[r].Cells[2].Value.ToString();
-            this.txtSoLuong.Text = dgvHangHoa.Rows[r].Cells[3].Value.ToString();
 
             this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
             this.dtpNgayCungCap.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int r = dgvHangHoa.CurrentCell.RowIndex;
-                string strHangHoa = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
-                DialogResult traloi;
-                traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (traloi == DialogResult.Yes)
-                {
-                    dbHH.XoaHangHoa(ref err, strHangHoa);
-                    LoadData();
-                    MessageBox.Show("Đã xóa xong!!!");
-                }
-                else
-                {
-                    MessageBox.Show("Không thực hiện lệnh xóa! Lệnh xóa đã bị hủy!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
         }
 
         private void btnHuyBo_Click(object sender, EventArgs e)
@@ -107,13 +146,11 @@ namespace App_QLBanHangSieuThiMini
             // Xoa trong cac doi tuong trong Panel
             this.txtMaHang.ResetText();
             this.txtTenHang.ResetText();
-            this.txtSoLuong.ResetText();
-            this.txtDonGia.ResetText();
+
             this.txtDVCungCap.ResetText();
             this.dtpNgayCungCap.ResetText();
             // Cho Thao tac tren cac nut Them/ Xoa / Sua/ Thoat
-            this.btnAdd.Enabled = true;
-            this.btnSua.Enabled = true;
+
             this.btnTrove.Enabled = true;
             //Khong cho thao tac tren cac nut Luu/ Huy/ Panel
             this.btnLuu.Enabled = false;
@@ -128,85 +165,6 @@ namespace App_QLBanHangSieuThiMini
             DialogResult traloi;
             traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK) this.Close();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            // Kich hoat bien Sua
-            Them = false;
-            // Cho chep thao tac tren Panel
-            this.panel1.Enabled = true;
-            dgvHangHoa_CellClick(null, null);
-            // Cho thao tac tren cac nut Luu/ Huy/ Panel
-
-            this.btnLuu.Enabled = true;
-            this.btnHuyBo.Enabled = true;
-            this.panel1.Enabled = true;
-            // Khong cho thao tac tren cac nut Them/Xoa/ Thoat
-            this.btnAdd.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnXoa.Enabled = false;
-            this.btnTrove.Enabled = false;
-            // Dua con tro den TenThanhPho
-            this.txtMaHang.Enabled = false;
-            this.txtMaHang.Focus();
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            if (Them)
-            {
-                try
-                {
-                    //Thuc hien lenh
-                    QL_HangHoa qlHangHoa = new QL_HangHoa();
-                    qlHangHoa.ThemHangHoa(this.txtMaHang.Text, this.txtTenHang.Text, Convert.ToInt32(this.txtSoLuong.Text), Convert.ToInt32(this.txtDonGia.Text), this.txtDVCungCap.Text, this.dtpNgayCungCap.Text, ref err);
-                    LoadData();
-                    MessageBox.Show("Da them vao !!");
-
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                QL_HangHoa qlHH = new QL_HangHoa();
-                qlHH.CapNhatHangHoa(this.txtMaHang.Text.Trim(), this.txtTenHang.Text.Trim(), Convert.ToInt32(this.txtDonGia.Text.Trim()), Convert.ToInt32(this.txtSoLuong.Text.Trim()), this.txtDVCungCap.Text.Trim(), this.dtpNgayCungCap.Text.Trim(), ref err);
-                LoadData();
-                MessageBox.Show("Đã sửa xong!!");
-            }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            // Kich hoat Them
-            Them = true;
-            // Xoa trong cac doi tuong trong Panel 
-            this.txtMaHang.ResetText();
-            this.txtTenHang.ResetText();
-            this.txtSoLuong.ResetText();
-            this.txtDonGia.ResetText();
-            this.txtDVCungCap.ResetText();
-            this.dtpNgayCungCap.ResetText();
-
-            // Cho thao tac tren cac nut Luu/ Huy/ Thoat
-            this.btnLuu.Enabled = true;
-            this.btnHuyBo.Enabled = true;
-            this.panel1.Enabled = true;
-            // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
-            this.btnAdd.Enabled = false;
-            this.btnSua.Enabled = false;
-            this.btnTrove.Enabled = false;
-            // Dua con tro den TextFied txtThanhPho
-            this.txtMaHang.Focus();
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            LoadData();
         }
     }
 }

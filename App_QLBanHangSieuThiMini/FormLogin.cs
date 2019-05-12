@@ -13,7 +13,7 @@ namespace App_QLBanHangSieuThiMini
 {
     public partial class FormLogin : Form
     {
-        string ConnStr= "Data Source=DESKTOP-K2PNA2M;Initial Catalog=QL_BanHang;Integrated Security=True";
+        string ConnStr= "Data Source=DESKTOP-LRIE6A1;Initial Catalog=QL_BanHang;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand cmd = null;
         SqlDataReader data = null;

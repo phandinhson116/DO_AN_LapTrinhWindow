@@ -70,7 +70,7 @@ namespace App_QLBanHangSieuThiMini
         private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Thu tu dong hien hanh
-            //int r = dgvHangHoa.CurrentCell.RowIndex;
+            int r = dgvHangHoa.CurrentCell.RowIndex;
             // Chuyen thong tin len Panel
             this.txtMaHang.Text = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
             this.txtTenHang.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
