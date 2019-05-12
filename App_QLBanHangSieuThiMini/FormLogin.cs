@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini
 {
     public partial class FormLogin : Form
     {
-        string ConnStr= "Data Source=DESKTOP-LRIE6A1;Initial Catalog=QL_BanHang;Integrated Security=True";
-        SqlConnection conn = null;
-        SqlCommand cmd = null;
-        SqlDataReader data = null;
+        private string ConnStr = "Data Source=DESKTOP-LRIE6A1;Initial Catalog=QL_BanHang;Integrated Security=True";
+        private SqlConnection conn = null;
+        private SqlCommand cmd = null;
+        private SqlDataReader data = null;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -28,6 +23,7 @@ namespace App_QLBanHangSieuThiMini
         }
 
         #region Watermark
+
         private void txtAccount_Leave(object sender, EventArgs e)
         {
             if (txtAccount.Text == "")
@@ -63,9 +59,8 @@ namespace App_QLBanHangSieuThiMini
                 txtPassword.ForeColor = Color.Black;
             }
         }
-        #endregion
 
-       
+        #endregion Watermark
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
@@ -81,22 +76,21 @@ namespace App_QLBanHangSieuThiMini
                 string account = txtAccount.Text;
                 string pass = txtPassword.Text;
 
-                string sql= "Select MaNV,MatKhau From NhanVien where MaNV='" + account + "'and MatKhau='" + pass + "'";
+                string sql = "Select MaNV,MatKhau From NhanVien where MaNV='" + account + "'and MatKhau='" + pass + "'";
                 cmd = new SqlCommand(sql, conn);
                 data = cmd.ExecuteReader();
                 if (data.Read() == true)
                 {
-                    if(account=="0001"&&pass=="1161999")
+                    if (account == "0001" && pass == "1161999")
                     {
                         Form fManager = new FormManager();
                         fManager.ShowDialog();
                     }
-                    else if((account=="0003"&&pass=="12345")||(account=="0005"&&pass=="12345"))
+                    else if ((account == "0003" && pass == "12345") || (account == "0005" && pass == "12345"))
                     {
                         Form fNhapHang = new fNhapHang();
                         fNhapHang.ShowDialog();
                     }
-                   
                 }
                 else
                 {
@@ -112,15 +106,11 @@ namespace App_QLBanHangSieuThiMini
                         txtAccount.Focus();
                     }
                 }
-
             }
             catch (SqlException ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
-           
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -130,7 +120,6 @@ namespace App_QLBanHangSieuThiMini
             {
                 this.Close();
             }
-          
         }
     }
 }
