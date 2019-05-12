@@ -8,14 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using App_QLBanHangSieuThiMini.BS_Player;
+
 namespace App_QLBanHangSieuThiMini
 {
     public partial class FormManager : Form
     {
+
         DataTable dtHangHoa = null;
+        DataTable dtThongKeDoanhThu = null;
         bool Them;
         string err;
+
         QL_HangHoa dbHH = new QL_HangHoa();
+        QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
+
         public FormManager()
         {
             InitializeComponent();
@@ -24,11 +30,12 @@ namespace App_QLBanHangSieuThiMini
         {
             try
             {
+                
                 dtHangHoa = new DataTable();
                 dtHangHoa.Clear();
                 DataSet ds = dbHH.LayHangHoa();
                 dtHangHoa = ds.Tables[0];
-                // Dua du lieu len DataGridView
+                // Dua du lieu len DataGridView ở tabControl quản lí háng hóa
                 dgvHangHoa.DataSource = dtHangHoa;
                 // Thay doi do rong cot
                 dgvHangHoa.AutoResizeColumns();
@@ -47,8 +54,6 @@ namespace App_QLBanHangSieuThiMini
                 this.btnSua.Enabled = true;
                 this.btnTrove.Enabled = true;
                 dgvHangHoa_CellClick(null, null);
-
-
             }
             catch (Exception ex)
             {
@@ -69,10 +74,8 @@ namespace App_QLBanHangSieuThiMini
 
             this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
             this.dtpNgayCungCap.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString();
-
-
-
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -86,7 +89,6 @@ namespace App_QLBanHangSieuThiMini
                     dbHH.XoaHangHoa(ref err, strHangHoa);
                     LoadData();
                     MessageBox.Show("Đã xóa xong!!!");
-
                 }
                 else
                 {

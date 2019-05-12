@@ -51,7 +51,6 @@ namespace App_QLBanHangSieuThiMini.DB_Player
             }
             catch (SqlException ex)
             {
-
                 error = ex.Message;
             }
             finally

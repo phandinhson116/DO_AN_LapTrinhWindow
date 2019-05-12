@@ -6,21 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using App_QLBanHangSieuThiMini.DB_Player;
+
 namespace App_QLBanHangSieuThiMini.BS_Player
 {
     class QL_HangHoa
     {
         DataBase_Main db = null;
-        
+
         public QL_HangHoa()
         {
             db = new DataBase_Main();
         }
+
         public DataSet LayHangHoa()
         {
             return db.ExecuteQueryDataSet("select * from HangHoa", CommandType.Text);
-
         }
+
         public bool ThemHangHoa(string MaHang, string TenHang,int DonGia, int SoLuong,string DVCungCap,string NgayNhapHang, ref string err)
         {
             string sqlString = "Insert Into HangHoa Values(" + "'" + MaHang + "',N'" + TenHang + "',N'"+DonGia+"',N'"+SoLuong+"',N'"+DVCungCap+"',N'"+NgayNhapHang+ "' )";

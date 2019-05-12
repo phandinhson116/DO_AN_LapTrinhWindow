@@ -19,8 +19,6 @@ namespace App_QLBanHangSieuThiMini
         string err;
         QL_HangHoa dbHH = new QL_HangHoa();
        
-           
-
         public fNhapHang()
         {
             InitializeComponent();
@@ -61,7 +59,6 @@ namespace App_QLBanHangSieuThiMini
 
                 MessageBox.Show(ex.Message);
             }
-
         }
        
 
@@ -82,9 +79,6 @@ namespace App_QLBanHangSieuThiMini
            
             this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
             this.dtpNgayCungCap.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString();
-           
-
-
         }
 
         private void btnReload_Click(object sender, EventArgs e)
