@@ -13,13 +13,14 @@ namespace App_QLBanHangSieuThiMini
 
         private QL_HangHoa dbHH = new QL_HangHoa();
         private QL_NhanVien dbNV = new QL_NhanVien();
-        // private bool AddNV;
+        private bool ThemNV;
+        string err;
 
         private QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
 
         public FormManager()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         #region QLNhanVien
@@ -43,7 +44,7 @@ namespace App_QLBanHangSieuThiMini
                 this.txtDiaChi.ResetText();
                 this.txtSDT.ResetText();
                 this.txtMatkhau.ResetText();
-                this.txtChucdanh.ResetText();
+                this.cmbChucDanh.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuuNV.Enabled = false;
                 this.btnHuyNV.Enabled = false;
@@ -80,18 +81,81 @@ namespace App_QLBanHangSieuThiMini
             }
 
             this.txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[3].Value.ToString();
-            this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[4].Value.ToString();
-            this.txtMatkhau.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
-            this.txtChucdanh.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+            this.dtpNamsinh.Text= dgvNhanVien.Rows[r].Cells[4].Value.ToString();
+            this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
+            this.txtMatkhau.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+            this.cmbChucDanh.Text = dgvNhanVien.Rows[r].Cells[7].Value.ToString();
+            this.txtLuong.Text = dgvNhanVien.Rows[r].Cells[8].Value.ToString();
         }
 
         private void btnLoadNV_Click(object sender, EventArgs e)
         {
             LoadDataNV();
         }
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+            // Kich hoat Them
+            ThemNV = true;
 
+            this.txtMaNV.ResetText();
+            this.txtTenNV.ResetText();
+            this.txtDiaChi.ResetText();
+            this.txtSDT.ResetText();
+            this.rdbNam.Checked = false;
+            this.rdbNu.Checked = false;
+            this.txtMatkhau.ResetText();
+            this.dtpNamsinh.ResetText();
+            this.cmbChucDanh.ResetText();
+
+            // Cho thao tac tren cac nut Luu/ Huy/ Thoat
+            this.btnLuuNV.Enabled = true;
+            this.btnHuyNV.Enabled = true;
+            this.panel1.Enabled = true;
+            // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
+            this.btnThemNV.Enabled = false;
+            this.btnSuaNV.Enabled = false;
+            this.btnTrove.Enabled = false;
+            // Dua con tro den TextFied txtThanhPho
+            this.txtMaNV.Focus();
+        }
+        private void btnLuuNV_Click(object sender, EventArgs e)
+        {
+            string rdbGT;
+            if (rdbNam.Checked == true)
+            {
+                rdbGT = rdbNam.Text.Trim();
+            }
+            else
+            {
+                rdbGT = rdbNu.Text.Trim();
+            }
+            if (ThemNV)
+            {
+                try
+                {
+                    //Thuc hien lenh
+                    QL_NhanVien qlNhanVien = new QL_NhanVien();
+                    qlNhanVien.ThemNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text, this.dtpNamsinh.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text, Convert.ToInt32(txtLuong.Text), ref err);
+                    LoadDataNV();
+                    MessageBox.Show("Da them vao !!");
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                QL_NhanVien qlNhanVien = new QL_NhanVien();
+                qlNhanVien.CapNhatNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text,this.dtpNamsinh.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text,Convert.ToInt32(txtLuong.Text), ref err);
+                LoadDataNV();
+                MessageBox.Show("Đã sửa xong!!");
+            }
+        }
         #endregion QLNhanVien
-
+        #region  QLHangHoa
         private void LoadDataHH()
         {
             try
@@ -166,5 +230,11 @@ namespace App_QLBanHangSieuThiMini
             traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK) this.Close();
         }
+        #endregion
+
+
+
+
+
     }
 }
