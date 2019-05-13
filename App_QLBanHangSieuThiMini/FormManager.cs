@@ -42,9 +42,11 @@ namespace App_QLBanHangSieuThiMini
                 this.txtTenNV.ResetText();
 
                 this.txtDiaChi.ResetText();
+              
                 this.txtSDT.ResetText();
                 this.txtMatkhau.ResetText();
                 this.cmbChucDanh.ResetText();
+                this.txtLuong.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuuNV.Enabled = false;
                 this.btnHuyNV.Enabled = false;
@@ -81,11 +83,11 @@ namespace App_QLBanHangSieuThiMini
             }
 
             this.txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[3].Value.ToString();
-            this.dtpNamsinh.Text= dgvNhanVien.Rows[r].Cells[4].Value.ToString();
-            this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
-            this.txtMatkhau.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
-            this.cmbChucDanh.Text = dgvNhanVien.Rows[r].Cells[7].Value.ToString();
-            this.txtLuong.Text = dgvNhanVien.Rows[r].Cells[8].Value.ToString();
+            //this.dtpNamsinh.Text= dgvNhanVien.Rows[r].Cells[4].Value.ToString();
+            this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[4].Value.ToString();
+            this.txtMatkhau.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
+            this.cmbChucDanh.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+            this.txtLuong.Text = dgvNhanVien.Rows[r].Cells[7].Value.ToString();
         }
 
         private void btnLoadNV_Click(object sender, EventArgs e)
@@ -104,7 +106,7 @@ namespace App_QLBanHangSieuThiMini
             this.rdbNam.Checked = false;
             this.rdbNu.Checked = false;
             this.txtMatkhau.ResetText();
-            this.dtpNamsinh.ResetText();
+            //this.dtpNamsinh.ResetText();
             this.cmbChucDanh.ResetText();
 
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
@@ -135,7 +137,7 @@ namespace App_QLBanHangSieuThiMini
                 {
                     //Thuc hien lenh
                     QL_NhanVien qlNhanVien = new QL_NhanVien();
-                    qlNhanVien.ThemNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text, this.dtpNamsinh.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text, Convert.ToInt32(txtLuong.Text), ref err);
+                    qlNhanVien.ThemNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text, Convert.ToInt32(txtLuong.Text), ref err);
                     LoadDataNV();
                     MessageBox.Show("Da them vao !!");
 
@@ -149,7 +151,7 @@ namespace App_QLBanHangSieuThiMini
             else
             {
                 QL_NhanVien qlNhanVien = new QL_NhanVien();
-                qlNhanVien.CapNhatNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text,this.dtpNamsinh.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text,Convert.ToInt32(txtLuong.Text), ref err);
+                qlNhanVien.CapNhatNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text,Convert.ToInt32(txtLuong.Text), ref err);
                 LoadDataNV();
                 MessageBox.Show("Đã sửa xong!!");
             }

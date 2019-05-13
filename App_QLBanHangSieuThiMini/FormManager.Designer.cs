@@ -78,11 +78,11 @@
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.gpThongTinNV = new System.Windows.Forms.GroupBox();
             this.cmbChucDanh = new System.Windows.Forms.ComboBox();
-            this.dtpNamsinh = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.rdbNu = new System.Windows.Forms.RadioButton();
             this.rdbNam = new System.Windows.Forms.RadioButton();
+            this.txtLuong = new System.Windows.Forms.TextBox();
             this.txtMatkhau = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
@@ -95,8 +95,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tp_qlHoaDon = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtLuong = new System.Windows.Forms.TextBox();
             this.tabconNguoiQuanLy.SuspendLayout();
             this.tp_BieuDo.SuspendLayout();
             this.plManager.SuspendLayout();
@@ -648,8 +646,6 @@
             // gpThongTinNV
             // 
             this.gpThongTinNV.Controls.Add(this.cmbChucDanh);
-            this.gpThongTinNV.Controls.Add(this.dtpNamsinh);
-            this.gpThongTinNV.Controls.Add(this.label14);
             this.gpThongTinNV.Controls.Add(this.label3);
             this.gpThongTinNV.Controls.Add(this.label13);
             this.gpThongTinNV.Controls.Add(this.rdbNu);
@@ -680,35 +676,26 @@
             "Quản Lý",
             "NV Bán Hàng",
             "NV Nhập Hàng"});
-            this.cmbChucDanh.Location = new System.Drawing.Point(895, 71);
+            this.cmbChucDanh.Location = new System.Drawing.Point(891, 36);
             this.cmbChucDanh.Name = "cmbChucDanh";
             this.cmbChucDanh.Size = new System.Drawing.Size(167, 24);
             this.cmbChucDanh.TabIndex = 6;
             // 
-            // dtpNamsinh
+            // label3
             // 
-            this.dtpNamsinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNamsinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNamsinh.Location = new System.Drawing.Point(895, 39);
-            this.dtpNamsinh.Name = "dtpNamsinh";
-            this.dtpNamsinh.Size = new System.Drawing.Size(167, 22);
-            this.dtpNamsinh.TabIndex = 5;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(793, 39);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 17);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Năm sinh :";
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(789, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Lương :";
             // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(793, 71);
+            this.label13.Location = new System.Drawing.Point(789, 36);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 17);
             this.label13.TabIndex = 3;
@@ -739,6 +726,15 @@
             this.rdbNam.TabStop = true;
             this.rdbNam.Text = "Nam";
             this.rdbNam.UseVisualStyleBackColor = true;
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLuong.Location = new System.Drawing.Point(891, 64);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(167, 22);
+            this.txtLuong.TabIndex = 1;
             // 
             // txtMatkhau
             // 
@@ -861,25 +857,6 @@
             this.tp_qlHoaDon.Text = "Quản lý Hóa Đơn";
             this.tp_qlHoaDon.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(793, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Lương :";
-            // 
-            // txtLuong
-            // 
-            this.txtLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLuong.Location = new System.Drawing.Point(895, 99);
-            this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(167, 22);
-            this.txtLuong.TabIndex = 1;
-            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -956,8 +933,6 @@
         private System.Windows.Forms.GroupBox gbDanhsachNV;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.GroupBox gpThongTinNV;
-        private System.Windows.Forms.DateTimePicker dtpNamsinh;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RadioButton rdbNu;
         private System.Windows.Forms.RadioButton rdbNam;
