@@ -12,9 +12,13 @@ namespace App_QLBanHangSieuThiMini.DAL
     {
         DBConnect _dbConnect = new DBConnect();
 
-        public DataTable GetTable()
+        public DataTable GetTable(int whereMaHH = 0, string whereTenHH = "")
         {
-            return _dbConnect.ExecuteQuery("select * from HangHoa");
+            string strWhereMaHH = "";
+            if (whereMaHH != 0)
+                strWhereMaHH += whereMaHH.ToString();
+            string strSql = string.Format("select * from HangHoa where str(MaHH) like '%{0}%' and TenHH like N'%{1}%'", strWhereMaHH, whereTenHH);
+            return _dbConnect.ExecuteQuery(strSql);
         }
 
         public bool Them(HangHoa hang)
@@ -27,7 +31,7 @@ namespace App_QLBanHangSieuThiMini.DAL
         {
             string strSql = string.Format("delete from HangHoa where MaHH = {0}", maHH);
             return _dbConnect.ExecuteNonQuery(strSql);
-            
+
         }
 
         public bool Sua(HangHoa hang)
@@ -48,6 +52,11 @@ namespace App_QLBanHangSieuThiMini.DAL
                 Convert.ToDateTime(dt.Rows[0]["NgayNhapHang"]),
                 Convert.ToDateTime(dt.Rows[0]["NgayHetHan"]));
             return hanghoa;
+        }
+
+        public int GetNextID()
+        {
+            return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('HangHoa')"));
         }
     }
 }

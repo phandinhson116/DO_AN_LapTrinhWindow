@@ -55,5 +55,10 @@ namespace App_QLBanHangSieuThiMini.DAL
                 hoadon.MaKH, hoadon.MaNV, hoadon.Ngay, hoadon.MaHD);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
+
+        public int GetNextID()
+        {
+            return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('HoaDon')"));
+        }
     }
 }

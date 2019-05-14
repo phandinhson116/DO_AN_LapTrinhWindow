@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,22 +10,26 @@ using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 {
-    public partial class FormBanHang : Form
+    public partial class GUI_HoaDon : UserControl
     {
-        public FormBanHang()
+        public GUI_HoaDon()
         {
             InitializeComponent();
+        }
+
+        private void txtMaHD_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void btnDangXuat_Click(object sender, EventArgs e)
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
-            Close();
+
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void txtMaHH_TextChanged(object sender, EventArgs e)
         {
-            dgvHoaDon.DataSource = new DAL.DAL_HoaDon().GetTable();
+
         }
     }
 }

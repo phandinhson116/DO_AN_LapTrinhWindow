@@ -49,5 +49,10 @@ namespace App_QLBanHangSieuThiMini.DAL
             return _dbConnect.ExecuteNonQuery(strSql);
 
         }
+
+        public int GetNextID()
+        {
+            return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('KhachHang')"));
+        }
     }
 }

@@ -55,26 +55,23 @@ namespace App_QLBanHangSieuThiMini.DAL
             return result;
         }
 
-        /*
-        private bool Them(string strTable, string strValues)
+        public object ExucuteScalar(string strSql)
         {
-            string strSql = string.Format("insert into {0} values({1})", strTable, strValues);
-            ExecuteQuery(strSql);
-            return true;
-            /*
-            bool result = true;
+            object obj;
+            _connection.Open();
             try
             {
-                ExecuteQuery(strSql);
+                SqlCommand cmd = new SqlCommand(strSql, _connection);
+                obj = cmd.ExecuteScalar();
             }
             catch (SqlException ex)
             {
-                result = false;
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                obj = new object();
             }
-            return result;
-            
-
-        }*/
+            _connection.Close();
+            return obj;
+        }
     }
 }
 
