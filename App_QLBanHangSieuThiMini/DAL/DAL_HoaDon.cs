@@ -25,6 +25,12 @@ namespace App_QLBanHangSieuThiMini.DAL
             return _dbConnect.ExecuteQuery("select * from HoaDon");
         }
 
+        public DataTable GetTable(string whereMaHD, string whereMaKH, string whereMaNV)
+        {
+            string strSql = string.Format("select * from HoaDon where str(MaHD) like '%{0}%' and str(MaKH) like '%{1}%' and str(MaNV) like '%{2}%'", whereMaHD, whereMaKH, whereMaNV);
+            return _dbConnect.ExecuteQuery(strSql);
+        }
+
         public HoaDon GetRow(int maHD)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from HoaDon where MaHD = {0}", maHD));

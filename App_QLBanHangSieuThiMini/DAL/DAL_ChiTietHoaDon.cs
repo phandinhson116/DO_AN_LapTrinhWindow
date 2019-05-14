@@ -44,10 +44,11 @@ namespace App_QLBanHangSieuThiMini.DAL
         }
 
         //Lay tat ca cac hang hoa cua mot hoa don 
+        /*
         public List<ChiTietHoaDon> GetChiTietHoaDon(int MaHD)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from ChiTietHoaDon where MaHD = {0}", MaHD));
-            List<ChiTietHoaDon> chitietHDs = new List<ChiTietHoaDon>();
+            List<ChiTietHoaDon> chitietHDs = new List<FormNhanVien.ChiTietHoaDon>();
             foreach (DataRow row in dt.Rows)
             {
                 ChiTietHoaDon chitietHD = new ChiTietHoaDon(
@@ -58,6 +59,10 @@ namespace App_QLBanHangSieuThiMini.DAL
                 chitietHDs.Add(chitietHD);
             }
             return chitietHDs;
+        }*/
+        public DataTable GetChiTietHoaDons(int maHD)
+        {
+            return _dbConnect.ExecuteQuery(string.Format("select * from ChiTietHoaDon where MaHD = {0}", maHD));
         }
     }
 }

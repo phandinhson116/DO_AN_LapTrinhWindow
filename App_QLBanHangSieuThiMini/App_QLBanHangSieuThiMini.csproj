@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_BanHang.cs" />
+    <Compile Include="BLL\BLL_HoaDon.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
     <Compile Include="BS_Player\QL_NhanVien.cs" />
     <Compile Include="BS_Player\QL_ThongKeDoanhThu.cs" />
