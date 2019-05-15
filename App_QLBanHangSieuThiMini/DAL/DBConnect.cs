@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.Sql;
+﻿using System.Data;
 using System.Data.SqlClient;
-using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DBConnect
+    internal class DBConnect
     {
-        SqlConnection _connection;
+        private SqlConnection _connection;
 
         public DBConnect()
         {
-            _connection = new SqlConnection("Data Source = (local); Initial Catalog = QL_BanHang; Integrated Security = True;");
+            _connection = new SqlConnection("Data Source=DESKTOP-LRIE6A1;Initial Catalog=QL_BanHang;Integrated Security=True");
         }
 
         public DataTable ExecuteQuery(string strSql)
@@ -54,27 +47,5 @@ namespace App_QLBanHangSieuThiMini.DAL
             _connection.Close();
             return result;
         }
-
-        /*
-        private bool Them(string strTable, string strValues)
-        {
-            string strSql = string.Format("insert into {0} values({1})", strTable, strValues);
-            ExecuteQuery(strSql);
-            return true;
-            /*
-            bool result = true;
-            try
-            {
-                ExecuteQuery(strSql);
-            }
-            catch (SqlException ex)
-            {
-                result = false;
-            }
-            return result;
-            
-
-        }*/
     }
 }
-

@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using App_QLBanHangSieuThiMini.ValueObject;
+using System;
 using System.Data;
-using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DAL_HoaDon
+    internal class DAL_HoaDon
     {
-        DBConnect _dbConnect = new DBConnect();
+        private DBConnect _dbConnect = new DBConnect();
 
         public DataTable GetTable()
         {
@@ -19,7 +15,7 @@ namespace App_QLBanHangSieuThiMini.DAL
             List<HoaDon> list = new List<HoaDon>();
             foreach (DataRow row in dt.Rows)
             {
-                list.Add(new HoaDon(row["MaHD"].ToString(),row["MaKH"].ToString(),row["MaNV"].ToString(),Convert.ToDateTime(row["NgayLap"])));                
+                list.Add(new HoaDon(row["MaHD"].ToString(),row["MaKH"].ToString(),row["MaNV"].ToString(),Convert.ToDateTime(row["NgayLap"])));
             }
             return list;*/
             return _dbConnect.ExecuteQuery("select * from HoaDon");
@@ -34,7 +30,6 @@ namespace App_QLBanHangSieuThiMini.DAL
                 Convert.ToInt32(dt.Rows[0]["MaNV"]),
                Convert.ToDateTime(dt.Rows[0]["NgayLap"]));
             return hoadon;
-
         }
 
         public bool Them(HoaDon hoadon)

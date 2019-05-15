@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using App_QLBanHangSieuThiMini.ValueObject;
+using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
@@ -19,7 +20,8 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public bool Them(HangHoa hang)
         {
-            string strSql = string.Format("insert into HangHoa (TenHH, DonGia, SoLuong, DVCungCap, NgayNhapHang, NgayHetHan) values(N'{0}', {1}, {2}, N'{3}', '{4}', '{5}')", hang.TenHH, hang.DonGia, hang.SoLuong, hang.DVCungCap, hang.NgayNhapHang, hang.NgayHetHan);
+            string strSql = string.Format("insert into HangHoa (TenHH, DonGia, SoLuong, DVCungCap, NgayNhapHang, NgayHetHan) values(N'{0}', {1}, {2}, N'{3}', '{4}', '{5}')", hang.TenHH, hang.DonGia, hang.SoLuong, hang.DVCungCap,hang.NgayNhapHang.ToString("yyyy-MM-dd"), hang.NgayHetHan.ToString("yyyy-MM-dd"));
+            MessageBox.Show(strSql);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
 
@@ -32,7 +34,9 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public bool Sua(HangHoa hang)
         {
-            string strSql = string.Format("update HangHoa set TenHH = N'{0}', DonGia = {1}, SoLuong = {2}, DVCungCap = N'{3}', NgayNhapHang = '{4}', NgayHetHan = '{5}' where MaHH = {6}", hang.TenHH, hang.DonGia, hang.SoLuong, hang.DVCungCap, hang.NgayNhapHang, hang.NgayHetHan, hang.MaHH);
+    
+            string strSql = string.Format("update HangHoa set TenHH = N'{0}', DonGia = {1}, SoLuong = {2}, DVCungCap = N'{3}', NgayNhapHang= '{4}',NgayHetHan  = '{5}' where MaHH = {6}", hang.TenHH, hang.DonGia, hang.SoLuong, hang.DVCungCap, hang.NgayNhapHang.ToString("yyyy-MM-dd"), hang.NgayHetHan.ToString("yyyy-MM-dd"),hang.MaHH);
+            MessageBox.Show(strSql);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
 

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabconNguoiQuanLy = new System.Windows.Forms.TabControl();
             this.tp_BieuDo = new System.Windows.Forms.TabPage();
             this.plManager = new System.Windows.Forms.Panel();
@@ -46,16 +46,8 @@
             this.dgvThongKe = new System.Windows.Forms.DataGridView();
             this.tp_qlHangHoa = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
-            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlChucNang = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
-            this.btnTrove = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -95,6 +87,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tp_qlHoaDon = new System.Windows.Forms.TabPage();
+            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.tabconNguoiQuanLy.SuspendLayout();
             this.tp_BieuDo.SuspendLayout();
             this.plManager.SuspendLayout();
@@ -103,13 +96,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
             this.tp_qlHangHoa.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.pnlChucNang.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tp_qlNhanVien.SuspendLayout();
             this.gbDanhsachNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.gpThongTinNV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.SuspendLayout();
             // 
             // tabconNguoiQuanLy
@@ -149,42 +142,42 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(4, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series1.Legend = "Legend1";
-            series1.Name = "Lương nhân viên";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Tổng chi";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Tổng thu";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Doanh thu";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series5.Legend = "Legend1";
+            series5.Name = "Lương nhân viên";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "Tổng chi";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "Tổng thu";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "Doanh thu";
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(1117, 638);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Biểu đồ doanh thu của siêu thị";
-            title1.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title1.Name = "Title";
-            title1.Text = "Biểu đồ doanh thu của siêu thị";
-            this.chart1.Titles.Add(title1);
+            title2.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title2.Name = "Title";
+            title2.Text = "Biểu đồ doanh thu của siêu thị";
+            this.chart1.Titles.Add(title2);
             // 
             // tp_ThongKe
             // 
@@ -277,70 +270,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DANH MỤC HÀNG HÓA";
             // 
-            // dgvHangHoa
-            // 
-            this.dgvHangHoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHang,
-            this.TenHang,
-            this.DonGia,
-            this.SoLuong,
-            this.DVCungCap,
-            this.NgayNhapHang});
-            this.dgvHangHoa.Location = new System.Drawing.Point(5, 27);
-            this.dgvHangHoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvHangHoa.Name = "dgvHangHoa";
-            this.dgvHangHoa.RowTemplate.Height = 24;
-            this.dgvHangHoa.Size = new System.Drawing.Size(1131, 399);
-            this.dgvHangHoa.TabIndex = 3;
-            this.dgvHangHoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHangHoa_CellClick);
-            // 
-            // MaHang
-            // 
-            this.MaHang.DataPropertyName = "MaHang";
-            this.MaHang.FillWeight = 200F;
-            this.MaHang.HeaderText = "Mã Hàng";
-            this.MaHang.Name = "MaHang";
-            this.MaHang.Width = 200;
-            // 
-            // TenHang
-            // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.Width = 200;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 200;
-            // 
-            // DVCungCap
-            // 
-            this.DVCungCap.DataPropertyName = "DVCungCap";
-            this.DVCungCap.HeaderText = "Dịch Vụ Cung Cấp";
-            this.DVCungCap.Name = "DVCungCap";
-            this.DVCungCap.Width = 200;
-            // 
-            // NgayNhapHang
-            // 
-            this.NgayNhapHang.DataPropertyName = "NgayNhapHang";
-            this.NgayNhapHang.HeaderText = "Ngày Nhập Hàng";
-            this.NgayNhapHang.Name = "NgayNhapHang";
-            this.NgayNhapHang.Width = 200;
-            // 
             // pnlChucNang
             // 
             this.pnlChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -348,7 +277,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnlChucNang.Controls.Add(this.btnHuyBo);
-            this.pnlChucNang.Controls.Add(this.btnTrove);
             this.pnlChucNang.Controls.Add(this.btnReload);
             this.pnlChucNang.Controls.Add(this.button3);
             this.pnlChucNang.Location = new System.Drawing.Point(28, 146);
@@ -360,8 +288,9 @@
             // btnHuyBo
             // 
             this.btnHuyBo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnHuyBo.BackColor = System.Drawing.Color.Purple;
+            this.btnHuyBo.BackColor = System.Drawing.Color.White;
             this.btnHuyBo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHuyBo.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyBo.Location = new System.Drawing.Point(245, 18);
             this.btnHuyBo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -369,28 +298,14 @@
             this.btnHuyBo.Size = new System.Drawing.Size(103, 52);
             this.btnHuyBo.TabIndex = 4;
             this.btnHuyBo.Text = "Hủy bỏ";
-            this.btnHuyBo.UseVisualStyleBackColor = false;
-            // 
-            // btnTrove
-            // 
-            this.btnTrove.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTrove.BackColor = System.Drawing.Color.Fuchsia;
-            this.btnTrove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTrove.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrove.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTrove.Location = new System.Drawing.Point(415, 18);
-            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTrove.Name = "btnTrove";
-            this.btnTrove.Size = new System.Drawing.Size(103, 52);
-            this.btnTrove.TabIndex = 5;
-            this.btnTrove.Text = "Trở về";
-            this.btnTrove.UseVisualStyleBackColor = false;
+            this.btnHuyBo.UseVisualStyleBackColor = true;
             // 
             // btnReload
             // 
             this.btnReload.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReload.BackColor = System.Drawing.Color.Aqua;
+            this.btnReload.BackColor = System.Drawing.Color.White;
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.Location = new System.Drawing.Point(93, 18);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -398,7 +313,7 @@
             this.btnReload.Size = new System.Drawing.Size(103, 52);
             this.btnReload.TabIndex = 9;
             this.btnReload.Text = "ReLoad";
-            this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // button3
@@ -438,7 +353,7 @@
             this.dtpNgayCungCap.CustomFormat = "";
             this.dtpNgayCungCap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayCungCap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpNgayCungCap.Location = new System.Drawing.Point(537, 58);
+            this.dtpNgayCungCap.Location = new System.Drawing.Point(537, 82);
             this.dtpNgayCungCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgayCungCap.Name = "dtpNgayCungCap";
             this.dtpNgayCungCap.Size = new System.Drawing.Size(241, 22);
@@ -459,7 +374,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(392, 60);
+            this.label6.Location = new System.Drawing.Point(392, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 17);
             this.label6.TabIndex = 0;
@@ -478,7 +393,7 @@
             // txtTenHang
             // 
             this.txtTenHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTenHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtTenHang.BackColor = System.Drawing.SystemColors.Control;
             this.txtTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenHang.Location = new System.Drawing.Point(132, 55);
             this.txtTenHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -490,9 +405,9 @@
             // txtDVCungCap
             // 
             this.txtDVCungCap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDVCungCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtDVCungCap.BackColor = System.Drawing.SystemColors.Control;
             this.txtDVCungCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDVCungCap.Location = new System.Drawing.Point(537, 2);
+            this.txtDVCungCap.Location = new System.Drawing.Point(537, 10);
             this.txtDVCungCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDVCungCap.Multiline = true;
             this.txtDVCungCap.Name = "txtDVCungCap";
@@ -502,7 +417,7 @@
             // txtMaHang
             // 
             this.txtMaHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtMaHang.BackColor = System.Drawing.SystemColors.Control;
             this.txtMaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHang.Location = new System.Drawing.Point(132, 2);
             this.txtMaHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -551,6 +466,7 @@
             this.btnXoaNV.TabIndex = 9;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // btnHuyNV
             // 
@@ -591,6 +507,7 @@
             this.btnSuaNV.TabIndex = 12;
             this.btnSuaNV.Text = "Sửa";
             this.btnSuaNV.UseVisualStyleBackColor = true;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnLoadNV
             // 
@@ -857,11 +774,20 @@
             this.tp_qlHoaDon.Text = "Quản lý Hóa Đơn";
             this.tp_qlHoaDon.UseVisualStyleBackColor = true;
             // 
+            // dgvHangHoa
+            // 
+            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangHoa.Location = new System.Drawing.Point(6, 34);
+            this.dgvHangHoa.Name = "dgvHangHoa";
+            this.dgvHangHoa.RowTemplate.Height = 24;
+            this.dgvHangHoa.Size = new System.Drawing.Size(1027, 360);
+            this.dgvHangHoa.TabIndex = 1;
+            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 730);
+            this.ClientSize = new System.Drawing.Size(1458, 730);
             this.Controls.Add(this.tabconNguoiQuanLy);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormManager";
@@ -875,7 +801,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
             this.tp_qlHangHoa.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.pnlChucNang.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -884,6 +809,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.gpThongTinNV.ResumeLayout(false);
             this.gpThongTinNV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -895,16 +821,8 @@
         private System.Windows.Forms.Panel plManager;
         private System.Windows.Forms.TabPage tp_qlHangHoa;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvHangHoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DVCungCap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhapHang;
         private System.Windows.Forms.Panel pnlChucNang;
         private System.Windows.Forms.Button btnHuyBo;
-        private System.Windows.Forms.Button btnTrove;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
@@ -950,5 +868,6 @@
         private System.Windows.Forms.ComboBox cmbChucDanh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLuong;
+        private System.Windows.Forms.DataGridView dgvHangHoa;
     }
 }

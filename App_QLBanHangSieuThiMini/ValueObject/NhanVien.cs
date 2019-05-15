@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace App_QLBanHangSieuThiMini.ValueObject
+﻿namespace App_QLBanHangSieuThiMini.ValueObject
 {
-    class NhanVien
+    internal class NhanVien
     {
         public int MaNV { get; set; }
         public string TenNV { get; set; }
@@ -16,6 +10,7 @@ namespace App_QLBanHangSieuThiMini.ValueObject
         public string ChucDanh { get; set; }
         public string SDT { get; set; }
         public int Luong { get; set; }
+
         public NhanVien(int maNV, string tenNV, string gioiTinh, string diaChi, string matKhau, string chucDanh, string sdt, int luong)
         {
             MaNV = maNV;

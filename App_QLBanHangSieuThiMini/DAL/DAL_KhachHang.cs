@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using App_QLBanHangSieuThiMini.ValueObject;
+using System;
 using System.Data;
-using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DAL_KhachHang
+    internal class DAL_KhachHang
     {
-        DBConnect _dbConnect = new DBConnect();
+        private DBConnect _dbConnect = new DBConnect();
 
         public DataTable GetTable()
         {
@@ -47,7 +43,6 @@ namespace App_QLBanHangSieuThiMini.DAL
         {
             string strSql = string.Format("update KhachHang set TenKH = N'{0}', SDT = '{1}', GioiTinh = N'{2}', DiaChi = N'{3}', SoDiem = {4} where MaKH = {5}", khachHang.TenKH, khachHang.SDT, khachHang.GioiTinh, khachHang.DiaChi, khachHang.SoDiem, khachHang.MaKH);
             return _dbConnect.ExecuteNonQuery(strSql);
-
         }
     }
 }

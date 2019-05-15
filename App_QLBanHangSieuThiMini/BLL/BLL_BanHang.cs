@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace App_QLBanHangSieuThiMini.BLL
+﻿namespace App_QLBanHangSieuThiMini.BLL
 {
-    class BLL_BanHang
+    internal class BLL_BanHang
     {
     }
 }

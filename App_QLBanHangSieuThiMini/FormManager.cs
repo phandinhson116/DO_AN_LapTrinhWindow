@@ -1,4 +1,6 @@
 ﻿using App_QLBanHangSieuThiMini.BS_Player;
+using App_QLBanHangSieuThiMini.DAL;
+using App_QLBanHangSieuThiMini.ValueObject;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -7,20 +9,15 @@ namespace App_QLBanHangSieuThiMini
 {
     public partial class FormManager : Form
     {
-        private DataTable dtHangHoa = null;
-        private DataTable dtNhanVien = null;
-        // DataTable dtThongKeDoanhThu = null;
-
-        private QL_HangHoa dbHH = new QL_HangHoa();
-        private QL_NhanVien dbNV = new QL_NhanVien();
+        DAL_HangHoa dbHH = new DAL_HangHoa();
+        private DAL_NhanVien dbNV = new DAL_NhanVien();
         private bool ThemNV;
-        string err;
 
         private QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
 
         public FormManager()
         {
-           InitializeComponent();
+            InitializeComponent();
         }
 
         #region QLNhanVien
@@ -29,20 +26,19 @@ namespace App_QLBanHangSieuThiMini
         {
             try
             {
-                dtNhanVien = new DataTable();
+                DataTable dtNhanVien = new DataTable();
                 dtNhanVien.Clear();
-                DataSet ds = dbNV.LayNhanVien();
-                dtNhanVien = ds.Tables[0];
+                dtNhanVien = dbNV.GetTable();
                 // Dua du lieu len DataGridView
                 dgvNhanVien.DataSource = dtNhanVien;
                 // Thay doi do rong cot
                 dgvNhanVien.AutoResizeColumns();
-                // Xoa cac doi tuong trong Panel
+               
                 this.txtMaNV.ResetText();
                 this.txtTenNV.ResetText();
 
                 this.txtDiaChi.ResetText();
-              
+
                 this.txtSDT.ResetText();
                 this.txtMatkhau.ResetText();
                 this.cmbChucDanh.ResetText();
@@ -67,7 +63,7 @@ namespace App_QLBanHangSieuThiMini
         {
             // Thu tu dong hien hanh
             int r = dgvNhanVien.CurrentCell.RowIndex;
-            // Chuyen thong tin len Panel
+           
             this.txtMaNV.Text = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
             this.txtTenNV.Text = dgvNhanVien.Rows[r].Cells[1].Value.ToString();
 
@@ -83,7 +79,6 @@ namespace App_QLBanHangSieuThiMini
             }
 
             this.txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[3].Value.ToString();
-            //this.dtpNamsinh.Text= dgvNhanVien.Rows[r].Cells[4].Value.ToString();
             this.txtSDT.Text = dgvNhanVien.Rows[r].Cells[4].Value.ToString();
             this.txtMatkhau.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
             this.cmbChucDanh.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
@@ -94,6 +89,7 @@ namespace App_QLBanHangSieuThiMini
         {
             LoadDataNV();
         }
+
         private void btnThemNV_Click(object sender, EventArgs e)
         {
             // Kich hoat Them
@@ -112,14 +108,39 @@ namespace App_QLBanHangSieuThiMini
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
             this.btnLuuNV.Enabled = true;
             this.btnHuyNV.Enabled = true;
-            this.panel1.Enabled = true;
+           
             // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
             this.btnThemNV.Enabled = false;
             this.btnSuaNV.Enabled = false;
-            this.btnTrove.Enabled = false;
-            // Dua con tro den TextFied txtThanhPho
-            this.txtMaNV.Focus();
+           
+
+            // Dua con tro den txtTenNV
+            this.txtMaNV.Enabled = false;
+            this.txtTenNV.Focus();
         }
+
+        private void btnSuaNV_Click(object sender, EventArgs e)
+        {
+            ThemNV = false;
+
+            // Cho chep thao tac tren Panel
+
+            dgvNhanVien_CellClick(null, null);
+            // Cho thao tac tren cac nut Luu/ Huy/ Panel
+
+            this.btnLuuNV.Enabled = true;
+            this.btnHuyNV.Enabled = true;
+           
+            // Khong cho thao tac tren cac nut Them/Xoa/ Thoat
+            this.btnThemNV.Enabled = false;
+            this.btnSuaNV.Enabled = false;
+            this.btnXoaNV.Enabled = false;
+
+            // Dua con tro den TenNV
+            this.txtMaNV.Enabled = false;
+            this.txtTenNV.Focus();
+        }
+
         private void btnLuuNV_Click(object sender, EventArgs e)
         {
             string rdbGT;
@@ -136,53 +157,75 @@ namespace App_QLBanHangSieuThiMini
                 try
                 {
                     //Thuc hien lenh
-                    QL_NhanVien qlNhanVien = new QL_NhanVien();
-                    qlNhanVien.ThemNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text, Convert.ToInt32(txtLuong.Text), ref err);
+                    dbNV.Them(new NhanVien(0, txtTenNV.Text.Trim(), rdbGT, txtDiaChi.Text.Trim(), txtMatkhau.Text.Trim(), cmbChucDanh.Text.Trim(), txtSDT.Text.Trim(), Convert.ToInt32(txtLuong.Text)));
                     LoadDataNV();
                     MessageBox.Show("Da them vao !!");
-
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }
             }
             else
             {
-                QL_NhanVien qlNhanVien = new QL_NhanVien();
-                qlNhanVien.CapNhatNhanVien(this.txtMaNV.Text, this.txtTenNV.Text, rdbGT, this.txtDiaChi.Text, this.txtSDT.Text, this.txtMatkhau.Text, this.cmbChucDanh.Text,Convert.ToInt32(txtLuong.Text), ref err);
+                dbNV.Sua(new NhanVien(Convert.ToInt32(txtMaNV.Text), txtTenNV.Text.Trim(), rdbGT, txtDiaChi.Text.Trim(), txtMatkhau.Text.Trim(), cmbChucDanh.Text.Trim(), txtSDT.Text.Trim(), Convert.ToInt32(txtLuong.Text)));
                 LoadDataNV();
                 MessageBox.Show("Đã sửa xong!!");
             }
         }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int r = dgvNhanVien.CurrentCell.RowIndex;
+                string strNhanVien = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
+                DialogResult traloi;
+                traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (traloi == DialogResult.Yes)
+                {
+                    dbNV.Xoa(Convert.ToInt32(strNhanVien));
+                    LoadDataNV();
+                    MessageBox.Show("Đã xóa xong!!!");
+                }
+                else
+                {
+                    MessageBox.Show("Không thực hiện lệnh xóa! Lệnh xóa đã bị hủy!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         #endregion QLNhanVien
-        #region  QLHangHoa
+
+        #region QLHangHoa
+
         private void LoadDataHH()
         {
             try
             {
-                dtHangHoa = new DataTable();
+                DataTable dtHangHoa = new DataTable();
                 dtHangHoa.Clear();
-                DataSet ds = dbHH.LayHangHoa();
-                dtHangHoa = ds.Tables[0];
-                // Dua du lieu len DataGridView ở tabControl quản lí háng hóa
+                dtHangHoa = dbHH.GetTable();
+                // Dua du lieu Hang Hóa len DataGridView
                 dgvHangHoa.DataSource = dtHangHoa;
                 // Thay doi do rong cot
                 dgvHangHoa.AutoResizeColumns();
                 // Xoa cac doi tuong trong Panel
                 this.txtMaHang.ResetText();
                 this.txtTenHang.ResetText();
-
+              
                 this.txtDVCungCap.ResetText();
+          
                 // Khong cho thao tac tren cac nut Luu/ Huy
-
+               
                 this.btnHuyBo.Enabled = false;
-                this.panel1.Enabled = false;
-                // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
-
-                this.btnTrove.Enabled = true;
-                dgvHangHoa_CellClick(null, null);
+               
+                
+               
             }
             catch (Exception ex)
             {
@@ -195,48 +238,20 @@ namespace App_QLBanHangSieuThiMini
             LoadDataHH();
         }
 
-        private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Thu tu dong hien hanh
-            int r = dgvHangHoa.CurrentCell.RowIndex;
-            // Chuyen thong tin len Panel
-            this.txtMaHang.Text = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
-            this.txtTenHang.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
-
-            this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
-            this.dtpNgayCungCap.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString();
-        }
+        
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
-            // Xoa trong cac doi tuong trong Panel
-            this.txtMaHang.ResetText();
-            this.txtTenHang.ResetText();
 
-            this.txtDVCungCap.ResetText();
-            this.dtpNgayCungCap.ResetText();
-            // Cho Thao tac tren cac nut Them/ Xoa / Sua/ Thoat
-
-            this.btnTrove.Enabled = true;
-            //Khong cho thao tac tren cac nut Luu/ Huy/ Panel
-
-            this.btnHuyBo.Enabled = false;
-            this.panel1.Enabled = false;
-            dgvHangHoa_CellClick(null, null);
         }
 
-        private void btnTrove_Click(object sender, EventArgs e)
+        
+
+        #endregion QLHangHoa
+
+        private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Khai bao bien tra loi
-            DialogResult traloi;
-            traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (traloi == DialogResult.OK) this.Close();
+
         }
-        #endregion
-
-
-
-
-
     }
 }

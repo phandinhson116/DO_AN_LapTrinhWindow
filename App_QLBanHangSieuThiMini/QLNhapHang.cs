@@ -1,38 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using App_QLBanHangSieuThiMini.DAL;
+using App_QLBanHangSieuThiMini.ValueObject;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using App_QLBanHangSieuThiMini.BS_Player;
-
 
 namespace App_QLBanHangSieuThiMini
 {
     public partial class fNhapHang : Form
     {
-        DataTable dtHangHoa = null;
-        bool Them;
-        string err;
-        QL_HangHoa dbHH = new QL_HangHoa();
-       
+    
+        private bool Them;
+      
+        private DAL_HangHoa dbHH = new DAL_HangHoa();
+
         public fNhapHang()
         {
             InitializeComponent();
         }
 
-        void LoadData()
+        private void LoadData()
         {
             try
             {
-                dtHangHoa = new DataTable();
+                DataTable dtHangHoa = new DataTable();
                 dtHangHoa.Clear();
-                DataSet ds = dbHH.LayHangHoa();
-                dtHangHoa = ds.Tables[0];
-                // Dua du lieu len DataGridView
+                dtHangHoa = dbHH.GetTable();
+                // Dua du lieu Hang Hóa len DataGridView
                 dgvHangHoa.DataSource = dtHangHoa;
                 // Thay doi do rong cot
                 dgvHangHoa.AutoResizeColumns();
@@ -42,6 +35,8 @@ namespace App_QLBanHangSieuThiMini
                 this.txtSoLuong.ResetText();
                 this.txtDonGia.ResetText();
                 this.txtDVCungCap.ResetText();
+                this.dtpNgayNhapHang.ResetText();
+                this.dtpNgayHetHan.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuu.Enabled = false;
                 this.btnHuyBo.Enabled = false;
@@ -51,16 +46,12 @@ namespace App_QLBanHangSieuThiMini
                 this.btnSua.Enabled = true;
                 this.btnTrove.Enabled = true;
                 dgvHangHoa_CellClick(null, null);
-
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
-       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -76,9 +67,10 @@ namespace App_QLBanHangSieuThiMini
             this.txtTenHang.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
             this.txtDonGia.Text = dgvHangHoa.Rows[r].Cells[2].Value.ToString();
             this.txtSoLuong.Text = dgvHangHoa.Rows[r].Cells[3].Value.ToString();
-           
+
             this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
-            this.dtpNgayCungCap.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString();
+            this.dtpNgayNhapHang.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString().Trim();
+            this.dtpNgayHetHan.Text = dgvHangHoa.Rows[r].Cells[6].Value.ToString().Trim();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -88,16 +80,15 @@ namespace App_QLBanHangSieuThiMini
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             // Kich hoat Them
             Them = true;
-            // Xoa trong cac doi tuong trong Panel 
+            // Xoa trong cac doi tuong trong Panel
             this.txtMaHang.ResetText();
             this.txtTenHang.ResetText();
             this.txtSoLuong.ResetText();
             this.txtDonGia.ResetText();
             this.txtDVCungCap.ResetText();
-            this.dtpNgayCungCap.ResetText();
+            this.dtpNgayNhapHang.ResetText();
 
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
             this.btnLuu.Enabled = true;
@@ -119,7 +110,7 @@ namespace App_QLBanHangSieuThiMini
             this.txtSoLuong.ResetText();
             this.txtDonGia.ResetText();
             this.txtDVCungCap.ResetText();
-            this.dtpNgayCungCap.ResetText();
+            this.dtpNgayNhapHang.ResetText();
             // Cho Thao tac tren cac nut Them/ Xoa / Sua/ Thoat
             this.btnAdd.Enabled = true;
             this.btnSua.Enabled = true;
@@ -133,27 +124,24 @@ namespace App_QLBanHangSieuThiMini
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(Them)
+            if (Them)
             {
                 try
                 {
                     //Thuc hien lenh
-                    QL_HangHoa qlHangHoa = new QL_HangHoa();
-                    qlHangHoa.ThemHangHoa(this.txtMaHang.Text, this.txtTenHang.Text,Convert.ToInt32(this.txtSoLuong.Text), Convert.ToInt32(this.txtDonGia.Text), this.txtDVCungCap.Text,this.dtpNgayCungCap.Text, ref err);
+                    dbHH.Them(new HangHoa(0, txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
                     LoadData();
                     MessageBox.Show("Da them vao !!");
-
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }
             }
             else
             {
-                QL_HangHoa qlHH = new QL_HangHoa();
-                qlHH.CapNhatHangHoa(this.txtMaHang.Text.Trim(), this.txtTenHang.Text.Trim(), Convert.ToInt32(this.txtDonGia.Text.Trim()), Convert.ToInt32(this.txtSoLuong.Text.Trim()), this.txtDVCungCap.Text.Trim(), this.dtpNgayCungCap.Text.Trim(), ref err);
+
+                dbHH.Sua(new HangHoa(Convert.ToInt32(txtMaHang.Text), txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
                 LoadData();
                 MessageBox.Show("Đã sửa xong!!");
             }
@@ -167,12 +155,11 @@ namespace App_QLBanHangSieuThiMini
                 string strHangHoa = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
                 DialogResult traloi;
                 traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(traloi==DialogResult.Yes)
+                if (traloi == DialogResult.Yes)
                 {
-                    dbHH.XoaHangHoa(ref err, strHangHoa);
+                    dbHH.Xoa(Convert.ToInt32(strHangHoa));
                     LoadData();
                     MessageBox.Show("Đã xóa xong!!!");
-
                 }
                 else
                 {
@@ -182,7 +169,6 @@ namespace App_QLBanHangSieuThiMini
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-               
             }
         }
 

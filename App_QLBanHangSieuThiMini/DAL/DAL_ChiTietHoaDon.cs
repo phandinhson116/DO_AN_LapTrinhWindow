@@ -1,16 +1,13 @@
-﻿using System;
+﻿using App_QLBanHangSieuThiMini.ValueObject;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DAL_ChiTietHoaDon
+    internal class DAL_ChiTietHoaDon
     {
-        DBConnect _dbConnect = new DBConnect();
+        private DBConnect _dbConnect = new DBConnect();
 
         public DataTable GetTable()
         {
@@ -43,7 +40,7 @@ namespace App_QLBanHangSieuThiMini.DAL
             return true;
         }
 
-        //Lay tat ca cac hang hoa cua mot hoa don 
+        //Lay tat ca cac hang hoa cua mot hoa don
         public List<ChiTietHoaDon> GetChiTietHoaDon(int MaHD)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from ChiTietHoaDon where MaHD = {0}", MaHD));
