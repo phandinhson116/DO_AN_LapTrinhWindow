@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using App_QLBanHangSieuThiMini.DAL;
 using App_QLBanHangSieuThiMini.ValueObject;
-using App_QLBanHangSieuThiMini.DAL;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace App_QLBanHangSieuThiMini.BLL
 {
-    class BLL_BanHang
+    internal class BLL_BanHang
     {
-        DAL_HangHoa _dalHangHoa = new DAL_HangHoa();
-        DAL_HoaDon _dalHoaDon = new DAL_HoaDon();
-        DAL_ChiTietHoaDon _dalChiTietHoaDon = new DAL_ChiTietHoaDon();
+        private DAL_HangHoa _dalHangHoa = new DAL_HangHoa();
+        private DAL_HoaDon _dalHoaDon = new DAL_HoaDon();
+        private DAL_ChiTietHoaDon _dalChiTietHoaDon = new DAL_ChiTietHoaDon();
 
         public int GetMaHHMoi()
         {
