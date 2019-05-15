@@ -33,5 +33,6 @@ namespace App_QLBanHangSieuThiMini.DAL
                 nhanvien.TenNV, nhanvien.GioiTinh, nhanvien.DiaChi, nhanvien.SDT, nhanvien.MatKhau, nhanvien.ChucDanh, nhanvien.Luong, nhanvien.MaNV);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
+
     }
 }
