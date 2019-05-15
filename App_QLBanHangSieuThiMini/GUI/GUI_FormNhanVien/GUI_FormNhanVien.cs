@@ -22,5 +22,10 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
         {
             Close();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvHoaDon.DataSource = new DAL.DAL_HoaDon().GetTable();
+        }
     }
 }

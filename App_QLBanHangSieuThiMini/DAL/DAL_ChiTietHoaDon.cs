@@ -1,13 +1,16 @@
-﻿using App_QLBanHangSieuThiMini.ValueObject;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data;
+using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    internal class DAL_ChiTietHoaDon
+    class DAL_ChiTietHoaDon
     {
-        private DBConnect _dbConnect = new DBConnect();
+        DBConnect _dbConnect = new DBConnect();
 
         public DataTable GetTable()
         {
@@ -40,11 +43,12 @@ namespace App_QLBanHangSieuThiMini.DAL
             return true;
         }
 
-        //Lay tat ca cac hang hoa cua mot hoa don
+        //Lay tat ca cac hang hoa cua mot hoa don 
+        /*
         public List<ChiTietHoaDon> GetChiTietHoaDon(int MaHD)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from ChiTietHoaDon where MaHD = {0}", MaHD));
-            List<ChiTietHoaDon> chitietHDs = new List<ChiTietHoaDon>();
+            List<ChiTietHoaDon> chitietHDs = new List<FormNhanVien.ChiTietHoaDon>();
             foreach (DataRow row in dt.Rows)
             {
                 ChiTietHoaDon chitietHD = new ChiTietHoaDon(
@@ -55,6 +59,10 @@ namespace App_QLBanHangSieuThiMini.DAL
                 chitietHDs.Add(chitietHD);
             }
             return chitietHDs;
+        }*/
+        public DataTable GetChiTietHoaDons(int maHD)
+        {
+            return _dbConnect.ExecuteQuery(string.Format("select * from ChiTietHoaDon where MaHD = {0}", maHD));
         }
     }
 }

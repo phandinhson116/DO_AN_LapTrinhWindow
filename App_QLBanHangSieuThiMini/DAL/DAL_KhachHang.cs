@@ -44,5 +44,10 @@ namespace App_QLBanHangSieuThiMini.DAL
             string strSql = string.Format("update KhachHang set TenKH = N'{0}', SDT = '{1}', GioiTinh = N'{2}', DiaChi = N'{3}', SoDiem = {4} where MaKH = {5}", khachHang.TenKH, khachHang.SDT, khachHang.GioiTinh, khachHang.DiaChi, khachHang.SoDiem, khachHang.MaKH);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
+
+        public int GetNextID()
+        {
+            return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('KhachHang')"));
+        }
     }
 }

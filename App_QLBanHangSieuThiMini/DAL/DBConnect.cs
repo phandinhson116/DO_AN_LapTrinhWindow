@@ -1,15 +1,22 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    internal class DBConnect
+    class DBConnect
     {
-        private SqlConnection _connection;
+        SqlConnection _connection;
 
         public DBConnect()
         {
-            _connection = new SqlConnection("Data Source=DESKTOP-LRIE6A1;Initial Catalog=QL_BanHang;Integrated Security=True");
+            _connection = new SqlConnection("Data Source = (local); Initial Catalog = QL_BanHang; Integrated Security = True;");
         }
 
         public DataTable ExecuteQuery(string strSql)
@@ -47,5 +54,24 @@ namespace App_QLBanHangSieuThiMini.DAL
             _connection.Close();
             return result;
         }
+
+        public object ExucuteScalar(string strSql)
+        {
+            object obj;
+            _connection.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(strSql, _connection);
+                obj = cmd.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                obj = new object();
+            }
+            _connection.Close();
+            return obj;
+        }
     }
 }
+

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_BanHang.cs" />
+    <Compile Include="BLL\BLL_HoaDon.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
     <Compile Include="BS_Player\QL_ThongKeDoanhThu.cs" />
     <Compile Include="DAL\DAL_ChiTietHoaDon.cs" />
@@ -81,6 +82,12 @@
     <Compile Include="GUI\GUI_FormNhanVien\GUI_FormNhanVien.Designer.cs">
       <DependentUpon>GUI_FormNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GUI_FormNhanVien\GUI_HoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_FormNhanVien\GUI_HoaDon.Designer.cs">
+      <DependentUpon>GUI_HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GUI_FormNhanVien\GUI_KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +113,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_FormNhanVien\GUI_BanHang.resx">
+      <DependentUpon>GUI_BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_FormNhanVien\GUI_FormNhanVien.resx">
+      <DependentUpon>GUI_FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_FormNhanVien\GUI_HoaDon.resx">
+      <DependentUpon>GUI_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_FormNhanVien\GUI_KhachHang.resx">
       <DependentUpon>GUI_KhachHang.cs</DependentUpon>
