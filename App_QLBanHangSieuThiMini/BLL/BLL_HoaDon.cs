@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using App_QLBanHangSieuThiMini.DAL;
 using System.Data;
-using App_QLBanHangSieuThiMini.DAL;
 
 namespace App_QLBanHangSieuThiMini.BLL
 {
-    class BLL_HoaDon
+    internal class BLL_HoaDon
     {
-        DAL_HoaDon _dalHoaDon = new DAL_HoaDon();
-        DAL_ChiTietHoaDon _dalChiTietHoaDon = new DAL_ChiTietHoaDon();
+        private DAL_HoaDon _dalHoaDon = new DAL_HoaDon();
+        private DAL_ChiTietHoaDon _dalChiTietHoaDon = new DAL_ChiTietHoaDon();
 
         public DataTable GetHoaDon()
         {

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App_QLBanHangSieuThiMini.ValueObject
 {
-    class HangHoa
+    internal class HangHoa
     {
         public int MaHH { get; set; }
         public string TenHH { get; set; }
@@ -16,7 +12,7 @@ namespace App_QLBanHangSieuThiMini.ValueObject
         public DateTime NgayNhapHang { get; set; }
         public DateTime NgayHetHan { get; set; }
 
-        public HangHoa(int maHH,string tenHH,float donGia,int soLuong,string dvCungCap,DateTime ngayNhap,DateTime ngayHetHan)
+        public HangHoa(int maHH, string tenHH, float donGia, int soLuong, string dvCungCap, DateTime ngayNhap, DateTime ngayHetHan)
         {
             MaHH = maHH;
             TenHH = tenHH;

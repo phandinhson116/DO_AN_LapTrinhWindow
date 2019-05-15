@@ -50,9 +50,7 @@
     <Compile Include="BLL\BLL_BanHang.cs" />
     <Compile Include="BLL\BLL_HoaDon.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
-    <Compile Include="BS_Player\QL_NhanVien.cs" />
     <Compile Include="BS_Player\QL_ThongKeDoanhThu.cs" />
-    <Compile Include="BS_Player\QL_HangHoa.cs" />
     <Compile Include="DAL\DAL_ChiTietHoaDon.cs" />
     <Compile Include="DAL\DAL_HangHoa.cs" />
     <Compile Include="DAL\DAL_HoaDon.cs" />

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using App_QLBanHangSieuThiMini.DAL;
+﻿using App_QLBanHangSieuThiMini.DAL;
 using App_QLBanHangSieuThiMini.ValueObject;
+using System.Data;
 
 namespace App_QLBanHangSieuThiMini.BLL
 {
-    class BLL_KhachHang
+    internal class BLL_KhachHang
     {
-        DAL_KhachHang _dal = new DAL_KhachHang();
+        private DAL_KhachHang _dal = new DAL_KhachHang();
 
         public DataTable GetKhachHang()
         {
@@ -37,6 +32,5 @@ namespace App_QLBanHangSieuThiMini.BLL
         {
             return _dal.Sua(khachhang);
         }
-
     }
 }

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.Sql;
+﻿using System.Data;
 using System.Data.SqlClient;
-using App_QLBanHangSieuThiMini.ValueObject;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DBConnect
+    internal class DBConnect
     {
-        SqlConnection _connection;
+        private SqlConnection _connection;
 
         public DBConnect()
         {
@@ -74,4 +67,3 @@ namespace App_QLBanHangSieuThiMini.DAL
         }
     }
 }
-
