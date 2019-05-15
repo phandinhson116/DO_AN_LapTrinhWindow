@@ -33,6 +33,7 @@
             this.txtTenHH = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
+            this.btnMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.txtMaHH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.txtTong = new System.Windows.Forms.TextBox();
             this.dgvHangMua = new System.Windows.Forms.DataGridView();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
-            this.btnMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -75,8 +75,9 @@
             this.dgvHang.Location = new System.Drawing.Point(54, 136);
             this.dgvHang.Name = "dgvHang";
             this.dgvHang.RowTemplate.Height = 24;
-            this.dgvHang.Size = new System.Drawing.Size(462, 354);
+            this.dgvHang.Size = new System.Drawing.Size(462, 621);
             this.dgvHang.TabIndex = 41;
+            this.dgvHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_CellClick);
             // 
             // txtTenHH
             // 
@@ -84,6 +85,7 @@
             this.txtTenHH.Name = "txtTenHH";
             this.txtTenHH.Size = new System.Drawing.Size(100, 22);
             this.txtTenHH.TabIndex = 52;
+            this.txtTenHH.TextChanged += new System.EventHandler(this.txtTenHH_TextChanged);
             // 
             // label10
             // 
@@ -104,6 +106,16 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // btnMoi
+            // 
+            this.btnMoi.Location = new System.Drawing.Point(522, 223);
+            this.btnMoi.Name = "btnMoi";
+            this.btnMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnMoi.TabIndex = 49;
+            this.btnMoi.Text = "Mới";
+            this.btnMoi.UseVisualStyleBackColor = true;
+            this.btnMoi.Click += new System.EventHandler(this.btnMoi_Click);
+            // 
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(521, 167);
@@ -120,6 +132,7 @@
             this.txtMaHH.Name = "txtMaHH";
             this.txtMaHH.Size = new System.Drawing.Size(100, 22);
             this.txtMaHH.TabIndex = 47;
+            this.txtMaHH.TextChanged += new System.EventHandler(this.txtMaHH_TextChanged);
             // 
             // label7
             // 
@@ -179,7 +192,7 @@
             this.groupBox1.Controls.Add(this.dtpNgay);
             this.groupBox1.Location = new System.Drawing.Point(601, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 466);
+            this.groupBox1.Size = new System.Drawing.Size(328, 565);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             // 
@@ -187,7 +200,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(278, 394);
+            this.label11.Location = new System.Drawing.Point(285, 493);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 17);
             this.label11.TabIndex = 21;
@@ -207,7 +220,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(113, 18);
+            this.label8.Location = new System.Drawing.Point(117, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 25);
             this.label8.TabIndex = 12;
@@ -216,13 +229,13 @@
             // btnThanhToan
             // 
             this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThanhToan.Location = new System.Drawing.Point(215, 422);
+            this.btnThanhToan.Location = new System.Drawing.Point(222, 521);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(100, 23);
             this.btnThanhToan.TabIndex = 20;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.btnThanhToan.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3
             // 
@@ -245,7 +258,7 @@
             // txtMaKH
             // 
             this.txtMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaKH.Location = new System.Drawing.Point(215, 81);
+            this.txtMaKH.Location = new System.Drawing.Point(222, 81);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(100, 22);
             this.txtMaKH.TabIndex = 3;
@@ -263,7 +276,7 @@
             // 
             this.txtMaHD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaHD.Enabled = false;
-            this.txtMaHD.Location = new System.Drawing.Point(215, 50);
+            this.txtMaHD.Location = new System.Drawing.Point(222, 50);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(100, 22);
             this.txtMaHD.TabIndex = 4;
@@ -271,7 +284,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 397);
+            this.label6.Location = new System.Drawing.Point(6, 496);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 17);
             this.label6.TabIndex = 11;
@@ -281,7 +294,7 @@
             // 
             this.txtTong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTong.Enabled = false;
-            this.txtTong.Location = new System.Drawing.Point(156, 392);
+            this.txtTong.Location = new System.Drawing.Point(163, 491);
             this.txtTong.Name = "txtTong";
             this.txtTong.Size = new System.Drawing.Size(116, 22);
             this.txtTong.TabIndex = 10;
@@ -291,10 +304,10 @@
             this.dgvHangMua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHangMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangMua.Location = new System.Drawing.Point(6, 159);
+            this.dgvHangMua.Location = new System.Drawing.Point(7, 159);
             this.dgvHangMua.Name = "dgvHangMua";
             this.dgvHangMua.RowTemplate.Height = 24;
-            this.dgvHangMua.Size = new System.Drawing.Size(309, 227);
+            this.dgvHangMua.Size = new System.Drawing.Size(316, 321);
             this.dgvHangMua.TabIndex = 8;
             // 
             // dtpNgay
@@ -302,31 +315,21 @@
             this.dtpNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgay.Enabled = false;
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgay.Location = new System.Drawing.Point(215, 109);
+            this.dtpNgay.Location = new System.Drawing.Point(222, 109);
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(100, 22);
             this.dtpNgay.TabIndex = 5;
-            // 
-            // btnMoi
-            // 
-            this.btnMoi.Location = new System.Drawing.Point(521, 223);
-            this.btnMoi.Name = "btnMoi";
-            this.btnMoi.Size = new System.Drawing.Size(75, 23);
-            this.btnMoi.TabIndex = 55;
-            this.btnMoi.Text = "Mới";
-            this.btnMoi.UseVisualStyleBackColor = true;
-            this.btnMoi.Click += new System.EventHandler(this.btnMoi_Click);
             // 
             // GUI_BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnMoi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvHang);
             this.Controls.Add(this.txtTenHH);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnMoi);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.txtMaHH);
             this.Controls.Add(this.label7);
@@ -350,8 +353,10 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvHang;
+        private System.Windows.Forms.TextBox txtTenHH;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnMoi;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.TextBox txtMaHH;
         private System.Windows.Forms.Label label7;
@@ -372,7 +377,5 @@
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.DataGridView dgvHangMua;
         private System.Windows.Forms.DateTimePicker dtpNgay;
-        private System.Windows.Forms.Button btnMoi;
-        private System.Windows.Forms.TextBox txtTenHH;
     }
 }

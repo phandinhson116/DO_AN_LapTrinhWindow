@@ -27,7 +27,7 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public DataTable GetTable(string whereMaHD, string whereMaKH, string whereMaNV)
         {
-            string strSql = string.Format("select * from HoaDon where str(MaHD) like '%{0}%' and str(MaKH) like '%{1}%' and str(MaNV) like '%{2}%'", whereMaHD, whereMaKH, whereMaNV);
+            string strSql = string.Format("select * from HoaDon where MaHD like '{0}%' and MaKH like '{1}%' and MaNV like '{2}%'", whereMaHD, whereMaKH, whereMaNV);
             return _dbConnect.ExecuteQuery(strSql);
         }
 
@@ -64,7 +64,7 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public int GetNextID()
         {
-            return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('HoaDon')"));
+            return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('HoaDon')")) + 1;
         }
     }
 }

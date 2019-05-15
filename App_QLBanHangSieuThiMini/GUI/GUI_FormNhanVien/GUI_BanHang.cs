@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using App_QLBanHangSieuThiMini.BLL;
-
 namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 {
     public partial class GUI_BanHang : UserControl
     {
+        int _maNV;
         BLL_BanHang bll = new BLL_BanHang();
         Dictionary<int, int> hangmua = new Dictionary<int, int>();
-        int _maNV;
 
-        public GUI_BanHang()
+
+        public GUI_BanHang(int maNV)
         {
-            _maNV = 1;
+            _maNV = maNV;
             InitializeComponent();
             LoadData();
             btnMoi_Click(btnMoi, null);
@@ -71,7 +71,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             txtMaHH.TextChanged += txtTenHH_TextChanged;
         }
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show(string.Format("Đưa {0} VND đây!", bll.TinhTongTien(hangmua)));
             bll.MuaHang(_maNV, Convert.ToInt32(txtMaKH.Text.Trim()), DateTime.Now, hangmua);

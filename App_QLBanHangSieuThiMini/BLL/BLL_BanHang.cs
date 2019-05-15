@@ -60,13 +60,15 @@ namespace App_QLBanHangSieuThiMini.BLL
         public bool KiemTraDuHang(Dictionary<int, int> hangmua)
         {
             bool result = true;
-
             foreach (int maHH in hangmua.Keys)
             {
                 HangHoa hang = _dalHangHoa.GetRow(maHH);
                 //Khong con du hang de mua
                 if (hang.SoLuong < hangmua[maHH])
+                {
+                    System.Windows.Forms.MessageBox.Show(string.Format("Mặt hàng {0} không còn đủ hàng", hang.MaHH));
                     result = false;
+                }
             }
             return result;
         }

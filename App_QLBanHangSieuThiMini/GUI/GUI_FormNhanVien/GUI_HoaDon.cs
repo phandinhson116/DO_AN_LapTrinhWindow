@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using App_QLBanHangSieuThiMini.BLL;
-
 namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 {
     public partial class GUI_HoaDon : UserControl
@@ -42,14 +41,14 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             LoadData();
         }
 
-        private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvChiTietHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
         }
 
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvChiTietHoaDon.DataSource = bll.GetChiTietHoaDon(Convert.ToInt32(dgvHoaDon.Rows[e.RowIndex].Cells[0].Value));
-            dgvChiTietHoaDon.AutoResizeColumns();
+            dgvChiTietHD.DataSource = bll.GetChiTietHoaDon(Convert.ToInt32(dgvHoaDon.Rows[e.RowIndex].Cells[0].Value));
+            dgvChiTietHD.AutoResizeColumns();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

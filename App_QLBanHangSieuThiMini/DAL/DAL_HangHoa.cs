@@ -17,7 +17,7 @@ namespace App_QLBanHangSieuThiMini.DAL
             string strWhereMaHH = "";
             if (whereMaHH != 0)
                 strWhereMaHH += whereMaHH.ToString();
-            string strSql = string.Format("select * from HangHoa where str(MaHH) like '%{0}%' and TenHH like N'%{1}%'", strWhereMaHH, whereTenHH);
+            string strSql = string.Format("select * from HangHoa where MaHH like '{0}%' and TenHH like N'%{1}%'", strWhereMaHH, whereTenHH);
             return _dbConnect.ExecuteQuery(strSql);
         }
 

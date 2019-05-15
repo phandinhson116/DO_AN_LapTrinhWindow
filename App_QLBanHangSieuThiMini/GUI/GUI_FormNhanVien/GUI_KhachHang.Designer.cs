@@ -64,6 +64,7 @@
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(236, 22);
             this.txtTenKH.TabIndex = 1;
+            this.txtTenKH.TextChanged += new System.EventHandler(this.txtTenKH_TextChanged);
             // 
             // txtMaKH
             // 
@@ -71,6 +72,7 @@
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(96, 22);
             this.txtMaKH.TabIndex = 2;
+            this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // label1
             // 
@@ -140,6 +142,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(100, 22);
             this.txtSDT.TabIndex = 10;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtDiaChi
             // 

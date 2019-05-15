@@ -18,6 +18,11 @@ namespace App_QLBanHangSieuThiMini.BLL
             return _dal.GetTable();
         }
 
+        public DataTable GetKhachHang(string maKH, string tenKH, string sdt)
+        {
+            return _dal.GetTable(maKH, tenKH, sdt);
+        }
+
         public bool ThemKhachHang(KhachHang khachhang)
         {
             return _dal.Them(khachhang);

@@ -24,7 +24,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void LoadData()
         {
-            dgvKhachHang.DataSource = bll.GetKhachHang();
+            dgvKhachHang.DataSource = bll.GetKhachHang(txtMaKH.Text.Trim(), txtTenKH.Text.Trim(), txtSDT.Text.Trim());
             dgvKhachHang.AutoResizeColumns();
         }
 
@@ -68,6 +68,9 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtMaKH.TextChanged -= txtMaKH_TextChanged;
+            txtTenKH.TextChanged -= txtTenKH_TextChanged;
+            txtSDT.TextChanged -= txtSDT_TextChanged;
             txtMaKH.Text = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtTenKH.Text = dgvKhachHang.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtSDT.Text = dgvKhachHang.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -85,6 +88,25 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             }
             txtDiaChi.Text = dgvKhachHang.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtDiem.Text = dgvKhachHang.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            txtMaKH.TextChanged += txtMaKH_TextChanged;
+            txtTenKH.TextChanged += txtTenKH_TextChanged;
+            txtSDT.TextChanged += txtSDT_TextChanged;
+        }
+
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void txtTenKH_TextChanged(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
