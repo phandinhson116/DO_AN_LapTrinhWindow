@@ -6,10 +6,14 @@ namespace App_QLBanHangSieuThiMini.DAL
     internal class DBConnect
     {
         private SqlConnection _connection;
+        private SqlDataReader dr = null;
+        private SqlCommand comn = new SqlCommand();
 
         public DBConnect()
         {
             _connection = new SqlConnection("Data Source = (local); Initial Catalog = QL_BanHang; Integrated Security = True;");
+            comn = _connection.CreateCommand();
+
         }
 
         public DataTable ExecuteQuery(string strSql)
@@ -64,6 +68,25 @@ namespace App_QLBanHangSieuThiMini.DAL
             }
             _connection.Close();
             return obj;
+        }
+        public string MyExecuteQueryDataReader(string strSQL, CommandType ct)
+        {
+
+           
+           
+            if (_connection.State == ConnectionState.Open)
+            {
+                _connection.Close();
+            }
+            _connection.Open();
+            comn.CommandText = strSQL;
+            comn.CommandType = ct;
+            dr = comn.ExecuteReader();
+            if (dr.Read())
+                return dr["ChucDanh"].ToString();
+            else
+                return "0";
+
         }
     }
 }
