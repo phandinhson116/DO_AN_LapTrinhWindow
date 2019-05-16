@@ -1,4 +1,4 @@
-﻿using App_QLBanHangSieuThiMini.BS_Player;
+﻿
 using App_QLBanHangSieuThiMini.DAL;
 using App_QLBanHangSieuThiMini.ValueObject;
 using System;
@@ -9,17 +9,45 @@ namespace App_QLBanHangSieuThiMini
 {
     public partial class FormManager : Form
     {
-        DAL_HangHoa dbHH = new DAL_HangHoa();
+        private DAL_HangHoa dbHH = new DAL_HangHoa();
         private DAL_NhanVien dbNV = new DAL_NhanVien();
+        private DAL_ThongKeDoanhThu dbTKDT = new DAL_ThongKeDoanhThu();
         private bool ThemNV;
 
-        private QL_ThongKeDoanhThu dbTKDT = new QL_ThongKeDoanhThu();
+
 
         public FormManager()
         {
             InitializeComponent();
         }
+        #region ThongKeDoanhThu
 
+        private void radioButtonSalaryOfEmployee_CheckedChanged(object sender, EventArgs e)
+        {
+            DataTable dtTKDT = new DataTable();
+            dtTKDT.Clear();
+            dtTKDT = dbTKDT.SalaryOfEmployee();
+            dgvThongKeDoanhThu.DataSource = dtTKDT;
+        }
+
+        private void radioButtonGoodsEntered_CheckedChanged(object sender, EventArgs e)
+        {
+            DataTable dtTKDT = new DataTable();
+            dtTKDT.Clear();
+            dtTKDT = dbTKDT.GoodsEntered();
+
+            dgvThongKeDoanhThu.DataSource = dtTKDT;
+        }
+
+        private void radioButtonIncome_CheckedChanged(object sender, EventArgs e)
+        {
+            DataTable dtTKDT = new DataTable();
+            dtTKDT.Clear();
+            dtTKDT = dbTKDT.Income();
+            dgvThongKeDoanhThu.DataSource = dtTKDT;
+        }
+
+        #endregion
         #region QLNhanVien
 
         private void LoadDataNV()

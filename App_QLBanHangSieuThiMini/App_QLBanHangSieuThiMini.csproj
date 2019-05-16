@@ -50,15 +50,14 @@
     <Compile Include="BLL\BLL_BanHang.cs" />
     <Compile Include="BLL\BLL_HoaDon.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
-    <Compile Include="BS_Player\QL_ThongKeDoanhThu.cs" />
     <Compile Include="DAL\DAL_ChiTietHoaDon.cs" />
     <Compile Include="DAL\DAL_DangNhap.cs" />
     <Compile Include="DAL\DAL_HangHoa.cs" />
     <Compile Include="DAL\DAL_HoaDon.cs" />
     <Compile Include="DAL\DAL_KhachHang.cs" />
     <Compile Include="DAL\DAL_NhanVien.cs" />
+    <Compile Include="DAL\DAL_ThongKeDoanhThu.cs" />
     <Compile Include="DAL\DBConnect.cs" />
-    <Compile Include="DB_Player\DataBase_Main.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

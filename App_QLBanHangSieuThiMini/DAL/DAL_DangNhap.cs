@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-using App_QLBanHangSieuThiMini.DB_Player;
+
 
 namespace App_QLBanHangSieuThiMini.DAL
 {

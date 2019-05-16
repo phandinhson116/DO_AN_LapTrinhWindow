@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabconNguoiQuanLy = new System.Windows.Forms.TabControl();
             this.tp_BieuDo = new System.Windows.Forms.TabPage();
             this.plManager = new System.Windows.Forms.Panel();
@@ -43,9 +43,10 @@
             this.radioButtonIncome = new System.Windows.Forms.RadioButton();
             this.radioButtonGoodsEntered = new System.Windows.Forms.RadioButton();
             this.radioButtonSalaryOfEmployee = new System.Windows.Forms.RadioButton();
-            this.dgvThongKe = new System.Windows.Forms.DataGridView();
+            this.dgvThongKeDoanhThu = new System.Windows.Forms.DataGridView();
             this.tp_qlHangHoa = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.pnlChucNang = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
@@ -87,22 +88,21 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tp_qlHoaDon = new System.Windows.Forms.TabPage();
-            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.tabconNguoiQuanLy.SuspendLayout();
             this.tp_BieuDo.SuspendLayout();
             this.plManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tp_ThongKe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKeDoanhThu)).BeginInit();
             this.tp_qlHangHoa.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.pnlChucNang.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tp_qlNhanVien.SuspendLayout();
             this.gbDanhsachNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.gpThongTinNV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.SuspendLayout();
             // 
             // tabconNguoiQuanLy
@@ -142,49 +142,49 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(4, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series5.Legend = "Legend1";
-            series5.Name = "Lương nhân viên";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Tổng chi";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.Name = "Tổng thu";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Legend = "Legend1";
-            series8.Name = "Doanh thu";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series17.Legend = "Legend1";
+            series17.Name = "Lương nhân viên";
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series18.Legend = "Legend1";
+            series18.Name = "Tổng chi";
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series19.Legend = "Legend1";
+            series19.Name = "Tổng thu";
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series20.Legend = "Legend1";
+            series20.Name = "Doanh thu";
+            this.chart1.Series.Add(series17);
+            this.chart1.Series.Add(series18);
+            this.chart1.Series.Add(series19);
+            this.chart1.Series.Add(series20);
             this.chart1.Size = new System.Drawing.Size(1117, 638);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Biểu đồ doanh thu của siêu thị";
-            title2.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title2.Name = "Title";
-            title2.Text = "Biểu đồ doanh thu của siêu thị";
-            this.chart1.Titles.Add(title2);
+            title5.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title5.Name = "Title";
+            title5.Text = "Biểu đồ doanh thu của siêu thị";
+            this.chart1.Titles.Add(title5);
             // 
             // tp_ThongKe
             // 
             this.tp_ThongKe.Controls.Add(this.radioButtonIncome);
             this.tp_ThongKe.Controls.Add(this.radioButtonGoodsEntered);
             this.tp_ThongKe.Controls.Add(this.radioButtonSalaryOfEmployee);
-            this.tp_ThongKe.Controls.Add(this.dgvThongKe);
+            this.tp_ThongKe.Controls.Add(this.dgvThongKeDoanhThu);
             this.tp_ThongKe.Location = new System.Drawing.Point(4, 25);
             this.tp_ThongKe.Margin = new System.Windows.Forms.Padding(4);
             this.tp_ThongKe.Name = "tp_ThongKe";
@@ -204,6 +204,7 @@
             this.radioButtonIncome.TabStop = true;
             this.radioButtonIncome.Text = "Thống kê về hàng hóa bán ra";
             this.radioButtonIncome.UseVisualStyleBackColor = true;
+            this.radioButtonIncome.CheckedChanged += new System.EventHandler(this.radioButtonIncome_CheckedChanged);
             // 
             // radioButtonGoodsEntered
             // 
@@ -216,6 +217,7 @@
             this.radioButtonGoodsEntered.TabStop = true;
             this.radioButtonGoodsEntered.Text = "Thống kê về lượng hàn hóa nhập vào";
             this.radioButtonGoodsEntered.UseVisualStyleBackColor = true;
+            this.radioButtonGoodsEntered.CheckedChanged += new System.EventHandler(this.radioButtonGoodsEntered_CheckedChanged);
             // 
             // radioButtonSalaryOfEmployee
             // 
@@ -228,15 +230,17 @@
             this.radioButtonSalaryOfEmployee.TabStop = true;
             this.radioButtonSalaryOfEmployee.Text = "Thống kê về nhân viên";
             this.radioButtonSalaryOfEmployee.UseVisualStyleBackColor = true;
+            this.radioButtonSalaryOfEmployee.CheckedChanged += new System.EventHandler(this.radioButtonSalaryOfEmployee_CheckedChanged);
             // 
-            // dgvThongKe
+            // dgvThongKeDoanhThu
             // 
-            this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongKe.Location = new System.Drawing.Point(4, 50);
-            this.dgvThongKe.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvThongKe.Name = "dgvThongKe";
-            this.dgvThongKe.Size = new System.Drawing.Size(1129, 597);
-            this.dgvThongKe.TabIndex = 0;
+            this.dgvThongKeDoanhThu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongKeDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongKeDoanhThu.Location = new System.Drawing.Point(4, 50);
+            this.dgvThongKeDoanhThu.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvThongKeDoanhThu.Name = "dgvThongKeDoanhThu";
+            this.dgvThongKeDoanhThu.Size = new System.Drawing.Size(1129, 597);
+            this.dgvThongKeDoanhThu.TabIndex = 0;
             // 
             // tp_qlHangHoa
             // 
@@ -269,6 +273,15 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DANH MỤC HÀNG HÓA";
+            // 
+            // dgvHangHoa
+            // 
+            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangHoa.Location = new System.Drawing.Point(6, 34);
+            this.dgvHangHoa.Name = "dgvHangHoa";
+            this.dgvHangHoa.RowTemplate.Height = 24;
+            this.dgvHangHoa.Size = new System.Drawing.Size(1027, 360);
+            this.dgvHangHoa.TabIndex = 1;
             // 
             // pnlChucNang
             // 
@@ -774,15 +787,6 @@
             this.tp_qlHoaDon.Text = "Quản lý Hóa Đơn";
             this.tp_qlHoaDon.UseVisualStyleBackColor = true;
             // 
-            // dgvHangHoa
-            // 
-            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangHoa.Location = new System.Drawing.Point(6, 34);
-            this.dgvHangHoa.Name = "dgvHangHoa";
-            this.dgvHangHoa.RowTemplate.Height = 24;
-            this.dgvHangHoa.Size = new System.Drawing.Size(1027, 360);
-            this.dgvHangHoa.TabIndex = 1;
-            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -798,9 +802,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tp_ThongKe.ResumeLayout(false);
             this.tp_ThongKe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKeDoanhThu)).EndInit();
             this.tp_qlHangHoa.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.pnlChucNang.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -809,7 +814,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.gpThongTinNV.ResumeLayout(false);
             this.gpThongTinNV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,7 +844,7 @@
         private System.Windows.Forms.RadioButton radioButtonIncome;
         private System.Windows.Forms.RadioButton radioButtonGoodsEntered;
         private System.Windows.Forms.RadioButton radioButtonSalaryOfEmployee;
-        private System.Windows.Forms.DataGridView dgvThongKe;
+        private System.Windows.Forms.DataGridView dgvThongKeDoanhThu;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button btnXoaNV;
         private System.Windows.Forms.Button btnHuyNV;
