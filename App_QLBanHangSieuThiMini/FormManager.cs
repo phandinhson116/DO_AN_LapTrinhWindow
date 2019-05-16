@@ -78,7 +78,7 @@ namespace App_QLBanHangSieuThiMini
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
                 this.btnThemNV.Enabled = true;
                 this.btnSuaNV.Enabled = true;
-
+                this.txtMaNV.Enabled = false;
                 dgvNhanVien_CellClick(null, null);
             }
             catch (Exception ex)
