@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using App_QLBanHangSieuThiMini.BLL;
+﻿using App_QLBanHangSieuThiMini.BLL;
 using App_QLBanHangSieuThiMini.ValueObject;
+using System;
+using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 {
     public partial class GUI_KhachHang : UserControl
     {
-        BLL_KhachHang bll = new BLL_KhachHang();
+        private BLL_KhachHang bll = new BLL_KhachHang();
 
         public GUI_KhachHang()
         {
@@ -79,9 +72,11 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
                 case "Nam":
                     cbGioiTinh.SelectedIndex = 0;
                     break;
+
                 case "Nữ":
                     cbGioiTinh.SelectedIndex = 1;
                     break;
+
                 default:
                     cbGioiTinh.SelectedIndex = 2;
                     break;

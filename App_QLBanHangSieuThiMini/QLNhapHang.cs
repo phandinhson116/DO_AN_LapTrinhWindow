@@ -8,9 +8,7 @@ namespace App_QLBanHangSieuThiMini
 {
     public partial class fNhapHang : Form
     {
-    
         private bool Them;
-      
         private DAL_HangHoa dbHH = new DAL_HangHoa();
 
         public fNhapHang()
@@ -68,16 +66,13 @@ namespace App_QLBanHangSieuThiMini
             this.txtDonGia.Text = dgvHangHoa.Rows[r].Cells[2].Value.ToString();
             this.txtSoLuong.Text = dgvHangHoa.Rows[r].Cells[3].Value.ToString();
             this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
-            this.txtSoLuongNhap.Text= dgvHangHoa.Rows[r].Cells[5].Value.ToString();
+            this.txtSoLuongNhap.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString();
             this.txtDonGiaNhap.Text = dgvHangHoa.Rows[r].Cells[6].Value.ToString();
             this.dtpNgayNhapHang.Text = dgvHangHoa.Rows[r].Cells[7].Value.ToString().Trim();
             this.dtpNgayHetHan.Text = dgvHangHoa.Rows[r].Cells[8].Value.ToString().Trim();
         }
 
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
+       
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -141,7 +136,6 @@ namespace App_QLBanHangSieuThiMini
             }
             else
             {
-
                 dbHH.Sua(new HangHoa(Convert.ToInt32(txtMaHang.Text), txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
                 LoadData();
                 MessageBox.Show("Đã sửa xong!!");

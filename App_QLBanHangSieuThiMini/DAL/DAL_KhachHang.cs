@@ -16,7 +16,6 @@ namespace App_QLBanHangSieuThiMini.DAL
         public DataTable GetTable(string maKH, string tenKH, string sdt)
         {
             return _dbConnect.ExecuteQuery(string.Format("select * from KhachHang where MaKH like '{0}%' and TenKH like N'%{1}%' and SDT like '%{2}%'", maKH, tenKH, sdt));
-
         }
 
         public KhachHang GetRow(int maKH)

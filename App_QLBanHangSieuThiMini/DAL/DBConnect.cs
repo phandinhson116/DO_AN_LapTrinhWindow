@@ -13,7 +13,6 @@ namespace App_QLBanHangSieuThiMini.DAL
         {
             _connection = new SqlConnection("Data Source = (local); Initial Catalog = QL_BanHang; Integrated Security = True;");
             comn = _connection.CreateCommand();
-
         }
 
         public DataTable ExecuteQuery(string strSql)
@@ -69,11 +68,9 @@ namespace App_QLBanHangSieuThiMini.DAL
             _connection.Close();
             return obj;
         }
+
         public string MyExecuteQueryDataReader(string strSQL, CommandType ct)
         {
-
-           
-           
             if (_connection.State == ConnectionState.Open)
             {
                 _connection.Close();
@@ -86,7 +83,6 @@ namespace App_QLBanHangSieuThiMini.DAL
                 return dr["ChucDanh"].ToString();
             else
                 return "0";
-
         }
     }
 }

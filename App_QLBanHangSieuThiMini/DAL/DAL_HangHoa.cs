@@ -1,7 +1,6 @@
 ﻿using App_QLBanHangSieuThiMini.ValueObject;
 using System;
 using System.Data;
-using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
@@ -21,7 +20,7 @@ namespace App_QLBanHangSieuThiMini.DAL
         public bool Them(HangHoa hang)
         {
             string strSql = string.Format("insert into HangHoa (TenHH, DonGia, SoLuong, DVCungCap, NgayNhapHang, NgayHetHan) values(N'{0}', {1}, {2}, N'{3}', '{4}', '{5}')", hang.TenHH, hang.DonGia, hang.SoLuong, hang.DVCungCap, hang.NgayNhapHang.ToString("yyyy-MM-dd"), hang.NgayHetHan.ToString("yyyy-MM-dd"));
-           
+
             return _dbConnect.ExecuteNonQuery(strSql);
         }
 
@@ -34,37 +33,43 @@ namespace App_QLBanHangSieuThiMini.DAL
         public bool Sua(HangHoa hang)
         {
             string strSql = string.Format("update HangHoa set TenHH = N'{0}', DonGia = {1}, SoLuong = {2}, DVCungCap = N'{3}', NgayNhapHang= '{4}',NgayHetHan  = '{5}' where MaHH = {6}", hang.TenHH, hang.DonGia, hang.SoLuong, hang.DVCungCap, hang.NgayNhapHang.ToString("yyyy-MM-dd"), hang.NgayHetHan.ToString("yyyy-MM-dd"), hang.MaHH);
-           
+
             return _dbConnect.ExecuteNonQuery(strSql);
         }
+
         public DataTable TimKiemMaHH(int maHH)
         {
             string strSql = string.Format("select *from HangHoa where MaHH ={0}", maHH);
 
-           return _dbConnect.ExecuteQuery(strSql);
+            return _dbConnect.ExecuteQuery(strSql);
         }
+
         public DataTable TimKiemTenHH(string tenHH)
         {
             string strSql = string.Format("select *from HangHoa where TenHH LIKE '%{0}%'", tenHH.Trim());
 
             return _dbConnect.ExecuteQuery(strSql);
         }
+
         public DataTable TimKiemDVCungCap(string tenDV)
         {
             string strSql = string.Format("select *from HangHoa where DVCungCap LIKE '%{0}%'", tenDV.Trim());
 
             return _dbConnect.ExecuteQuery(strSql);
         }
+
         public DataTable TimKiemSPHetHan()
         {
             string strSql = string.Format("Select * from HangHoa where NgayHetHan<Convert(date,GETDATE(),102)");
             return _dbConnect.ExecuteQuery(strSql);
         }
+
         public DataTable TimKiemSPConHan()
         {
             string strSql = string.Format("Select * from HangHoa where NgayHetHan>=Convert(date,GETDATE(),102)");
             return _dbConnect.ExecuteQuery(strSql);
         }
+
         public HangHoa GetRow(int maHH)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from HangHoa where MaHH = '{0}'", maHH));

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DAL_ThongKeDoanhThu
+    internal class DAL_ThongKeDoanhThu
     {
-        DBConnect db = null;
+        private DBConnect db = null;
 
         public DAL_ThongKeDoanhThu()
         {
@@ -18,7 +13,6 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public DataTable SalaryOfEmployee()
         {
-           
             return db.ExecuteQuery("select MaNV[Mã Nhân Viên], TenNV[Tên Nhân Viên], ChucDanh[Chức Danh], Luong[Lương]  from NhanVien");
         }
 

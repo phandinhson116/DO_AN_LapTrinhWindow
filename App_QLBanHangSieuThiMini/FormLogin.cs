@@ -1,15 +1,15 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using App_QLBanHangSieuThiMini.DAL;
+using App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using App_QLBanHangSieuThiMini.DAL;
-using App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien;
+
 namespace App_QLBanHangSieuThiMini
 {
     public partial class FormLogin : Form
     {
         private DAL_DangNhap lg = new DAL_DangNhap();
-        
+
         public FormLogin()
         {
             InitializeComponent();
@@ -77,38 +77,37 @@ namespace App_QLBanHangSieuThiMini
                             fManager.ShowDialog();
                         };
                         break;
+
                     case "NV Nhập Hàng":
                         {
                             Form fNhapHang = new fNhapHang();
                             fNhapHang.ShowDialog();
-
                         }
                         break;
+
                     case "NV Bán Hàng":
                         {
                             Form fNhanVien = new FormNhanVien(Convert.ToInt32(this.txtAccount.Text));
                             fNhanVien.ShowDialog();
                         }
                         break;
+
                     default:
                         {
                             MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo");
                             txtAccount.Focus();
                             break;
                         }
-
                 }
-                
             }
             catch
             {
                 MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo");
                 txtAccount.Focus();
             }
-           
         }
 
-            private void btnExit_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             if (result == DialogResult.Yes)

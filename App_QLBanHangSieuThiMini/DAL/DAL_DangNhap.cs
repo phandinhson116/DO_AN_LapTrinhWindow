@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-
-
+﻿using System.Data;
 
 namespace App_QLBanHangSieuThiMini.DAL
 {
-    class DAL_DangNhap
+    internal class DAL_DangNhap
     {
-        DBConnect db = null;
+        private DBConnect db = null;
 
         public DAL_DangNhap()
         {

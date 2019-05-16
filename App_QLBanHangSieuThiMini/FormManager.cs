@@ -21,6 +21,7 @@ namespace App_QLBanHangSieuThiMini
         {
             InitializeComponent();
         }
+
         #region ThongKeDoanhThu
 
         private void radioButtonSalaryOfEmployee_CheckedChanged(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace App_QLBanHangSieuThiMini
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuuNV.Enabled = false;
                 this.btnHuyNV.Enabled = false;
-
+                pnlTTNhanVien.Enabled = false;
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
                 this.btnThemNV.Enabled = true;
                 this.btnSuaNV.Enabled = true;
@@ -137,11 +138,11 @@ namespace App_QLBanHangSieuThiMini
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
             this.btnLuuNV.Enabled = true;
             this.btnHuyNV.Enabled = true;
-           
+            pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
             this.btnThemNV.Enabled = false;
             this.btnSuaNV.Enabled = false;
-           
+          
 
             // Dua con tro den txtTenNV
             this.txtMaNV.Enabled = false;
@@ -159,7 +160,7 @@ namespace App_QLBanHangSieuThiMini
 
             this.btnLuuNV.Enabled = true;
             this.btnHuyNV.Enabled = true;
-           
+            pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/Xoa/ Thoat
             this.btnThemNV.Enabled = false;
             this.btnSuaNV.Enabled = false;
@@ -227,12 +228,15 @@ namespace App_QLBanHangSieuThiMini
                 MessageBox.Show(ex.Message);
             }
         }
+        private void btnHuyNV_Click(object sender, EventArgs e)
+        {
 
+        }
         #endregion QLNhanVien
 
         #region QLHangHoa
 
-     
+
 
         private void btnReload_Click(object sender, EventArgs e)
         {
@@ -328,5 +332,7 @@ namespace App_QLBanHangSieuThiMini
             #endregion QLHangHoa
 
         }
+
+        
     }
 }
