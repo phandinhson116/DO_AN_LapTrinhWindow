@@ -3,6 +3,7 @@ using App_QLBanHangSieuThiMini.DAL;
 using App_QLBanHangSieuThiMini.ValueObject;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini
@@ -231,54 +232,96 @@ namespace App_QLBanHangSieuThiMini
 
         #region QLHangHoa
 
-        private void LoadDataHH()
-        {
-            try
-            {
-                DataTable dtHangHoa = new DataTable();
-                dtHangHoa.Clear();
-                dtHangHoa = dbHH.GetTable();
-                // Dua du lieu Hang Hóa len DataGridView
-                dgvHangHoa.DataSource = dtHangHoa;
-                // Thay doi do rong cot
-                dgvHangHoa.AutoResizeColumns();
-                // Xoa cac doi tuong trong Panel
-                this.txtMaHang.ResetText();
-                this.txtTenHang.ResetText();
-              
-                this.txtDVCungCap.ResetText();
-          
-                // Khong cho thao tac tren cac nut Luu/ Huy
-               
-                this.btnHuyBo.Enabled = false;
-               
-                
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+     
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            LoadDataHH();
+            DataTable dtHangHoa = new DataTable();
+            dtHangHoa.Clear();
+            dtHangHoa = dbHH.GetTable();
+            // Dua du lieu Hang Hóa len DataGridView
+            dgvHangHoa.DataSource = dtHangHoa;
+            // Thay doi do rong cot
+            dgvHangHoa.AutoResizeColumns();
         }
 
         
 
-        private void btnHuyBo_Click(object sender, EventArgs e)
+      
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable dtTimKiem = new DataTable();
+                dtTimKiem.Clear();
+                if(cmbMucTimKiem.SelectedIndex==0)
+                {
+                    dtTimKiem = dbHH.TimKiemMaHH(Convert.ToInt32(txtTimKiem.Text));
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvHangHoa.DataSource = dtTimKiem;
+                    // Thay doi do rong cot
+                    dgvHangHoa.AutoResizeColumns();
+                }
+                else if (cmbMucTimKiem.SelectedIndex == 1)
+                {
+                    dtTimKiem = dbHH.TimKiemTenHH(txtTimKiem.Text);
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvHangHoa.DataSource = dtTimKiem;
+                    // Thay doi do rong cot
+                    dgvHangHoa.AutoResizeColumns();
+                }
+                else if(cmbMucTimKiem.SelectedIndex==2)
+                {
+                    dtTimKiem = dbHH.TimKiemDVCungCap(txtTimKiem.Text);
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvHangHoa.DataSource = dtTimKiem;
+                    // Thay doi do rong cot
+                    dgvHangHoa.AutoResizeColumns();
+                }
+                else if(cmbMucTimKiem.SelectedIndex ==3)
+                {
+                 
+                    dtTimKiem = dbHH.TimKiemSPHetHan();
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvHangHoa.DataSource = dtTimKiem;
+                    // Thay doi do rong cot
+                    dgvHangHoa.AutoResizeColumns();
+                }
+                else if (cmbMucTimKiem.SelectedIndex == 4)
+                {
+
+                    dtTimKiem = dbHH.TimKiemSPConHan();
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvHangHoa.DataSource = dtTimKiem;
+                    // Thay doi do rong cot
+                    dgvHangHoa.AutoResizeColumns();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+     
+       
+           
+           
 
         }
-
-        
-
-        #endregion QLHangHoa
-
-        private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void cmbMucTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbMucTimKiem.SelectedIndex == 3|| cmbMucTimKiem.SelectedIndex == 4)
+            {
+                txtTimKiem.Enabled = false;
+
+            }
+
+
+
+
+
+            #endregion QLHangHoa
 
         }
     }
