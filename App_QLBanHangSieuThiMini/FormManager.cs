@@ -316,6 +316,10 @@ namespace App_QLBanHangSieuThiMini
                 txtTimKiem.Enabled = false;
 
             }
+            else
+            {
+                txtTimKiem.Enabled = true;
+            }
 
 
 

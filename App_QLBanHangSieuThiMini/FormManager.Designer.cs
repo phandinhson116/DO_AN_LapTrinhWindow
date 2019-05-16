@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabconNguoiQuanLy = new System.Windows.Forms.TabControl();
             this.tp_BieuDo = new System.Windows.Forms.TabPage();
             this.plManager = new System.Windows.Forms.Panel();
@@ -134,42 +134,42 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
             this.chart1.Location = new System.Drawing.Point(4, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series17.Legend = "Legend1";
-            series17.Name = "Lương nhân viên";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series18.Legend = "Legend1";
-            series18.Name = "Tổng chi";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series19.Legend = "Legend1";
-            series19.Name = "Tổng thu";
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series20.Legend = "Legend1";
-            series20.Name = "Doanh thu";
-            this.chart1.Series.Add(series17);
-            this.chart1.Series.Add(series18);
-            this.chart1.Series.Add(series19);
-            this.chart1.Series.Add(series20);
+            series21.ChartArea = "ChartArea1";
+            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series21.Legend = "Legend1";
+            series21.Name = "Lương nhân viên";
+            series22.ChartArea = "ChartArea1";
+            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series22.Legend = "Legend1";
+            series22.Name = "Tổng chi";
+            series23.ChartArea = "ChartArea1";
+            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series23.Legend = "Legend1";
+            series23.Name = "Tổng thu";
+            series24.ChartArea = "ChartArea1";
+            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series24.Legend = "Legend1";
+            series24.Name = "Doanh thu";
+            this.chart1.Series.Add(series21);
+            this.chart1.Series.Add(series22);
+            this.chart1.Series.Add(series23);
+            this.chart1.Series.Add(series24);
             this.chart1.Size = new System.Drawing.Size(1117, 638);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Biểu đồ doanh thu của siêu thị";
-            title5.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title5.Name = "Title";
-            title5.Text = "Biểu đồ doanh thu của siêu thị";
-            this.chart1.Titles.Add(title5);
+            title6.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title6.Name = "Title";
+            title6.Text = "Biểu đồ doanh thu của siêu thị";
+            this.chart1.Titles.Add(title6);
             // 
             // tp_ThongKe
             // 
@@ -254,7 +254,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.dgvHangHoa);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(28, 238);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -287,10 +287,10 @@
             this.pnlChucNang.Controls.Add(this.btnTimKiem);
             this.pnlChucNang.Controls.Add(this.btnReload);
             this.pnlChucNang.Controls.Add(this.button3);
-            this.pnlChucNang.Location = new System.Drawing.Point(6, 13);
+            this.pnlChucNang.Location = new System.Drawing.Point(6, 48);
             this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(1502, 185);
+            this.pnlChucNang.Size = new System.Drawing.Size(1502, 186);
             this.pnlChucNang.TabIndex = 8;
             // 
             // cmbMucTimKiem
@@ -323,7 +323,7 @@
             this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(205, 114);
+            this.btnTimKiem.Location = new System.Drawing.Point(196, 129);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(103, 39);
@@ -339,7 +339,7 @@
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(38, 14);
+            this.btnReload.Location = new System.Drawing.Point(38, 25);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(103, 39);
@@ -360,6 +360,9 @@
             // 
             // tp_qlNhanVien
             // 
+            this.tp_qlNhanVien.AllowDrop = true;
+            this.tp_qlNhanVien.AutoScroll = true;
+            this.tp_qlNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tp_qlNhanVien.Controls.Add(this.btnXoaNV);
             this.tp_qlNhanVien.Controls.Add(this.btnHuyNV);
             this.tp_qlNhanVien.Controls.Add(this.btnLuuNV);
@@ -378,13 +381,14 @@
             // 
             // btnXoaNV
             // 
-            this.btnXoaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoaNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoaNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnXoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNV.Location = new System.Drawing.Point(601, 150);
+            this.btnXoaNV.Location = new System.Drawing.Point(806, 150);
             this.btnXoaNV.Name = "btnXoaNV";
-            this.btnXoaNV.Size = new System.Drawing.Size(83, 59);
+            this.btnXoaNV.Size = new System.Drawing.Size(79, 59);
             this.btnXoaNV.TabIndex = 9;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.UseVisualStyleBackColor = true;
@@ -392,26 +396,28 @@
             // 
             // btnHuyNV
             // 
-            this.btnHuyNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnHuyNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuyNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHuyNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHuyNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyNV.Location = new System.Drawing.Point(900, 150);
+            this.btnHuyNV.Location = new System.Drawing.Point(1123, 150);
             this.btnHuyNV.Name = "btnHuyNV";
-            this.btnHuyNV.Size = new System.Drawing.Size(83, 59);
+            this.btnHuyNV.Size = new System.Drawing.Size(79, 59);
             this.btnHuyNV.TabIndex = 10;
             this.btnHuyNV.Text = "Hủy";
             this.btnHuyNV.UseVisualStyleBackColor = true;
             // 
             // btnLuuNV
             // 
-            this.btnLuuNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLuuNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuuNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLuuNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLuuNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuNV.Location = new System.Drawing.Point(763, 150);
+            this.btnLuuNV.Location = new System.Drawing.Point(958, 150);
             this.btnLuuNV.Name = "btnLuuNV";
-            this.btnLuuNV.Size = new System.Drawing.Size(83, 59);
+            this.btnLuuNV.Size = new System.Drawing.Size(79, 59);
             this.btnLuuNV.TabIndex = 11;
             this.btnLuuNV.Text = "Lưu";
             this.btnLuuNV.UseVisualStyleBackColor = true;
@@ -419,13 +425,14 @@
             // 
             // btnSuaNV
             // 
-            this.btnSuaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSuaNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSuaNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaNV.Location = new System.Drawing.Point(455, 150);
+            this.btnSuaNV.Location = new System.Drawing.Point(660, 150);
             this.btnSuaNV.Name = "btnSuaNV";
-            this.btnSuaNV.Size = new System.Drawing.Size(83, 59);
+            this.btnSuaNV.Size = new System.Drawing.Size(79, 59);
             this.btnSuaNV.TabIndex = 12;
             this.btnSuaNV.Text = "Sửa";
             this.btnSuaNV.UseVisualStyleBackColor = true;
@@ -433,13 +440,14 @@
             // 
             // btnLoadNV
             // 
-            this.btnLoadNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLoadNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLoadNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoadNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadNV.Location = new System.Drawing.Point(153, 150);
+            this.btnLoadNV.Location = new System.Drawing.Point(358, 150);
             this.btnLoadNV.Name = "btnLoadNV";
-            this.btnLoadNV.Size = new System.Drawing.Size(83, 59);
+            this.btnLoadNV.Size = new System.Drawing.Size(79, 59);
             this.btnLoadNV.TabIndex = 7;
             this.btnLoadNV.Text = "Load";
             this.btnLoadNV.UseVisualStyleBackColor = true;
@@ -447,13 +455,14 @@
             // 
             // btnThemNV
             // 
-            this.btnThemNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThemNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNV.Location = new System.Drawing.Point(305, 150);
+            this.btnThemNV.Location = new System.Drawing.Point(510, 150);
             this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.Size = new System.Drawing.Size(83, 59);
+            this.btnThemNV.Size = new System.Drawing.Size(79, 59);
             this.btnThemNV.TabIndex = 8;
             this.btnThemNV.Text = "Thêm";
             this.btnThemNV.UseVisualStyleBackColor = true;
@@ -467,19 +476,22 @@
             this.gbDanhsachNV.Controls.Add(this.dgvNhanVien);
             this.gbDanhsachNV.Location = new System.Drawing.Point(20, 215);
             this.gbDanhsachNV.Name = "gbDanhsachNV";
-            this.gbDanhsachNV.Size = new System.Drawing.Size(1100, 441);
+            this.gbDanhsachNV.Size = new System.Drawing.Size(1423, 437);
             this.gbDanhsachNV.TabIndex = 6;
             this.gbDanhsachNV.TabStop = false;
             this.gbDanhsachNV.Text = "Danh sách nhân viên";
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Location = new System.Drawing.Point(6, 32);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1088, 403);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1411, 399);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
@@ -502,7 +514,7 @@
             this.gpThongTinNV.Controls.Add(this.label10);
             this.gpThongTinNV.Controls.Add(this.label8);
             this.gpThongTinNV.Controls.Add(this.label7);
-            this.gpThongTinNV.Location = new System.Drawing.Point(20, 15);
+            this.gpThongTinNV.Location = new System.Drawing.Point(232, 3);
             this.gpThongTinNV.Name = "gpThongTinNV";
             this.gpThongTinNV.Size = new System.Drawing.Size(1100, 129);
             this.gpThongTinNV.TabIndex = 5;
