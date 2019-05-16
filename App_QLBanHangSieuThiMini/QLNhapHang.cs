@@ -67,10 +67,11 @@ namespace App_QLBanHangSieuThiMini
             this.txtTenHang.Text = dgvHangHoa.Rows[r].Cells[1].Value.ToString();
             this.txtDonGia.Text = dgvHangHoa.Rows[r].Cells[2].Value.ToString();
             this.txtSoLuong.Text = dgvHangHoa.Rows[r].Cells[3].Value.ToString();
-
             this.txtDVCungCap.Text = dgvHangHoa.Rows[r].Cells[4].Value.ToString();
-            this.dtpNgayNhapHang.Text = dgvHangHoa.Rows[r].Cells[5].Value.ToString().Trim();
-            this.dtpNgayHetHan.Text = dgvHangHoa.Rows[r].Cells[6].Value.ToString().Trim();
+            this.txtSoLuongNhap.Text= dgvHangHoa.Rows[r].Cells[5].Value.ToString();
+            this.txtDonGiaNhap.Text = dgvHangHoa.Rows[r].Cells[6].Value.ToString();
+            this.dtpNgayNhapHang.Text = dgvHangHoa.Rows[r].Cells[7].Value.ToString().Trim();
+            this.dtpNgayHetHan.Text = dgvHangHoa.Rows[r].Cells[8].Value.ToString().Trim();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
