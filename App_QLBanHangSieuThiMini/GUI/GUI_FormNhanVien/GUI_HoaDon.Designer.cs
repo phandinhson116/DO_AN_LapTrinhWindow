@@ -49,7 +49,7 @@
             this.dgvHoaDon.Location = new System.Drawing.Point(43, 176);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(406, 478);
+            this.dgvHoaDon.Size = new System.Drawing.Size(406, 383);
             this.dgvHoaDon.TabIndex = 0;
             this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
             // 
@@ -59,7 +59,7 @@
             this.dgvChiTietHD.Location = new System.Drawing.Point(481, 176);
             this.dgvChiTietHD.Name = "dgvChiTietHD";
             this.dgvChiTietHD.RowTemplate.Height = 24;
-            this.dgvChiTietHD.Size = new System.Drawing.Size(381, 478);
+            this.dgvChiTietHD.Size = new System.Drawing.Size(381, 383);
             this.dgvChiTietHD.TabIndex = 1;
             this.dgvChiTietHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHD_CellClick);
             // 
@@ -160,7 +160,7 @@
             this.Controls.Add(this.dgvChiTietHD);
             this.Controls.Add(this.dgvHoaDon);
             this.Name = "GUI_HoaDon";
-            this.Size = new System.Drawing.Size(900, 700);
+            this.Size = new System.Drawing.Size(900, 665);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).EndInit();
             this.ResumeLayout(false);

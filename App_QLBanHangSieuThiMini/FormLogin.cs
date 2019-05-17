@@ -70,7 +70,7 @@ namespace App_QLBanHangSieuThiMini
             Form newForm = null;
             try
             {
-                switch (bll.GetChucDanh(Convert.ToInt32(this.txtAccount.Text.Trim()), this.txtPassword.Text))
+                switch (bll.GetChucDanh(Convert.ToInt32(this.txtAccount.Text), this.txtPassword.Text))
                 {
                     case "Quản Lý":
                         {
@@ -92,7 +92,7 @@ namespace App_QLBanHangSieuThiMini
 
                     default:
                         {
-                            MessageBox.Show("Sai tài khoản hoặc mật khẩu! Đm mày là ai?");
+                            MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
                             txtAccount.Focus();
                             break;
                         }
