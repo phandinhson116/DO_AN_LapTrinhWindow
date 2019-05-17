@@ -73,7 +73,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("Đưa {0} VND đây!", bll.TinhTongTien(hangmua)));
+            MessageBox.Show(string.Format("Tổng số tiền của bạn la {0}.Cảm ơn đã mua hàng của chúng tôi!", bll.TinhTongTien(hangmua)));
             bll.MuaHang(_maNV, Convert.ToInt32(txtMaKH.Text.Trim()), DateTime.Now, hangmua);
         }
 
