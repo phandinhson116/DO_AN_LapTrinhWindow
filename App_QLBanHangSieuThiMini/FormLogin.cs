@@ -3,12 +3,12 @@ using App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using App_QLBanHangSieuThiMini.BLL;
 namespace App_QLBanHangSieuThiMini
 {
     public partial class FormLogin : Form
     {
-        private DAL_DangNhap lg = new DAL_DangNhap();
+        BLL_DangNhap bll = new BLL_DangNhap();
 
         public FormLogin()
         {
@@ -67,34 +67,32 @@ namespace App_QLBanHangSieuThiMini
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            Form newForm = null;
             try
             {
-                switch (lg.LogIn(this.txtAccount.Text, this.txtPassword.Text))
+                switch (bll.GetChucDanh(Convert.ToInt32(this.txtAccount.Text.Trim()), this.txtPassword.Text))
                 {
                     case "Quản Lý":
                         {
-                            FormManager fManager = new FormManager();
-                            fManager.ShowDialog();
+                            newForm = new FormManager(Convert.ToInt32(this.txtAccount.Text));
                         };
                         break;
 
                     case "NV Nhập Hàng":
                         {
-                            Form fNhapHang = new fNhapHang();
-                            fNhapHang.ShowDialog();
+                            newForm = new fNhapHang(Convert.ToInt32(this.txtAccount.Text));
                         }
                         break;
 
                     case "NV Bán Hàng":
                         {
-                            Form fNhanVien = new FormNhanVien(Convert.ToInt32(this.txtAccount.Text));
-                            fNhanVien.ShowDialog();
+                            newForm = new FormNhanVien(Convert.ToInt32(this.txtAccount.Text));
                         }
                         break;
 
                     default:
                         {
-                            MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo");
+                            MessageBox.Show("Sai tài khoản hoặc mật khẩu! Đm mày là ai?");
                             txtAccount.Focus();
                             break;
                         }
@@ -104,6 +102,12 @@ namespace App_QLBanHangSieuThiMini
             {
                 MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo");
                 txtAccount.Focus();
+            }
+            if (newForm != null)
+            {
+                newForm.FormClosed += (s, eva) => this.Show();
+                this.Hide();
+                newForm.ShowDialog();
             }
         }
 

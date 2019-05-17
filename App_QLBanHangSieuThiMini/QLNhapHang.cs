@@ -11,9 +11,23 @@ namespace App_QLBanHangSieuThiMini
         private bool Them;
         private DAL_HangHoa dbHH = new DAL_HangHoa();
 
-        public fNhapHang()
+
+        private GUI.GUI_FormNhanVien.GUI_ThongTinCaNhan guI_ThongTinCaNhan1;
+        int _maNV;
+        public fNhapHang(int maNV)
         {
+            _maNV = maNV;
             InitializeComponent();
+
+            // 
+            // guI_ThongTinCaNhan1
+            // 
+            this.guI_ThongTinCaNhan1 = new GUI.GUI_FormNhanVien.GUI_ThongTinCaNhan(_maNV);
+            this.guI_ThongTinCaNhan1.Location = new System.Drawing.Point(29, -65);
+            this.guI_ThongTinCaNhan1.Name = "guI_ThongTinCaNhan1";
+            this.guI_ThongTinCaNhan1.Size = new System.Drawing.Size(900, 700);
+            this.guI_ThongTinCaNhan1.TabIndex = 0;
+            this.tabPage2.Controls.Add(this.guI_ThongTinCaNhan1);
         }
 
         private void LoadData()
@@ -192,6 +206,13 @@ namespace App_QLBanHangSieuThiMini
         private void btnTrove_Click(object sender, EventArgs e)
         {
             // Khai bao bien tra loi
+            DialogResult traloi;
+            traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK) this.Close();
+        }
+
+        private void btnTrove_Click_1(object sender, EventArgs e)
+        {
             DialogResult traloi;
             traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK) this.Close();

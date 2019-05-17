@@ -15,11 +15,23 @@ namespace App_QLBanHangSieuThiMini
         private DAL_ThongKeDoanhThu dbTKDT = new DAL_ThongKeDoanhThu();
         private bool ThemNV;
 
+        int _maNV;
+        private GUI.GUI_FormNhanVien.GUI_ThongTinCaNhan guI_ThongTinCaNhan1;
 
-
-        public FormManager()
+        public FormManager(int maNV)
         {
+            _maNV = maNV;
             InitializeComponent();
+
+            // 
+            // guI_ThongTinCaNhan1
+            // 
+            this.guI_ThongTinCaNhan1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_ThongTinCaNhan(_maNV);
+            this.tabPage1.Controls.Add(this.guI_ThongTinCaNhan1);
+            this.guI_ThongTinCaNhan1.Location = new System.Drawing.Point(100, 6);
+            this.guI_ThongTinCaNhan1.Name = "guI_ThongTinCaNhan1";
+            this.guI_ThongTinCaNhan1.Size = new System.Drawing.Size(900, 700);
+            this.guI_ThongTinCaNhan1.TabIndex = 0;
         }
 
         #region ThongKeDoanhThu
@@ -63,7 +75,7 @@ namespace App_QLBanHangSieuThiMini
                 dgvNhanVien.DataSource = dtNhanVien;
                 // Thay doi do rong cot
                 dgvNhanVien.AutoResizeColumns();
-               
+
                 this.txtMaNV.ResetText();
                 this.txtTenNV.ResetText();
 
@@ -93,7 +105,7 @@ namespace App_QLBanHangSieuThiMini
         {
             // Thu tu dong hien hanh
             int r = dgvNhanVien.CurrentCell.RowIndex;
-           
+
             this.txtMaNV.Text = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
             this.txtTenNV.Text = dgvNhanVien.Rows[r].Cells[1].Value.ToString();
 
@@ -142,7 +154,7 @@ namespace App_QLBanHangSieuThiMini
             // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
             this.btnThemNV.Enabled = false;
             this.btnSuaNV.Enabled = false;
-          
+
 
             // Dua con tro den txtTenNV
             this.txtMaNV.Enabled = false;
@@ -249,16 +261,16 @@ namespace App_QLBanHangSieuThiMini
             dgvHangHoa.AutoResizeColumns();
         }
 
-        
 
-      
+
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
                 DataTable dtTimKiem = new DataTable();
                 dtTimKiem.Clear();
-                if(cmbMucTimKiem.SelectedIndex==0)
+                if (cmbMucTimKiem.SelectedIndex == 0)
                 {
                     dtTimKiem = dbHH.TimKiemMaHH(Convert.ToInt32(txtTimKiem.Text));
                     // Dua du lieu Hang Hóa len DataGridView
@@ -274,7 +286,7 @@ namespace App_QLBanHangSieuThiMini
                     // Thay doi do rong cot
                     dgvHangHoa.AutoResizeColumns();
                 }
-                else if(cmbMucTimKiem.SelectedIndex==2)
+                else if (cmbMucTimKiem.SelectedIndex == 2)
                 {
                     dtTimKiem = dbHH.TimKiemDVCungCap(txtTimKiem.Text);
                     // Dua du lieu Hang Hóa len DataGridView
@@ -282,9 +294,9 @@ namespace App_QLBanHangSieuThiMini
                     // Thay doi do rong cot
                     dgvHangHoa.AutoResizeColumns();
                 }
-                else if(cmbMucTimKiem.SelectedIndex ==3)
+                else if (cmbMucTimKiem.SelectedIndex == 3)
                 {
-                 
+
                     dtTimKiem = dbHH.TimKiemSPHetHan();
                     // Dua du lieu Hang Hóa len DataGridView
                     dgvHangHoa.DataSource = dtTimKiem;
@@ -307,15 +319,15 @@ namespace App_QLBanHangSieuThiMini
 
                 MessageBox.Show(ex.Message);
             }
-     
-       
-           
-           
+
+
+
+
 
         }
         private void cmbMucTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbMucTimKiem.SelectedIndex == 3|| cmbMucTimKiem.SelectedIndex == 4)
+            if (cmbMucTimKiem.SelectedIndex == 3 || cmbMucTimKiem.SelectedIndex == 4)
             {
                 txtTimKiem.Enabled = false;
 
@@ -333,6 +345,6 @@ namespace App_QLBanHangSieuThiMini
 
         }
 
-        
+
     }
 }
