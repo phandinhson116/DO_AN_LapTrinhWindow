@@ -46,14 +46,14 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public DataTable TimKiemTenHH(string tenHH)
         {
-            string strSql = string.Format("select *from HangHoa where TenHH LIKE '%{0}%'", tenHH.Trim());
+            string strSql = string.Format("select *from HangHoa where TenHH LIKE N'%{0}%'", tenHH.Trim());
 
             return _dbConnect.ExecuteQuery(strSql);
         }
 
         public DataTable TimKiemDVCungCap(string tenDV)
         {
-            string strSql = string.Format("select *from HangHoa where DVCungCap LIKE '%{0}%'", tenDV.Trim());
+            string strSql = string.Format("select *from HangHoa where DVCungCap LIKE N'%{0}%'", tenDV.Trim());
 
             return _dbConnect.ExecuteQuery(strSql);
         }

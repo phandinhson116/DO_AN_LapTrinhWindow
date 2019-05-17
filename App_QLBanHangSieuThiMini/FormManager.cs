@@ -228,9 +228,52 @@ namespace App_QLBanHangSieuThiMini
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btnHuyNV_Click(object sender, EventArgs e)
+        private void btnTimKiemNV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable dtTimKiemNV = new DataTable();
+                dtTimKiemNV.Clear();
+                if (cmbTimKiemNV.SelectedIndex == 0)
+                {
+                    dtTimKiemNV = dbNV.TimKiemMaNV(Convert.ToInt32(txtTimKiemNV.Text));
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvNhanVien.DataSource = dtTimKiemNV;
+                    // Thay doi do rong cot
+                    dgvNhanVien.AutoResizeColumns();
+                }
+                else if (cmbTimKiemNV.SelectedIndex==1)
+                {
+                    dtTimKiemNV = dbNV.TimKiemTenNV(txtTimKiemNV.Text);
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvNhanVien.DataSource = dtTimKiemNV;
+                    // Thay doi do rong cot
+                    dgvNhanVien.AutoResizeColumns();
+                }
+                else if (cmbTimKiemNV.SelectedIndex == 2)
+                {
+                    dtTimKiemNV = dbNV.TimKiemGioiTinh(txtTimKiemNV.Text);
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvNhanVien.DataSource = dtTimKiemNV;
+                    // Thay doi do rong cot
+                    dgvNhanVien.AutoResizeColumns();
+                }
+                else if (cmbTimKiemNV.SelectedIndex == 3)
+                {
+                    dtTimKiemNV = dbNV.TimKiemChucDanh(txtTimKiemNV.Text);
+                    // Dua du lieu Hang Hóa len DataGridView
+                    dgvNhanVien.DataSource = dtTimKiemNV;
+                    // Thay doi do rong cot
+                    dgvNhanVien.AutoResizeColumns();
+                }
+               
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+           
         }
         #endregion QLNhanVien
 
@@ -333,6 +376,6 @@ namespace App_QLBanHangSieuThiMini
 
         }
 
-        
+      
     }
 }
