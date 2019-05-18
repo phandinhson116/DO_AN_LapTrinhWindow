@@ -54,7 +54,36 @@ namespace App_QLBanHangSieuThiMini.DAL
                 nhanvien.TenNV, nhanvien.GioiTinh, nhanvien.DiaChi, nhanvien.SDT, nhanvien.MatKhau, nhanvien.ChucDanh, nhanvien.Luong, nhanvien.MaNV);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
+        public DataTable TimKiemMaNV(int maNV)
+        {
+            string strSql = string.Format("select *from NhanVien where MaNV ={0}", maNV);
 
+            return _dbConnect.ExecuteQuery(strSql);
+        }
+        public DataTable TimKiemTenNV(string tenNV)
+        {
+            string strSql = string.Format("select *from NhanVien where TenNV LIKE N'%{0}%'", tenNV);
+
+            return _dbConnect.ExecuteQuery(strSql);
+        }
+        public DataTable TimKiemGT(string gioiTinh)
+        {
+            string strSql = string.Format("select *from NhanVien where GioiTinh LIKE N'%{0}%'", gioiTinh);
+
+            return _dbConnect.ExecuteQuery(strSql);
+        }
+        public DataTable TimKiemChucDanh(string chucDanh)
+        {
+            string strSql = string.Format("select *from NhanVien where ChucDanh LIKE N'%{0}%'", chucDanh);
+
+            return _dbConnect.ExecuteQuery(strSql);
+        }
+        public DataTable TimKiemDiaChi(string diaChi)
+        {
+            string strSql = string.Format("select *from NhanVien where DiaChi LIKE N'%{0}%'", diaChi);
+
+            return _dbConnect.ExecuteQuery(strSql);
+        }
         public int GetNextID()
         {
             return Convert.ToInt32(_dbConnect.ExucuteScalar("select ident_current('NhanVien')"));
