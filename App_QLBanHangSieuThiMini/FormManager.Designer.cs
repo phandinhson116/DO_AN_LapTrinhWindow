@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabconNguoiQuanLy = new System.Windows.Forms.TabControl();
             this.tp_BieuDo = new System.Windows.Forms.TabPage();
             this.btnShowChart = new System.Windows.Forms.Button();
@@ -80,6 +80,14 @@
             this.btnThemNV = new System.Windows.Forms.Button();
             this.gbDanhsachNV = new System.Windows.Forms.GroupBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpThongTinNV = new System.Windows.Forms.GroupBox();
             this.pnlTTNhanVien = new System.Windows.Forms.Panel();
             this.cmbChucDanh = new System.Windows.Forms.ComboBox();
@@ -101,14 +109,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tp_qlHoaDon = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabconNguoiQuanLy.SuspendLayout();
             this.tp_BieuDo.SuspendLayout();
             this.plManager.SuspendLayout();
@@ -163,10 +163,12 @@
             // 
             // btnShowChart
             // 
+            this.btnShowChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShowChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowChart.Location = new System.Drawing.Point(1120, 255);
             this.btnShowChart.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowChart.Name = "btnShowChart";
-            this.btnShowChart.Size = new System.Drawing.Size(161, 78);
+            this.btnShowChart.Size = new System.Drawing.Size(161, 81);
             this.btnShowChart.TabIndex = 7;
             this.btnShowChart.Text = "Hiện biểu đồ";
             this.btnShowChart.UseVisualStyleBackColor = true;
@@ -175,7 +177,7 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(1116, 202);
+            this.lblYear.Location = new System.Drawing.Point(1168, 201);
             this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(41, 17);
@@ -185,7 +187,7 @@
             // lbl2ndMonth
             // 
             this.lbl2ndMonth.AutoSize = true;
-            this.lbl2ndMonth.Location = new System.Drawing.Point(1116, 133);
+            this.lbl2ndMonth.Location = new System.Drawing.Point(1150, 132);
             this.lbl2ndMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl2ndMonth.Name = "lbl2ndMonth";
             this.lbl2ndMonth.Size = new System.Drawing.Size(93, 17);
@@ -195,7 +197,7 @@
             // lbl1stMonth
             // 
             this.lbl1stMonth.AutoSize = true;
-            this.lbl1stMonth.Location = new System.Drawing.Point(1116, 66);
+            this.lbl1stMonth.Location = new System.Drawing.Point(1150, 65);
             this.lbl1stMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1stMonth.Name = "lbl1stMonth";
             this.lbl1stMonth.Size = new System.Drawing.Size(88, 17);
@@ -267,45 +269,45 @@
             this.plManager.Location = new System.Drawing.Point(7, 7);
             this.plManager.Margin = new System.Windows.Forms.Padding(4);
             this.plManager.Name = "plManager";
-            this.plManager.Size = new System.Drawing.Size(1125, 640);
+            this.plManager.Size = new System.Drawing.Size(1105, 640);
             this.plManager.TabIndex = 1;
             // 
             // chart
             // 
-            chartArea5.Name = "ChartArea";
-            this.chart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(8, 4);
             this.chart.Margin = new System.Windows.Forms.Padding(4);
             this.chart.Name = "chart";
-            series13.ChartArea = "ChartArea";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series13.Legend = "Legend1";
-            series13.Name = "Tổng chi";
-            series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series14.ChartArea = "ChartArea";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Legend = "Legend1";
-            series14.Name = "Tổng thu";
-            series14.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series15.ChartArea = "ChartArea";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series15.Legend = "Legend1";
-            series15.Name = "Lợi nhuận";
-            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series15.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart.Series.Add(series13);
-            this.chart.Series.Add(series14);
-            this.chart.Series.Add(series15);
-            this.chart.Size = new System.Drawing.Size(1117, 606);
+            series1.ChartArea = "ChartArea";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Tổng chi";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series2.ChartArea = "ChartArea";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Tổng thu";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series3.ChartArea = "ChartArea";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Lợi nhuận";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart.Series.Add(series1);
+            this.chart.Series.Add(series2);
+            this.chart.Series.Add(series3);
+            this.chart.Size = new System.Drawing.Size(1077, 606);
             this.chart.TabIndex = 0;
             this.chart.Text = "Biểu đồ doanh thu của siêu thị";
-            title5.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title5.Name = "Title";
-            title5.Text = "Biểu đồ doanh thu của siêu thị";
-            this.chart.Titles.Add(title5);
+            title1.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title1.Name = "Title";
+            title1.Text = "Biểu đồ doanh thu của siêu thị";
+            this.chart.Titles.Add(title1);
             // 
             // tp_ThongKe
             // 
@@ -325,10 +327,11 @@
             // radioButtonIncome
             // 
             this.radioButtonIncome.AutoSize = true;
-            this.radioButtonIncome.Location = new System.Drawing.Point(857, 21);
+            this.radioButtonIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonIncome.Location = new System.Drawing.Point(812, 18);
             this.radioButtonIncome.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonIncome.Name = "radioButtonIncome";
-            this.radioButtonIncome.Size = new System.Drawing.Size(244, 21);
+            this.radioButtonIncome.Size = new System.Drawing.Size(266, 24);
             this.radioButtonIncome.TabIndex = 3;
             this.radioButtonIncome.TabStop = true;
             this.radioButtonIncome.Text = "Thống kê về hàng hóa bán ra";
@@ -338,10 +341,11 @@
             // radioButtonGoodsEntered
             // 
             this.radioButtonGoodsEntered.AutoSize = true;
-            this.radioButtonGoodsEntered.Location = new System.Drawing.Point(419, 21);
+            this.radioButtonGoodsEntered.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonGoodsEntered.Location = new System.Drawing.Point(389, 18);
             this.radioButtonGoodsEntered.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonGoodsEntered.Name = "radioButtonGoodsEntered";
-            this.radioButtonGoodsEntered.Size = new System.Drawing.Size(300, 21);
+            this.radioButtonGoodsEntered.Size = new System.Drawing.Size(328, 24);
             this.radioButtonGoodsEntered.TabIndex = 2;
             this.radioButtonGoodsEntered.TabStop = true;
             this.radioButtonGoodsEntered.Text = "Thống kê về lượng hàn hóa nhập vào";
@@ -351,10 +355,11 @@
             // radioButtonSalaryOfEmployee
             // 
             this.radioButtonSalaryOfEmployee.AutoSize = true;
-            this.radioButtonSalaryOfEmployee.Location = new System.Drawing.Point(27, 22);
+            this.radioButtonSalaryOfEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonSalaryOfEmployee.Location = new System.Drawing.Point(37, 18);
             this.radioButtonSalaryOfEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonSalaryOfEmployee.Name = "radioButtonSalaryOfEmployee";
-            this.radioButtonSalaryOfEmployee.Size = new System.Drawing.Size(195, 21);
+            this.radioButtonSalaryOfEmployee.Size = new System.Drawing.Size(213, 24);
             this.radioButtonSalaryOfEmployee.TabIndex = 1;
             this.radioButtonSalaryOfEmployee.TabStop = true;
             this.radioButtonSalaryOfEmployee.Text = "Thống kê về nhân viên";
@@ -489,10 +494,10 @@
             this.pnlChucNang.Controls.Add(this.btnTimKiem);
             this.pnlChucNang.Controls.Add(this.btnReload);
             this.pnlChucNang.Controls.Add(this.button3);
-            this.pnlChucNang.Location = new System.Drawing.Point(5, 48);
+            this.pnlChucNang.Location = new System.Drawing.Point(28, 48);
             this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(1519, 186);
+            this.pnlChucNang.Size = new System.Drawing.Size(1496, 186);
             this.pnlChucNang.TabIndex = 8;
             // 
             // cmbMucTimKiem
@@ -527,7 +532,7 @@
             this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(745, 129);
+            this.btnTimKiem.Location = new System.Drawing.Point(734, 129);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(103, 39);
@@ -543,7 +548,7 @@
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(745, 25);
+            this.btnReload.Location = new System.Drawing.Point(734, 25);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(103, 39);
@@ -756,6 +761,54 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(1411, 401);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã nhân viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên nhân viên";
+            this.TenNV.Name = "TenNV";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.Name = "MatKhau";
+            // 
+            // ChucDanh
+            // 
+            this.ChucDanh.DataPropertyName = "ChucDanh";
+            this.ChucDanh.HeaderText = "Chức danh";
+            this.ChucDanh.Name = "ChucDanh";
+            // 
+            // Luong
+            // 
+            this.Luong.DataPropertyName = "Luong";
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
             // 
             // gpThongTinNV
             // 
@@ -1008,54 +1061,6 @@
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Thông Tin Cá Nhân";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã nhân viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // TenNV
-            // 
-            this.TenNV.DataPropertyName = "TenNV";
-            this.TenNV.HeaderText = "Tên nhân viên";
-            this.TenNV.Name = "TenNV";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.Name = "MatKhau";
-            // 
-            // ChucDanh
-            // 
-            this.ChucDanh.DataPropertyName = "ChucDanh";
-            this.ChucDanh.HeaderText = "Chức danh";
-            this.ChucDanh.Name = "ChucDanh";
-            // 
-            // Luong
-            // 
-            this.Luong.DataPropertyName = "Luong";
-            this.Luong.HeaderText = "Lương";
-            this.Luong.Name = "Luong";
             // 
             // FormManager
             // 

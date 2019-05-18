@@ -34,10 +34,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.guI_KhachHang1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_KhachHang();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.guI_HoaDon1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_HoaDon();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.guI_KhachHang1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_KhachHang();
+            this.guI_HoaDon1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_HoaDon();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -47,7 +47,7 @@
             // 
             this.btnDangXuat.Location = new System.Drawing.Point(798, 6);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(111, 23);
+            this.btnDangXuat.Size = new System.Drawing.Size(111, 39);
             this.btnDangXuat.TabIndex = 0;
             this.btnDangXuat.Text = "Đăng Xuất";
             this.btnDangXuat.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(589, 9);
+            this.label1.Location = new System.Drawing.Point(620, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 17);
             this.label1.TabIndex = 1;
@@ -65,9 +65,9 @@
             // txtMaNV
             // 
             this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(692, 6);
+            this.txtMaNV.Location = new System.Drawing.Point(723, 14);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(100, 22);
+            this.txtMaNV.Size = new System.Drawing.Size(69, 22);
             this.txtMaNV.TabIndex = 2;
             // 
             // tabControl1
@@ -76,10 +76,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(12, 29);
+            this.tabControl1.Location = new System.Drawing.Point(12, 51);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(958, 702);
+            this.tabControl1.Size = new System.Drawing.Size(1259, 712);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -87,7 +87,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(950, 673);
+            this.tabPage1.Size = new System.Drawing.Size(1251, 683);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hóa Đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -98,10 +98,31 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(950, 673);
+            this.tabPage2.Size = new System.Drawing.Size(1251, 683);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khách Hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.guI_HoaDon1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1251, 683);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Lịch Sử";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1251, 683);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Thông TIn Cá Nhân";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // guI_KhachHang1
             // 
@@ -110,17 +131,6 @@
             this.guI_KhachHang1.Size = new System.Drawing.Size(1000, 800);
             this.guI_KhachHang1.TabIndex = 0;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.guI_HoaDon1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(950, 673);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Lịch Sử";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // guI_HoaDon1
             // 
             this.guI_HoaDon1.Location = new System.Drawing.Point(21, -19);
@@ -128,21 +138,11 @@
             this.guI_HoaDon1.Size = new System.Drawing.Size(900, 580);
             this.guI_HoaDon1.TabIndex = 0;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(950, 673);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Thông TIn Cá Nhân";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 743);
+            this.ClientSize = new System.Drawing.Size(1311, 775);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.label1);

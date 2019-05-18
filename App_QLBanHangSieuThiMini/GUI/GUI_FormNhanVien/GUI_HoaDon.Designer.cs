@@ -69,7 +69,7 @@
             // 
             this.txtMaHD.Location = new System.Drawing.Point(186, 36);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(100, 22);
+            this.txtMaHD.Size = new System.Drawing.Size(145, 22);
             this.txtMaHD.TabIndex = 2;
             this.txtMaHD.TextChanged += new System.EventHandler(this.txtMaHD_TextChanged);
             // 
@@ -77,7 +77,7 @@
             // 
             this.txtMaKH.Location = new System.Drawing.Point(186, 64);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(100, 22);
+            this.txtMaKH.Size = new System.Drawing.Size(145, 22);
             this.txtMaKH.TabIndex = 3;
             this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
@@ -85,7 +85,7 @@
             // 
             this.txtMaNV.Location = new System.Drawing.Point(186, 92);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(100, 22);
+            this.txtMaNV.Size = new System.Drawing.Size(145, 22);
             this.txtMaNV.TabIndex = 4;
             this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaHH_TextChanged);
             // 
@@ -120,7 +120,7 @@
             // 
             this.btnRefresh.Location = new System.Drawing.Point(787, 36);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 33);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;

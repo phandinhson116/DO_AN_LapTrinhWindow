@@ -41,8 +41,17 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            hangmua[Convert.ToInt32(txtMaHH.Text)] = Convert.ToInt32(numSoLuong.Value);
-            LoadData();
+            try
+            {
+                hangmua[Convert.ToInt32(txtMaHH.Text)] = Convert.ToInt32(numSoLuong.Value);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
