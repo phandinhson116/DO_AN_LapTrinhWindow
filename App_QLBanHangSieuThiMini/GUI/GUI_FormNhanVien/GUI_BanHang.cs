@@ -41,8 +41,17 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            hangmua[Convert.ToInt32(txtMaHH.Text)] = Convert.ToInt32(numSoLuong.Value);
-            LoadData();
+            try
+            {
+                hangmua[Convert.ToInt32(txtMaHH.Text)] = Convert.ToInt32(numSoLuong.Value);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -76,7 +85,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("Đưa {0} VND đây!", bll.TinhTongTien(Convert.ToInt32(txtMaKH.Text), hangmua)));
+            MessageBox.Show(string.Format("Tổng số tiền của quý khách là {0} VND. Xin cảm ơn quý khách đã mua hàng!", bll.TinhTongTien(Convert.ToInt32(txtMaKH.Text), hangmua)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification); ;
             bll.MuaHang(_maNV, Convert.ToInt32(txtMaKH.Text.Trim()), DateTime.Now, hangmua);
         }
 

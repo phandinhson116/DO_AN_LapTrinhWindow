@@ -166,9 +166,9 @@
             // 
             // btnMoi
             // 
-            this.btnMoi.Location = new System.Drawing.Point(540, 139);
+            this.btnMoi.Location = new System.Drawing.Point(227, 139);
             this.btnMoi.Name = "btnMoi";
-            this.btnMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnMoi.Size = new System.Drawing.Size(75, 43);
             this.btnMoi.TabIndex = 13;
             this.btnMoi.Text = "Mới";
             this.btnMoi.UseVisualStyleBackColor = true;
@@ -176,9 +176,9 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(783, 139);
+            this.btnSua.Location = new System.Drawing.Point(588, 139);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(75, 43);
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -186,9 +186,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(702, 139);
+            this.btnXoa.Location = new System.Drawing.Point(462, 139);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(75, 43);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -196,9 +196,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(621, 139);
+            this.btnThem.Location = new System.Drawing.Point(336, 139);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(75, 43);
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;

@@ -90,7 +90,7 @@ namespace App_QLBanHangSieuThiMini
                 this.txtLuong.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuuNV.Enabled = false;
-                this.btnHuyNV.Enabled = false;
+                
                 pnlTTNhanVien.Enabled = false;
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
                 this.btnThemNV.Enabled = true;
@@ -152,7 +152,7 @@ namespace App_QLBanHangSieuThiMini
 
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
             this.btnLuuNV.Enabled = true;
-            this.btnHuyNV.Enabled = true;
+           
             pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
             this.btnThemNV.Enabled = false;
@@ -174,7 +174,7 @@ namespace App_QLBanHangSieuThiMini
             // Cho thao tac tren cac nut Luu/ Huy/ Panel
 
             this.btnLuuNV.Enabled = true;
-            this.btnHuyNV.Enabled = true;
+           ;
             pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/Xoa/ Thoat
             this.btnThemNV.Enabled = false;
@@ -243,10 +243,72 @@ namespace App_QLBanHangSieuThiMini
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btnHuyNV_Click(object sender, EventArgs e)
+        private void btnTimKiemNV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable dtTimKiemNV = new DataTable();
+                dtTimKiemNV.Clear();
+                int value = cmbTimKiemNV.SelectedIndex;
+                switch (value)
+                {
+                    case 0:
+                        {
+                            dtTimKiemNV = dbNV.TimKiemMaNV(Convert.ToInt32(txtTimKiemNV.Text));
+                            // Dua du lieu Hang Hóa len DataGridView
+                            dgvNhanVien.DataSource = dtTimKiemNV;
+                            // Thay doi do rong cot
+                            dgvHangHoa.AutoResizeColumns();
+                            break;
+                        }
+                    case 1:
+                        {
+                            dtTimKiemNV = dbNV.TimKiemTenNV(txtTimKiemNV.Text);
+                            // Dua du lieu Hang Hóa len DataGridView
+                            dgvNhanVien.DataSource = dtTimKiemNV;
+                            // Thay doi do rong cot
+                            dgvHangHoa.AutoResizeColumns();
+                            break;
+                        }
+                    case 2:
+                        {
+                            dtTimKiemNV = dbNV.TimKiemGT(txtTimKiemNV.Text);
+                            // Dua du lieu Hang Hóa len DataGridView
+                            dgvNhanVien.DataSource = dtTimKiemNV;
+                            // Thay doi do rong cot
+                            dgvHangHoa.AutoResizeColumns();
+                            break;
+                        }
+                    case 3:
+                        {
+                            dtTimKiemNV = dbNV.TimKiemChucDanh(txtTimKiemNV.Text);
+                            // Dua du lieu Hang Hóa len DataGridView
+                            dgvNhanVien.DataSource = dtTimKiemNV;
+                            // Thay doi do rong cot
+                            dgvHangHoa.AutoResizeColumns();
+                            break;
+                        }
+                    case 4:
+                        {
+                            dtTimKiemNV = dbNV.TimKiemDiaChi(txtTimKiemNV.Text);
+                            // Dua du lieu Hang Hóa len DataGridView
+                            dgvNhanVien.DataSource = dtTimKiemNV;
+                            // Thay doi do rong cot
+                            dgvHangHoa.AutoResizeColumns();
+                            break;
+                        }
+                    default:
+                        
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
         }
+
         #endregion QLNhanVien
 
         #region QLHangHoa
@@ -353,12 +415,15 @@ namespace App_QLBanHangSieuThiMini
                 chart.Series["Lợi nhuận"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)) -bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
             }
         }
-        #endregion
-
         private void cb2ndMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt32(cb2ndMonth.Text) <= Convert.ToInt32(cb1stMonth.Text))
-                cb2ndMonth.Text = cb2ndMonth.Items[Convert.ToInt32(cb1stMonth.Text)-1].ToString();
+                cb2ndMonth.Text = cb2ndMonth.Items[Convert.ToInt32(cb1stMonth.Text) - 1].ToString();
         }
+
+
+        #endregion
+
+       
     }
 }
