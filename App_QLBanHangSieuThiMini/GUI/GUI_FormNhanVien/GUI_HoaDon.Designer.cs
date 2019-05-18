@@ -45,21 +45,23 @@
             // 
             // dgvHoaDon
             // 
+            this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Location = new System.Drawing.Point(43, 176);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(406, 383);
+            this.dgvHoaDon.Size = new System.Drawing.Size(406, 248);
             this.dgvHoaDon.TabIndex = 0;
             this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
             // 
             // dgvChiTietHD
             // 
+            this.dgvChiTietHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHD.Location = new System.Drawing.Point(481, 176);
             this.dgvChiTietHD.Name = "dgvChiTietHD";
             this.dgvChiTietHD.RowTemplate.Height = 24;
-            this.dgvChiTietHD.Size = new System.Drawing.Size(381, 383);
+            this.dgvChiTietHD.Size = new System.Drawing.Size(381, 248);
             this.dgvChiTietHD.TabIndex = 1;
             this.dgvChiTietHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHD_CellClick);
             // 

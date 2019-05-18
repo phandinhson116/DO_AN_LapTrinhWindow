@@ -8,12 +8,9 @@ namespace App_QLBanHangSieuThiMini.DAL
     {
         private DBConnect _dbConnect = new DBConnect();
 
-        public DataTable GetTable(int whereMaHH = 0, string whereTenHH = "")
+        public DataTable GetTable(string whereMaHH = "", string whereTenHH = "")
         {
-            string strWhereMaHH = "";
-            if (whereMaHH != 0)
-                strWhereMaHH += whereMaHH.ToString();
-            string strSql = string.Format("select * from HangHoa where MaHH like '{0}%' and TenHH like N'%{1}%'", strWhereMaHH, whereTenHH);
+            string strSql = string.Format("select * from HangHoa where MaHH like '{0}%' and TenHH like N'%{1}%'", whereMaHH, whereTenHH);
             return _dbConnect.ExecuteQuery(strSql);
         }
 

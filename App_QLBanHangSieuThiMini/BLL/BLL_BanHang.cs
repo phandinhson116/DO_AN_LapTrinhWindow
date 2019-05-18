@@ -40,7 +40,7 @@ namespace App_QLBanHangSieuThiMini.BLL
             return dt;
         }
 
-        public DataTable GetHangHoa(int whereMaHH, string whereTenHH)
+        public DataTable GetHangHoa(string whereMaHH, string whereTenHH)
         {
             return _dalHangHoa.GetTable(whereMaHH, whereTenHH);
         }

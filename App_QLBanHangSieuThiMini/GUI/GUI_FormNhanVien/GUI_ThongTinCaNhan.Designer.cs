@@ -51,9 +51,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.txtLuong = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -195,7 +195,7 @@
             this.groupBox1.Controls.Add(this.txtXacNhanMatKhau);
             this.groupBox1.Controls.Add(this.txtMatKhau);
             this.groupBox1.Controls.Add(this.txtMatKhauMoi);
-            this.groupBox1.Location = new System.Drawing.Point(125, 387);
+            this.groupBox1.Location = new System.Drawing.Point(125, 279);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(625, 211);
             this.groupBox1.TabIndex = 18;
@@ -265,12 +265,28 @@
             this.groupBox2.Controls.Add(this.txtDiaChi);
             this.groupBox2.Controls.Add(this.txtSDT);
             this.groupBox2.Controls.Add(this.txtChucDanh);
-            this.groupBox2.Location = new System.Drawing.Point(125, 102);
+            this.groupBox2.Location = new System.Drawing.Point(125, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(625, 261);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(40, 195);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 17);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Lương";
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.Location = new System.Drawing.Point(238, 192);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(235, 22);
+            this.txtLuong.TabIndex = 19;
             // 
             // btnLuu
             // 
@@ -281,22 +297,6 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // txtLuong
-            // 
-            this.txtLuong.Location = new System.Drawing.Point(238, 192);
-            this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(235, 22);
-            this.txtLuong.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(40, 195);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 17);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Lương";
             // 
             // GUI_ThongTinCaNhan
             // 
