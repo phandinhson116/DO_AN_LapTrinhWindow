@@ -6,7 +6,7 @@ namespace App_QLBanHangSieuThiMini.DAL
     internal class DBConnect
     {
         private SqlConnection _connection;
-        private SqlDataReader dr = null;
+        //private SqlDataReader dr = null;
         private SqlCommand comn = new SqlCommand();
 
         public DBConnect()
