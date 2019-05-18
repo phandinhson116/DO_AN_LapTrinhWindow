@@ -29,14 +29,14 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public int TotalRevenue(int Month, int Year)
         {
-            if (db.ExecuteQuery("SELECT SUM(DonGia*SoLuong)[Revenue] FROM HoaDon JOIN ChiTietHoaDon ON HoaDon.MaHD = ChiTietHoaDon.MaHD WHERE MONTH(NgayLap) = " + Month + " and YEAR(NgayLap)=" + Year).Rows[0]["Revenue"] == null)
+            if (db.ExecuteQuery("SELECT SUM(DonGia*SoLuong)[Revenue] FROM HoaDon JOIN ChiTietHoaDon ON HoaDon.MaHD = ChiTietHoaDon.MaHD WHERE MONTH(NgayLap) = " + Month + " and YEAR(NgayLap)=" + Year).Rows[0]["Revenue"] == DBNull.Value)
                 return 0;
             return Convert.ToInt32(db.ExecuteQuery("SELECT SUM(DonGia*SoLuong)[Revenue] FROM HoaDon JOIN ChiTietHoaDon ON HoaDon.MaHD = ChiTietHoaDon.MaHD WHERE MONTH(NgayLap) = " + Month + " and YEAR(NgayLap)=" + Year).Rows[0]["Revenue"]);
         }
 
         public int TotalExpenditure(int Month, int Year)
         {
-            if (db.ExecuteQuery("SELECT SUM(SoLuongNhap*DonGiaNhap)[Expenditure] FROM HangHoa WHERE MONTH(NgayNhapHang)= " + Month + " and YEAR(NgayNhapHang) = " + Year).Rows[0]["Expenditure"] == null)
+            if (db.ExecuteQuery("SELECT SUM(SoLuongNhap*DonGiaNhap)[Expenditure] FROM HangHoa WHERE MONTH(NgayNhapHang)= " + Month + " and YEAR(NgayNhapHang) = " + Year).Rows[0]["Expenditure"] == DBNull.Value)
                 return 0;
             return Convert.ToInt32(db.ExecuteQuery("SELECT SUM(SoLuongNhap*DonGiaNhap)[Expenditure] FROM HangHoa WHERE MONTH(NgayNhapHang) = "+Month+" and YEAR(NgayNhapHang) = "+Year).Rows[0]["Expenditure"]);
         }

@@ -28,7 +28,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void LoadData()
         {
-            dgvHang.DataSource = bll.GetHangHoa((string.IsNullOrEmpty(txtMaHH.Text.Trim())) ? 0 : Convert.ToInt32(txtMaHH.Text), txtTenHH.Text);
+            dgvHang.DataSource = bll.GetHangHoa(txtMaHH.Text, txtTenHH.Text);
             dgvHang.AutoResizeColumns();
 
             dgvHangMua.DataSource = bll.GetTableHangMua(hangmua);
