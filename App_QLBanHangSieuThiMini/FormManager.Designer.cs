@@ -109,6 +109,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tp_qlHoaDon = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.guI_HoaDon1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_HoaDon();
             this.tabconNguoiQuanLy.SuspendLayout();
             this.tp_BieuDo.SuspendLayout();
             this.plManager.SuspendLayout();
@@ -124,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.gpThongTinNV.SuspendLayout();
             this.pnlTTNhanVien.SuspendLayout();
+            this.tp_qlHoaDon.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabconNguoiQuanLy
@@ -331,7 +333,7 @@
             this.radioButtonIncome.Location = new System.Drawing.Point(812, 18);
             this.radioButtonIncome.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonIncome.Name = "radioButtonIncome";
-            this.radioButtonIncome.Size = new System.Drawing.Size(266, 24);
+            this.radioButtonIncome.Size = new System.Drawing.Size(272, 24);
             this.radioButtonIncome.TabIndex = 3;
             this.radioButtonIncome.TabStop = true;
             this.radioButtonIncome.Text = "Thống kê về hàng hóa bán ra";
@@ -345,7 +347,7 @@
             this.radioButtonGoodsEntered.Location = new System.Drawing.Point(389, 18);
             this.radioButtonGoodsEntered.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonGoodsEntered.Name = "radioButtonGoodsEntered";
-            this.radioButtonGoodsEntered.Size = new System.Drawing.Size(328, 24);
+            this.radioButtonGoodsEntered.Size = new System.Drawing.Size(335, 24);
             this.radioButtonGoodsEntered.TabIndex = 2;
             this.radioButtonGoodsEntered.TabStop = true;
             this.radioButtonGoodsEntered.Text = "Thống kê về lượng hàn hóa nhập vào";
@@ -359,7 +361,7 @@
             this.radioButtonSalaryOfEmployee.Location = new System.Drawing.Point(37, 18);
             this.radioButtonSalaryOfEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonSalaryOfEmployee.Name = "radioButtonSalaryOfEmployee";
-            this.radioButtonSalaryOfEmployee.Size = new System.Drawing.Size(213, 24);
+            this.radioButtonSalaryOfEmployee.Size = new System.Drawing.Size(217, 24);
             this.radioButtonSalaryOfEmployee.TabIndex = 1;
             this.radioButtonSalaryOfEmployee.TabStop = true;
             this.radioButtonSalaryOfEmployee.Text = "Thống kê về nhân viên";
@@ -1043,6 +1045,7 @@
             // 
             // tp_qlHoaDon
             // 
+            this.tp_qlHoaDon.Controls.Add(this.guI_HoaDon1);
             this.tp_qlHoaDon.Location = new System.Drawing.Point(4, 25);
             this.tp_qlHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_qlHoaDon.Name = "tp_qlHoaDon";
@@ -1062,11 +1065,18 @@
             this.tabPage1.Text = "Thông Tin Cá Nhân";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // guI_HoaDon1
+            // 
+            this.guI_HoaDon1.Location = new System.Drawing.Point(4, 4);
+            this.guI_HoaDon1.Name = "guI_HoaDon1";
+            this.guI_HoaDon1.Size = new System.Drawing.Size(1161, 665);
+            this.guI_HoaDon1.TabIndex = 0;
+            // 
             // FormManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 730);
+            this.ClientSize = new System.Drawing.Size(1370, 730);
             this.Controls.Add(this.tabconNguoiQuanLy);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormManager";
@@ -1091,6 +1101,7 @@
             this.gpThongTinNV.ResumeLayout(false);
             this.pnlTTNhanVien.ResumeLayout(false);
             this.pnlTTNhanVien.PerformLayout();
+            this.tp_qlHoaDon.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1172,5 +1183,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChucDanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
+        private GUI.GUI_FormNhanVien.GUI_HoaDon guI_HoaDon1;
     }
 }
