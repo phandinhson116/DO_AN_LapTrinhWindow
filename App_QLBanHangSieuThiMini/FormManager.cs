@@ -87,7 +87,7 @@ namespace App_QLBanHangSieuThiMini
                 this.txtLuong.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuuNV.Enabled = false;
-                this.btnHuyNV.Enabled = false;
+                
                 pnlTTNhanVien.Enabled = false;
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
                 this.btnThemNV.Enabled = true;
@@ -149,7 +149,7 @@ namespace App_QLBanHangSieuThiMini
 
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
             this.btnLuuNV.Enabled = true;
-            this.btnHuyNV.Enabled = true;
+           
             pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
             this.btnThemNV.Enabled = false;
@@ -171,7 +171,7 @@ namespace App_QLBanHangSieuThiMini
             // Cho thao tac tren cac nut Luu/ Huy/ Panel
 
             this.btnLuuNV.Enabled = true;
-            this.btnHuyNV.Enabled = true;
+           ;
             pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/Xoa/ Thoat
             this.btnThemNV.Enabled = false;
@@ -240,10 +240,7 @@ namespace App_QLBanHangSieuThiMini
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btnHuyNV_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         #endregion QLNhanVien
 
         #region QLHangHoa

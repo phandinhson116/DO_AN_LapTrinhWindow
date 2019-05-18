@@ -64,7 +64,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tp_qlNhanVien = new System.Windows.Forms.TabPage();
             this.btnXoaNV = new System.Windows.Forms.Button();
-            this.btnHuyNV = new System.Windows.Forms.Button();
             this.btnLuuNV = new System.Windows.Forms.Button();
             this.btnSuaNV = new System.Windows.Forms.Button();
             this.btnLoadNV = new System.Windows.Forms.Button();
@@ -443,7 +442,6 @@
             this.tp_qlNhanVien.AutoScroll = true;
             this.tp_qlNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tp_qlNhanVien.Controls.Add(this.btnXoaNV);
-            this.tp_qlNhanVien.Controls.Add(this.btnHuyNV);
             this.tp_qlNhanVien.Controls.Add(this.btnLuuNV);
             this.tp_qlNhanVien.Controls.Add(this.btnSuaNV);
             this.tp_qlNhanVien.Controls.Add(this.btnLoadNV);
@@ -472,21 +470,6 @@
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.UseVisualStyleBackColor = true;
             this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
-            // 
-            // btnHuyNV
-            // 
-            this.btnHuyNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuyNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHuyNV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuyNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyNV.Location = new System.Drawing.Point(1123, 159);
-            this.btnHuyNV.Name = "btnHuyNV";
-            this.btnHuyNV.Size = new System.Drawing.Size(79, 59);
-            this.btnHuyNV.TabIndex = 10;
-            this.btnHuyNV.Text = "Hủy";
-            this.btnHuyNV.UseVisualStyleBackColor = true;
-            this.btnHuyNV.Click += new System.EventHandler(this.btnHuyNV_Click);
             // 
             // btnLuuNV
             // 
@@ -864,7 +847,6 @@
         private System.Windows.Forms.DataGridView dgvThongKeDoanhThu;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button btnXoaNV;
-        private System.Windows.Forms.Button btnHuyNV;
         private System.Windows.Forms.Button btnLuuNV;
         private System.Windows.Forms.Button btnSuaNV;
         private System.Windows.Forms.Button btnLoadNV;
