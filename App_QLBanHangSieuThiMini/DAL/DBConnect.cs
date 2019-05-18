@@ -69,20 +69,20 @@ namespace App_QLBanHangSieuThiMini.DAL
             return obj;
         }
 
-        public string MyExecuteQueryDataReader(string strSQL, CommandType ct)
-        {
-            if (_connection.State == ConnectionState.Open)
-            {
-                _connection.Close();
-            }
-            _connection.Open();
-            comn.CommandText = strSQL;
-            comn.CommandType = ct;
-            dr = comn.ExecuteReader();
-            if (dr.Read())
-                return dr["ChucDanh"].ToString();
-            else
-                return "0";
-        }
+        //public string MyExecuteQueryDataReader(string strSQL, CommandType ct)
+        //{
+        //    if (_connection.State == ConnectionState.Open)
+        //    {
+        //        _connection.Close();
+        //    }
+        //    _connection.Open();
+        //    comn.CommandText = strSQL;
+        //    comn.CommandType = ct;
+        //    dr = comn.ExecuteReader();
+        //    if (dr.Read())
+        //        return dr["ChucDanh"].ToString();
+        //    else
+        //        return "0";
+        //}
     }
 }

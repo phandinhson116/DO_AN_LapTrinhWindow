@@ -11,6 +11,7 @@ namespace App_QLBanHangSieuThiMini.BLL
         private DAL_HangHoa _dalHangHoa = new DAL_HangHoa();
         private DAL_HoaDon _dalHoaDon = new DAL_HoaDon();
         private DAL_ChiTietHoaDon _dalChiTietHoaDon = new DAL_ChiTietHoaDon();
+        private DAL_KhachHang _dalKhachHang = new DAL_KhachHang();
 
         public int GetMaHHMoi()
         {
@@ -42,6 +43,16 @@ namespace App_QLBanHangSieuThiMini.BLL
         public DataTable GetHangHoa(int whereMaHH, string whereTenHH)
         {
             return _dalHangHoa.GetTable(whereMaHH, whereTenHH);
+        }
+
+        public float TinhTongTien(int maKH, Dictionary<int, int> hangmua)
+        {
+            float tong = 0;
+            foreach (int maHH in hangmua.Keys)
+            {
+                tong += _dalHangHoa.GetRow(maHH).DonGia * hangmua[maHH];
+            }
+            return tong - _dalKhachHang.GetRow(maKH).SoDiem;
         }
 
         public float TinhTongTien(Dictionary<int, int> hangmua)
@@ -82,14 +93,20 @@ namespace App_QLBanHangSieuThiMini.BLL
                     hang.SoLuong = hang.SoLuong - hangmua[maHH];
                     _dalHangHoa.Sua(hang);
                 }
+                KhachHang khachang = _dalKhachHang.GetRow(maKH);
+                float tong = TinhTongTien(maKH, hangmua);
                 int maHD = _dalHoaDon.GetNextID();
                 //them HoaDon
-                _dalHoaDon.Them(new HoaDon(0, maKH, maNV, thoigian));
+                _dalHoaDon.Them(new HoaDon(maHD, maKH, maNV, thoigian, tong));
                 //them ChiTietHoaDon
                 foreach (int maHH in hangmua.Keys)
                 {
                     _dalChiTietHoaDon.Them(new ChiTietHoaDon(maHD, maHH, _dalHangHoa.GetRow(maHH).DonGia, hangmua[maHH]));
                 }
+                khachang.SoDiem = khachang.SoDiem + (int)tong / 100000 * 10;
+                _dalKhachHang.Sua(khachang);
+
+                System.Windows.Forms.MessageBox.Show("Giao dịch thành công!");
             }
             else
             {

@@ -15,8 +15,10 @@ namespace App_QLBanHangSieuThiMini.BLL
         public string GetChucDanh(int manv,string matkhau)
         {
             NhanVien nv=dal.GetRow(manv);
-            if (nv != null)
+            if (nv != null && nv.MatKhau.Equals(matkhau))
+            {
                 return nv.ChucDanh;
+            }
             else
                 return string.Empty;
         } 

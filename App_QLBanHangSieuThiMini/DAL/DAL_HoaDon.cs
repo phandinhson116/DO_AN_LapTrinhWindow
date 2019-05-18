@@ -34,7 +34,8 @@ namespace App_QLBanHangSieuThiMini.DAL
                 Convert.ToInt32(dt.Rows[0]["MaHD"]),
                 Convert.ToInt32(dt.Rows[0]["MaKH"]),
                 Convert.ToInt32(dt.Rows[0]["MaNV"]),
-               Convert.ToDateTime(dt.Rows[0]["NgayLap"]));
+               Convert.ToDateTime(dt.Rows[0]["NgayLap"]),
+               Convert.ToInt32(dt.Rows[0]["Tong"]));
             return hoadon;
         }
 
