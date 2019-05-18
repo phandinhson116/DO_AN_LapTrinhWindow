@@ -9,6 +9,7 @@ namespace App_QLBanHangSieuThiMini
     public partial class fNhapHang : Form
     {
         private bool Them;
+
         private DAL_HangHoa dbHH = new DAL_HangHoa();
 
 
