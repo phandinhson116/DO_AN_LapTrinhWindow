@@ -51,6 +51,7 @@
     <Compile Include="BLL\BLL_DangNhap.cs" />
     <Compile Include="BLL\BLL_HoaDon.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
+    <Compile Include="BLL\BLL_ThongKeDoanhThu.cs" />
     <Compile Include="BLL\BLL_ThongTinCaNhan.cs" />
     <Compile Include="DAL\DAL_ChiTietHoaDon.cs" />
     <Compile Include="DAL\DAL_HangHoa.cs" />

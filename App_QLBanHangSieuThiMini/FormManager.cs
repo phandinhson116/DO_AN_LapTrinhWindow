@@ -5,6 +5,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using App_QLBanHangSieuThiMini.BLL;
 
 namespace App_QLBanHangSieuThiMini
 {
@@ -13,6 +14,7 @@ namespace App_QLBanHangSieuThiMini
         private DAL_HangHoa dbHH = new DAL_HangHoa();
         private DAL_NhanVien dbNV = new DAL_NhanVien();
         private DAL_ThongKeDoanhThu dbTKDT = new DAL_ThongKeDoanhThu();
+        private BLL_ThongKeDoanhThu bllTKDL = new BLL_ThongKeDoanhThu();
         private bool ThemNV;
 
         int _maNV;
@@ -62,6 +64,7 @@ namespace App_QLBanHangSieuThiMini
         }
 
         #endregion
+
         #region QLNhanVien
 
         private void LoadDataNV()
@@ -333,15 +336,26 @@ namespace App_QLBanHangSieuThiMini
             {
                 txtTimKiem.Enabled = true;
             }
-
-
-
-
-
-            #endregion QLHangHoa
-
         }
+        #endregion QLHangHoa
 
 
+        #region Biểu đồ
+        private void btnShowChart_Click(object sender, EventArgs e)
+        {
+            for (int i = Convert.ToInt32(cb1stMonth.Text); i <= Convert.ToInt32(cb2ndMonth.Text); i++)
+            {
+                chart.Series["Tổng chi"].Points.AddXY(i, bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
+                chart.Series["Tổng thu"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)));
+                chart.Series["Lợi nhuận"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)) -bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
+            }
+        }
+        #endregion
+
+        private void cb2ndMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(cb2ndMonth.Text) <= Convert.ToInt32(cb1stMonth.Text))
+                cb2ndMonth.Text = cb2ndMonth.Items[Convert.ToInt32(cb1stMonth.Text)-1].ToString();
+        }
     }
 }
