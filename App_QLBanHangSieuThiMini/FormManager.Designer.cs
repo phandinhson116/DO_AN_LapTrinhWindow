@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabconNguoiQuanLy = new System.Windows.Forms.TabControl();
             this.tp_BieuDo = new System.Windows.Forms.TabPage();
             this.btnShowChart = new System.Windows.Forms.Button();
@@ -219,6 +219,7 @@
             this.cb2ndMonth.Name = "cb2ndMonth";
             this.cb2ndMonth.Size = new System.Drawing.Size(121, 21);
             this.cb2ndMonth.TabIndex = 2;
+            this.cb2ndMonth.SelectedIndexChanged += new System.EventHandler(this.cb2ndMonth_SelectedIndexChanged);
             // 
             // cb1stMonth
             // 
@@ -253,39 +254,39 @@
             // 
             // chart
             // 
-            chartArea4.Name = "ChartArea";
-            this.chart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart.Legends.Add(legend4);
+            chartArea5.Name = "ChartArea";
+            this.chart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart.Legends.Add(legend5);
             this.chart.Location = new System.Drawing.Point(6, 3);
             this.chart.Name = "chart";
-            series10.ChartArea = "ChartArea";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.Name = "Tổng chi";
-            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series11.ChartArea = "ChartArea";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series11.Legend = "Legend1";
-            series11.Name = "Tổng thu";
-            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series12.ChartArea = "ChartArea";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.Legend = "Legend1";
-            series12.Name = "Lợi nhuận";
-            series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series12.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart.Series.Add(series10);
-            this.chart.Series.Add(series11);
-            this.chart.Series.Add(series12);
+            series13.ChartArea = "ChartArea";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Legend = "Legend1";
+            series13.Name = "Tổng chi";
+            series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series14.ChartArea = "ChartArea";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.Legend = "Legend1";
+            series14.Name = "Tổng thu";
+            series14.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series15.ChartArea = "ChartArea";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series15.Legend = "Legend1";
+            series15.Name = "Lợi nhuận";
+            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series15.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart.Series.Add(series13);
+            this.chart.Series.Add(series14);
+            this.chart.Series.Add(series15);
             this.chart.Size = new System.Drawing.Size(838, 492);
             this.chart.TabIndex = 0;
             this.chart.Text = "Biểu đồ doanh thu của siêu thị";
-            title4.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title4.Name = "Title";
-            title4.Text = "Biểu đồ doanh thu của siêu thị";
-            this.chart.Titles.Add(title4);
+            title5.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title5.Name = "Title";
+            title5.Text = "Biểu đồ doanh thu của siêu thị";
+            this.chart.Titles.Add(title5);
             // 
             // tp_ThongKe
             // 

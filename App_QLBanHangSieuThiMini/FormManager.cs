@@ -354,5 +354,11 @@ namespace App_QLBanHangSieuThiMini
             }
         }
         #endregion
+
+        private void cb2ndMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(cb2ndMonth.Text) <= Convert.ToInt32(cb1stMonth.Text))
+                cb2ndMonth.Text = cb2ndMonth.Items[Convert.ToInt32(cb1stMonth.Text)-1].ToString();
+        }
     }
 }
