@@ -75,7 +75,7 @@
             this.dgvHang.Location = new System.Drawing.Point(54, 136);
             this.dgvHang.Name = "dgvHang";
             this.dgvHang.RowTemplate.Height = 24;
-            this.dgvHang.Size = new System.Drawing.Size(462, 621);
+            this.dgvHang.Size = new System.Drawing.Size(462, 518);
             this.dgvHang.TabIndex = 41;
             this.dgvHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_CellClick);
             // 
@@ -192,7 +192,7 @@
             this.groupBox1.Controls.Add(this.dtpNgay);
             this.groupBox1.Location = new System.Drawing.Point(601, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 565);
+            this.groupBox1.Size = new System.Drawing.Size(328, 536);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             // 
@@ -200,7 +200,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(285, 493);
+            this.label11.Location = new System.Drawing.Point(285, 464);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 17);
             this.label11.TabIndex = 21;
@@ -229,7 +229,7 @@
             // btnThanhToan
             // 
             this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThanhToan.Location = new System.Drawing.Point(222, 521);
+            this.btnThanhToan.Location = new System.Drawing.Point(222, 492);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(100, 23);
             this.btnThanhToan.TabIndex = 20;
@@ -284,7 +284,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 496);
+            this.label6.Location = new System.Drawing.Point(6, 467);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 17);
             this.label6.TabIndex = 11;
@@ -294,7 +294,7 @@
             // 
             this.txtTong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTong.Enabled = false;
-            this.txtTong.Location = new System.Drawing.Point(163, 491);
+            this.txtTong.Location = new System.Drawing.Point(163, 462);
             this.txtTong.Name = "txtTong";
             this.txtTong.Size = new System.Drawing.Size(116, 22);
             this.txtTong.TabIndex = 10;
@@ -307,7 +307,7 @@
             this.dgvHangMua.Location = new System.Drawing.Point(7, 159);
             this.dgvHangMua.Name = "dgvHangMua";
             this.dgvHangMua.RowTemplate.Height = 24;
-            this.dgvHangMua.Size = new System.Drawing.Size(316, 321);
+            this.dgvHangMua.Size = new System.Drawing.Size(316, 291);
             this.dgvHangMua.TabIndex = 8;
             // 
             // dtpNgay

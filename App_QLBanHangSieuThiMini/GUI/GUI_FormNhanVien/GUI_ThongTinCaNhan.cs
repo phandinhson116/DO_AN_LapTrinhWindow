@@ -51,7 +51,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
                 txtSDT.Text,
                 nvCu.Luong);
             if (bll.SuaThongTin(nvMoi))
-                MessageBox.Show("Đã lưu");
+                MessageBox.Show("Đã lưu!");
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
@@ -61,10 +61,11 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
                 if (txtMatKhauMoi.Text.Equals(txtXacNhanMatKhau.Text))
                 {
                     bll.DoiMatKhau(_maNV, txtMatKhau.Text);
+                    MessageBox.Show("Đã đổi mật khẩu! Đừng quên đấy!");
                 }
                 else
                 {
-                    MessageBox.Show("Xác nhận mật khẩu không khớp");
+                    MessageBox.Show("Xác nhận mật khẩu không khớp!");
                 }
             }
             else
@@ -73,7 +74,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             }
             txtXacNhanMatKhau.ResetText();
             txtMatKhau.ResetText();
-            txtMatKhau.ResetText();
+            txtMatKhauMoi.ResetText();
         }
     }
 }

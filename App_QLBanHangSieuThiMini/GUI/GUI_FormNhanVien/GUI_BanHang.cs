@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using App_QLBanHangSieuThiMini.BLL;
+
 namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 {
     public partial class GUI_BanHang : UserControl
@@ -32,8 +33,10 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
             dgvHangMua.DataSource = bll.GetTableHangMua(hangmua);
             dgvHangMua.AutoResizeColumns();
-
-            txtTong.Text = bll.TinhTongTien(hangmua).ToString();
+            if (string.IsNullOrEmpty(txtMaKH.Text.Trim()))
+                txtTong.Text = bll.TinhTongTien(hangmua).ToString();
+            else
+                txtTong.Text = bll.TinhTongTien(Convert.ToInt32(txtMaKH.Text), hangmua).ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -73,7 +76,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("Đưa {0} VND đây!", bll.TinhTongTien(hangmua)));
+            MessageBox.Show(string.Format("Đưa {0} VND đây!", bll.TinhTongTien(Convert.ToInt32(txtMaKH.Text), hangmua)));
             bll.MuaHang(_maNV, Convert.ToInt32(txtMaKH.Text.Trim()), DateTime.Now, hangmua);
         }
 

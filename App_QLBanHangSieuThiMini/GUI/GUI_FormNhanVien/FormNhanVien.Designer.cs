@@ -38,7 +38,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guI_HoaDon1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_HoaDon();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +63,7 @@
             // 
             // txtMaNV
             // 
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Location = new System.Drawing.Point(692, 6);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(100, 22);
@@ -89,7 +89,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hóa Đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
-            
             // 
             // tabPage2
             // 
@@ -124,7 +123,7 @@
             // 
             this.guI_HoaDon1.Location = new System.Drawing.Point(21, -19);
             this.guI_HoaDon1.Name = "guI_HoaDon1";
-            this.guI_HoaDon1.Size = new System.Drawing.Size(900, 700);
+            this.guI_HoaDon1.Size = new System.Drawing.Size(900, 580);
             this.guI_HoaDon1.TabIndex = 0;
             // 
             // FormNhanVien
@@ -139,7 +138,6 @@
             this.Name = "FormNhanVien";
             this.Text = "FormNhanVien";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
