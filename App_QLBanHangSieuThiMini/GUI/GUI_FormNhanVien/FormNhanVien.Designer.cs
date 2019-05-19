@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.guI_KhachHang1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_KhachHang();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guI_HoaDon1 = new App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_HoaDon();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -103,6 +104,13 @@
             this.tabPage2.Text = "Khách Hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // guI_KhachHang1
+            // 
+            this.guI_KhachHang1.Location = new System.Drawing.Point(0, -19);
+            this.guI_KhachHang1.Name = "guI_KhachHang1";
+            this.guI_KhachHang1.Size = new System.Drawing.Size(1000, 800);
+            this.guI_KhachHang1.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.guI_HoaDon1);
@@ -114,6 +122,13 @@
             this.tabPage3.Text = "Lịch Sử";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // guI_HoaDon1
+            // 
+            this.guI_HoaDon1.Location = new System.Drawing.Point(21, -19);
+            this.guI_HoaDon1.Name = "guI_HoaDon1";
+            this.guI_HoaDon1.Size = new System.Drawing.Size(900, 580);
+            this.guI_HoaDon1.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
@@ -124,20 +139,6 @@
             this.tabPage4.Text = "Thông TIn Cá Nhân";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // guI_KhachHang1
-            // 
-            this.guI_KhachHang1.Location = new System.Drawing.Point(0, -19);
-            this.guI_KhachHang1.Name = "guI_KhachHang1";
-            this.guI_KhachHang1.Size = new System.Drawing.Size(1000, 800);
-            this.guI_KhachHang1.TabIndex = 0;
-            // 
-            // guI_HoaDon1
-            // 
-            this.guI_HoaDon1.Location = new System.Drawing.Point(21, -19);
-            this.guI_HoaDon1.Name = "guI_HoaDon1";
-            this.guI_HoaDon1.Size = new System.Drawing.Size(900, 580);
-            this.guI_HoaDon1.TabIndex = 0;
-            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -147,6 +148,7 @@
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangXuat);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhanVien";
             this.Text = "FormNhanVien";
             this.tabControl1.ResumeLayout(false);
