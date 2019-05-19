@@ -52,7 +52,6 @@
             this.radioButtonSalaryOfEmployee = new System.Windows.Forms.RadioButton();
             this.dgvThongKeDoanhThu = new System.Windows.Forms.DataGridView();
             this.tp_qlHangHoa = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.MaHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +67,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tp_qlNhanVien = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaNV = new System.Windows.Forms.Button();
@@ -119,7 +117,6 @@
             this.tp_ThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKeDoanhThu)).BeginInit();
             this.tp_qlHangHoa.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.pnlChucNang.SuspendLayout();
             this.tp_qlNhanVien.SuspendLayout();
@@ -387,7 +384,6 @@
             // 
             // tp_qlHangHoa
             // 
-            this.tp_qlHangHoa.Controls.Add(this.groupBox1);
             this.tp_qlHangHoa.Controls.Add(this.pnlChucNang);
             this.tp_qlHangHoa.Location = new System.Drawing.Point(4, 25);
             this.tp_qlHangHoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -397,24 +393,6 @@
             this.tp_qlHangHoa.TabIndex = 1;
             this.tp_qlHangHoa.Text = "Quản Lý Hàng Hóa";
             this.tp_qlHangHoa.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dgvHangHoa);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(28, 231);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(164, 0);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DANH MỤC HÀNG HÓA";
             // 
             // dgvHangHoa
             // 
@@ -431,7 +409,7 @@
             this.DonGiaNhap,
             this.NgayNhapHang,
             this.NgayHetHan});
-            this.dgvHangHoa.Location = new System.Drawing.Point(5, 34);
+            this.dgvHangHoa.Location = new System.Drawing.Point(25, 194);
             this.dgvHangHoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHangHoa.Name = "dgvHangHoa";
             this.dgvHangHoa.RowTemplate.Height = 24;
@@ -494,19 +472,17 @@
             // 
             // pnlChucNang
             // 
-            this.pnlChucNang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlChucNang.BackColor = System.Drawing.Color.White;
+            this.pnlChucNang.Controls.Add(this.dgvHangHoa);
             this.pnlChucNang.Controls.Add(this.cmbMucTimKiem);
             this.pnlChucNang.Controls.Add(this.txtTimKiem);
             this.pnlChucNang.Controls.Add(this.btnTimKiem);
             this.pnlChucNang.Controls.Add(this.btnReload);
-            this.pnlChucNang.Controls.Add(this.button3);
-            this.pnlChucNang.Location = new System.Drawing.Point(28, 41);
+            this.pnlChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChucNang.Location = new System.Drawing.Point(3, 2);
             this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(141, 0);
+            this.pnlChucNang.Size = new System.Drawing.Size(1541, 650);
             this.pnlChucNang.TabIndex = 8;
             // 
             // cmbMucTimKiem
@@ -518,7 +494,7 @@
             "Đơn Vị Cung Cấp",
             "Sản Phẩm Hết Hạn",
             "Sản Phẩm Còn Hạn"});
-            this.cmbMucTimKiem.Location = new System.Drawing.Point(71, 78);
+            this.cmbMucTimKiem.Location = new System.Drawing.Point(25, 88);
             this.cmbMucTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMucTimKiem.Name = "cmbMucTimKiem";
             this.cmbMucTimKiem.Size = new System.Drawing.Size(205, 24);
@@ -527,7 +503,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(294, 78);
+            this.txtTimKiem.Location = new System.Drawing.Point(248, 88);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
@@ -541,7 +517,7 @@
             this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(-505, 122);
+            this.btnTimKiem.Location = new System.Drawing.Point(149, 132);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(103, 39);
@@ -557,7 +533,7 @@
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(-505, 14);
+            this.btnReload.Location = new System.Drawing.Point(149, 24);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(103, 39);
@@ -565,16 +541,6 @@
             this.btnReload.Text = "LoadData";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(221, 172);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(8, 7);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // tp_qlNhanVien
             // 
@@ -1107,7 +1073,6 @@
             this.tp_ThongKe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKeDoanhThu)).EndInit();
             this.tp_qlHangHoa.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.pnlChucNang.ResumeLayout(false);
             this.pnlChucNang.PerformLayout();
@@ -1130,10 +1095,8 @@
         private System.Windows.Forms.TabPage tp_BieuDo;
         private System.Windows.Forms.Panel plManager;
         private System.Windows.Forms.TabPage tp_qlHangHoa;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel pnlChucNang;
         private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tp_qlNhanVien;
         private System.Windows.Forms.TabPage tp_qlHoaDon;
         private System.Windows.Forms.TabPage tp_ThongKe;
