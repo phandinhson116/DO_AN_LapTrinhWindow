@@ -70,14 +70,16 @@ namespace App_QLBanHangSieuThiMini.DAL
         public HangHoa GetRow(int maHH)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from HangHoa where MaHH = '{0}'", maHH));
-            HangHoa hanghoa = new HangHoa(
-                Convert.ToInt32(dt.Rows[0]["MaHH"]),
-                dt.Rows[0]["TenHH"].ToString(),
-                (float)Convert.ToDouble(dt.Rows[0]["DonGia"]),
-                Convert.ToInt32(dt.Rows[0]["SoLuong"]),
-                dt.Rows[0]["DVCungCap"].ToString(),
-                Convert.ToDateTime(dt.Rows[0]["NgayNhapHang"]),
-                Convert.ToDateTime(dt.Rows[0]["NgayHetHan"]));
+            HangHoa hanghoa = new HangHoa()
+            {
+                MaHH = Convert.ToInt32(dt.Rows[0]["MaHH"]),
+                TenHH = dt.Rows[0]["TenHH"].ToString(),
+                DonGia = (float)Convert.ToDouble(dt.Rows[0]["DonGia"]),
+                SoLuong = Convert.ToInt32(dt.Rows[0]["SoLuong"]),
+                DVCungCap = dt.Rows[0]["DVCungCap"].ToString(),
+                NgayNhapHang = Convert.ToDateTime(dt.Rows[0]["NgayNhapHang"]),
+                NgayHetHan = Convert.ToDateTime(dt.Rows[0]["NgayHetHan"])
+            };
             return hanghoa;
         }
 

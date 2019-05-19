@@ -30,12 +30,14 @@ namespace App_QLBanHangSieuThiMini.DAL
         public HoaDon GetRow(int maHD)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from HoaDon where MaHD = {0}", maHD));
-            HoaDon hoadon = new HoaDon(
-                Convert.ToInt32(dt.Rows[0]["MaHD"]),
-                Convert.ToInt32(dt.Rows[0]["MaKH"]),
-                Convert.ToInt32(dt.Rows[0]["MaNV"]),
-               Convert.ToDateTime(dt.Rows[0]["NgayLap"]),
-               Convert.ToInt32(dt.Rows[0]["Tong"]));
+            HoaDon hoadon = new HoaDon()
+            {
+                MaHD = Convert.ToInt32(dt.Rows[0]["MaHD"]),
+                MaKH = Convert.ToInt32(dt.Rows[0]["MaKH"]),
+                MaNV = Convert.ToInt32(dt.Rows[0]["MaNV"]),
+                Ngay = Convert.ToDateTime(dt.Rows[0]["NgayLap"]),
+                Tong = Convert.ToInt32(dt.Rows[0]["Tong"])
+            };
             return hoadon;
         }
 

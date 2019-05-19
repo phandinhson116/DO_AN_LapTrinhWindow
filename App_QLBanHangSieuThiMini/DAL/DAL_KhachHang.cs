@@ -21,13 +21,15 @@ namespace App_QLBanHangSieuThiMini.DAL
         public KhachHang GetRow(int maKH)
         {
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from KhachHang where MaKH = {0}", maKH));
-            KhachHang khachhang = new KhachHang(
-                Convert.ToInt32(dt.Rows[0]["MaKH"]),
-                dt.Rows[0]["TenKH"].ToString(),
-                dt.Rows[0]["SDT"].ToString(),
-                dt.Rows[0]["GioiTinh"].ToString(),
-                dt.Rows[0]["DiaChi"].ToString(),
-                Convert.ToInt32(dt.Rows[0]["SoDiem"]));
+            KhachHang khachhang = new KhachHang()
+            {
+                MaKH = Convert.ToInt32(dt.Rows[0]["MaKH"]),
+                TenKH = dt.Rows[0]["TenKH"].ToString(),
+                SDT = dt.Rows[0]["SDT"].ToString(),
+                GioiTinh = dt.Rows[0]["GioiTinh"].ToString(),
+                DiaChi = dt.Rows[0]["DiaChi"].ToString(),
+                SoDiem = Convert.ToInt32(dt.Rows[0]["SoDiem"])
+            };
             return khachhang;
         }
 

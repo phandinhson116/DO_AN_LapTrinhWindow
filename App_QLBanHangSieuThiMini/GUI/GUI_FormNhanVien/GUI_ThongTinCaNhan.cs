@@ -41,15 +41,17 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
         private void btnLuu_Click(object sender, EventArgs e)
         {
             NhanVien nvCu = bll.GetThongTin(_maNV);
-            NhanVien nvMoi = new NhanVien(
-                Convert.ToInt32(txtMaNV.Text),
-                txtTenNV.Text,
-                txtGioiTinh.Text,
-                txtDiaChi.Text,
-                nvCu.MatKhau,
-                nvCu.ChucDanh,
-                txtSDT.Text,
-                nvCu.Luong);
+            NhanVien nvMoi = new NhanVien()
+            {
+                MaNV = Convert.ToInt32(txtMaNV.Text),
+                TenNV = txtTenNV.Text,
+                GioiTinh = txtGioiTinh.Text,
+                DiaChi = txtDiaChi.Text,
+                MatKhau = nvCu.MatKhau,
+                ChucDanh = nvCu.ChucDanh,
+                SDT = txtSDT.Text,
+                Luong = nvCu.Luong
+            };
             if (bll.SuaThongTin(nvMoi))
                 MessageBox.Show("Đã lưu!");
         }

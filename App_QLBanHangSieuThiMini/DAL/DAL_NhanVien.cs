@@ -20,15 +20,17 @@ namespace App_QLBanHangSieuThiMini.DAL
             DataTable dt = _dbConnect.ExecuteQuery(string.Format("select * from NhanVien where MaNV = {0}", manv));
             if (dt.Rows.Count > 0)
             {
-                nhanvien = new NhanVien(
-                   Convert.ToInt32(dt.Rows[0]["MaNV"]),
-                    dt.Rows[0]["TenNV"].ToString(),
-                    dt.Rows[0]["GioiTinh"].ToString(),
-                    dt.Rows[0]["DiaChi"].ToString(),
-                    dt.Rows[0]["MatKhau"].ToString(),
-                    dt.Rows[0]["ChucDanh"].ToString(),
-                    dt.Rows[0]["SDT"].ToString(),
-                   Convert.ToInt32(dt.Rows[0]["Luong"]));
+                nhanvien = new NhanVien()
+                {
+                    MaNV = Convert.ToInt32(dt.Rows[0]["MaNV"]),
+                    TenNV = dt.Rows[0]["TenNV"].ToString(),
+                    GioiTinh = dt.Rows[0]["GioiTinh"].ToString(),
+                    DiaChi = dt.Rows[0]["DiaChi"].ToString(),
+                    MatKhau = dt.Rows[0]["MatKhau"].ToString(),
+                    ChucDanh = dt.Rows[0]["ChucDanh"].ToString(),
+                    SDT = dt.Rows[0]["SDT"].ToString(),
+                    Luong = Convert.ToInt32(dt.Rows[0]["Luong"])
+                };
             }
             else MessageBox.Show("Không tìm thấy nhân viên này");
             return nhanvien;

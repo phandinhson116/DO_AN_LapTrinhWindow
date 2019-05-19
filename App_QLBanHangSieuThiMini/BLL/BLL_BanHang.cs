@@ -97,11 +97,19 @@ namespace App_QLBanHangSieuThiMini.BLL
                 float tong = TinhTongTien(maKH, hangmua);
                 int maHD = _dalHoaDon.GetNextID();
                 //them HoaDon
-                _dalHoaDon.Them(new HoaDon(maHD, maKH, maNV, thoigian, tong));
+                _dalHoaDon.Them(new HoaDon()
+                {
+                    MaHD = maHD,
+                    MaKH = maKH,
+                    MaNV = maNV,
+                    Ngay = thoigian,
+                    Tong = tong
+                });
                 //them ChiTietHoaDon
                 foreach (int maHH in hangmua.Keys)
                 {
-                    _dalChiTietHoaDon.Them(new ChiTietHoaDon(maHD, maHH, _dalHangHoa.GetRow(maHH).DonGia, hangmua[maHH]));
+                    ChiTietHoaDon chitiethoadon = new ChiTietHoaDon() { MaHD = maHD, MaHH = maHH, DonGia = _dalHangHoa.GetRow(maHH).DonGia, SoLuong = hangmua[maHH] };
+                    _dalChiTietHoaDon.Them(chitiethoadon);
                 }
                 khachang.SoDiem = khachang.SoDiem + (int)tong / 100000 * 10;
                 _dalKhachHang.Sua(khachang);

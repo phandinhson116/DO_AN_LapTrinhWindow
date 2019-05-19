@@ -140,7 +140,15 @@ namespace App_QLBanHangSieuThiMini
                 try
                 {
                     //Thuc hien lenh
-                    dbHH.Them(new HangHoa(0, txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
+                    dbHH.Them(new HangHoa()
+                    {
+                        TenHH = txtTenHang.Text,
+                        DonGia = (float)Convert.ToDouble(txtDonGia.Text),
+                        SoLuong = Convert.ToInt32(txtSoLuong.Text),
+                        DVCungCap = txtDVCungCap.Text,
+                        NgayNhapHang = dtpNgayNhapHang.Value,
+                        NgayHetHan = dtpNgayHetHan.Value
+                    });
                     LoadData();
                     MessageBox.Show("Da them vao !!");
                 }
@@ -151,7 +159,16 @@ namespace App_QLBanHangSieuThiMini
             }
             else
             {
-                dbHH.Sua(new HangHoa(Convert.ToInt32(txtMaHang.Text), txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
+                dbHH.Sua(new HangHoa()
+                {
+                    MaHH = Convert.ToInt32(txtMaHang.Text),
+                    TenHH = txtTenHang.Text,
+                    DonGia = (float)Convert.ToDouble(txtDonGia.Text),
+                    SoLuong = Convert.ToInt32(txtSoLuong.Text),
+                    DVCungCap = txtDVCungCap.Text,
+                    NgayNhapHang = dtpNgayNhapHang.Value,
+                    NgayHetHan = dtpNgayHetHan.Value
+                });
                 LoadData();
                 MessageBox.Show("Đã sửa xong!!");
             }

@@ -33,30 +33,52 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            bll.ThemKhachHang(new KhachHang(0,
-                txtTenKH.Text.Trim(),
-                txtSDT.Text.Trim(),
-                cbGioiTinh.Items[cbGioiTinh.SelectedIndex].ToString().Trim(),
-                txtDiaChi.Text.Trim(),
-                0));
-            LoadData();
+            KhachHang khachhang = new KhachHang()
+            {
+                TenKH = txtTenKH.Text.Trim(),
+                SDT = txtSDT.Text.Trim(),
+                GioiTinh = cbGioiTinh.Items[cbGioiTinh.SelectedIndex].ToString().Trim(),
+                DiaChi = txtDiaChi.Text.Trim(),
+                SoDiem = 0
+            };
+            if (bll.ThemKhachHang(khachhang))
+            {
+                MessageBox.Show("Đã thêm!");
+                LoadData();
+            }
+            else
+                MessageBox.Show("Không thêm được!");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            bll.XoaKhachHang(Convert.ToInt32(txtMaKH.Text));
-            LoadData();
+            if (bll.XoaKhachHang(Convert.ToInt32(txtMaKH.Text)))
+            {
+                MessageBox.Show("Đã xóa!");
+                LoadData();
+            }
+            else
+                MessageBox.Show("Không xóa được!");
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            bll.SuaKhachHang(new KhachHang(Convert.ToInt32(txtMaKH.Text),
-                txtTenKH.Text.Trim(),
-                txtSDT.Text.Trim(),
-                cbGioiTinh.Items[cbGioiTinh.SelectedIndex].ToString().Trim(),
-                txtDiaChi.Text.Trim(),
-                0));
-            LoadData();
+            KhachHang khachhang = new KhachHang()
+            {
+                MaKH = Convert.ToInt32(txtMaKH.Text.Trim()),
+                TenKH = txtTenKH.Text.Trim(),
+                SDT = txtSDT.Text.Trim(),
+                GioiTinh = cbGioiTinh.Items[cbGioiTinh.SelectedIndex].ToString().Trim(),
+                DiaChi = txtDiaChi.Text.Trim(),
+                SoDiem = Convert.ToInt32(txtDiem.Text.Trim())
+            };
+            if (bll.SuaKhachHang(khachhang))
+            {
+                MessageBox.Show("Đã sửa!");
+                LoadData();
+            }
+            else
+                MessageBox.Show("Không sửa được!");
         }
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)

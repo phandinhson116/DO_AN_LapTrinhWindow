@@ -23,8 +23,19 @@ namespace App_QLBanHangSieuThiMini.BLL
 
         public bool DoiMatKhau(int maNV, string matKhau)
         {
-            NhanVien nhanvien = dal.GetRow(maNV);
-            return dal.Sua(new NhanVien(nhanvien.MaNV, nhanvien.TenNV, nhanvien.GioiTinh, nhanvien.DiaChi, matKhau, nhanvien.ChucDanh, nhanvien.SDT, nhanvien.Luong));
+            NhanVien nhanvienCu = dal.GetRow(maNV);
+            NhanVien nhanvienMoi = new NhanVien()
+            {
+                MaNV = nhanvienCu.MaNV,
+                TenNV = nhanvienCu.TenNV,
+                GioiTinh = nhanvienCu.GioiTinh,
+                DiaChi = nhanvienCu.DiaChi,
+                MatKhau = matKhau,
+                ChucDanh = nhanvienCu.ChucDanh,
+                SDT = nhanvienCu.SDT,
+                Luong = nhanvienCu.Luong
+            };
+            return dal.Sua(nhanvienMoi);
         }
     }
 }

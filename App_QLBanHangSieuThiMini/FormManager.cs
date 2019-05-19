@@ -90,7 +90,7 @@ namespace App_QLBanHangSieuThiMini
                 this.txtLuong.ResetText();
                 // Khong cho thao tac tren cac nut Luu/ Huy
                 this.btnLuuNV.Enabled = false;
-                
+
                 pnlTTNhanVien.Enabled = false;
                 // cho thao tac tren cac nut Them/Sua/Xoa/Thoat
                 this.btnThemNV.Enabled = true;
@@ -152,7 +152,7 @@ namespace App_QLBanHangSieuThiMini
 
             // Cho thao tac tren cac nut Luu/ Huy/ Thoat
             this.btnLuuNV.Enabled = true;
-           
+
             pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/ Xoa/ Thoat
             this.btnThemNV.Enabled = false;
@@ -174,7 +174,7 @@ namespace App_QLBanHangSieuThiMini
             // Cho thao tac tren cac nut Luu/ Huy/ Panel
 
             this.btnLuuNV.Enabled = true;
-           ;
+            ;
             pnlTTNhanVien.Enabled = true;
             // Khong cho thao tac tren cac nut Them/Xoa/ Thoat
             this.btnThemNV.Enabled = false;
@@ -202,7 +202,16 @@ namespace App_QLBanHangSieuThiMini
                 try
                 {
                     //Thuc hien lenh
-                    dbNV.Them(new NhanVien(0, txtTenNV.Text.Trim(), rdbGT, txtDiaChi.Text.Trim(), txtMatkhau.Text.Trim(), cmbChucDanh.Text.Trim(), txtSDT.Text.Trim(), Convert.ToInt32(txtLuong.Text)));
+                    dbNV.Them(new NhanVien()
+                    {
+                        TenNV = txtTenNV.Text.Trim(),
+                        GioiTinh = rdbGT,
+                        DiaChi = txtDiaChi.Text.Trim(),
+                        MatKhau = txtMatkhau.Text.Trim(),
+                        ChucDanh = cmbChucDanh.Text.Trim(),
+                        SDT = txtSDT.Text.Trim(),
+                        Luong = Convert.ToInt32(txtLuong.Text)
+                    });
                     LoadDataNV();
                     MessageBox.Show("Da them vao !!");
                 }
@@ -213,7 +222,17 @@ namespace App_QLBanHangSieuThiMini
             }
             else
             {
-                dbNV.Sua(new NhanVien(Convert.ToInt32(txtMaNV.Text), txtTenNV.Text.Trim(), rdbGT, txtDiaChi.Text.Trim(), txtMatkhau.Text.Trim(), cmbChucDanh.Text.Trim(), txtSDT.Text.Trim(), Convert.ToInt32(txtLuong.Text)));
+                dbNV.Sua(new NhanVien()
+                {
+                    MaNV = Convert.ToInt32(txtMaNV.Text),
+                    TenNV = txtTenNV.Text.Trim(),
+                    GioiTinh = rdbGT,
+                    DiaChi = txtDiaChi.Text.Trim(),
+                    MatKhau = txtMatkhau.Text.Trim(),
+                    ChucDanh = cmbChucDanh.Text.Trim(),
+                    SDT = txtSDT.Text.Trim(),
+                    Luong = Convert.ToInt32(txtLuong.Text)
+                });
                 LoadDataNV();
                 MessageBox.Show("Đã sửa xong!!");
             }
@@ -298,7 +317,7 @@ namespace App_QLBanHangSieuThiMini
                             break;
                         }
                     default:
-                        
+
                         break;
                 }
             }
@@ -379,7 +398,7 @@ namespace App_QLBanHangSieuThiMini
                 }
 
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
@@ -412,7 +431,7 @@ namespace App_QLBanHangSieuThiMini
             {
                 chart.Series["Tổng chi"].Points.AddXY(i, bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
                 chart.Series["Tổng thu"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)));
-                chart.Series["Lợi nhuận"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)) -bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
+                chart.Series["Lợi nhuận"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)) - bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
             }
         }
         private void cb2ndMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -424,6 +443,6 @@ namespace App_QLBanHangSieuThiMini
 
         #endregion
 
-       
+
     }
 }
