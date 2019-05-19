@@ -60,7 +60,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             {
                 if (txtMatKhauMoi.Text.Equals(txtXacNhanMatKhau.Text))
                 {
-                    bll.DoiMatKhau(_maNV, txtMatKhau.Text);
+                    bll.DoiMatKhau(_maNV, txtMatKhauMoi.Text);
                     MessageBox.Show("Đã đổi mật khẩu! Đừng quên đấy!");
                 }
                 else
