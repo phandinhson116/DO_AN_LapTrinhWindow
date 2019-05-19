@@ -52,6 +52,7 @@
             this.radioButtonSalaryOfEmployee = new System.Windows.Forms.RadioButton();
             this.dgvThongKeDoanhThu = new System.Windows.Forms.DataGridView();
             this.tp_qlHangHoa = new System.Windows.Forms.TabPage();
+            this.pnlChucNang = new System.Windows.Forms.Panel();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.MaHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +63,6 @@
             this.DonGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlChucNang = new System.Windows.Forms.Panel();
             this.cmbMucTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -117,8 +117,8 @@
             this.tp_ThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKeDoanhThu)).BeginInit();
             this.tp_qlHangHoa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.pnlChucNang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.tp_qlNhanVien.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbDanhsachNV.SuspendLayout();
@@ -146,6 +146,7 @@
             // 
             // tp_BieuDo
             // 
+            this.tp_BieuDo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tp_BieuDo.Controls.Add(this.btnShowChart);
             this.tp_BieuDo.Controls.Add(this.lblYear);
             this.tp_BieuDo.Controls.Add(this.lbl2ndMonth);
@@ -167,7 +168,7 @@
             // 
             this.btnShowChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnShowChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowChart.Location = new System.Drawing.Point(1120, 255);
+            this.btnShowChart.Location = new System.Drawing.Point(1120, 254);
             this.btnShowChart.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowChart.Name = "btnShowChart";
             this.btnShowChart.Size = new System.Drawing.Size(161, 81);
@@ -317,6 +318,7 @@
             // 
             // tp_ThongKe
             // 
+            this.tp_ThongKe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tp_ThongKe.Controls.Add(this.radioButtonIncome);
             this.tp_ThongKe.Controls.Add(this.radioButtonGoodsEntered);
             this.tp_ThongKe.Controls.Add(this.radioButtonSalaryOfEmployee);
@@ -394,6 +396,22 @@
             this.tp_qlHangHoa.Text = "Quản Lý Hàng Hóa";
             this.tp_qlHangHoa.UseVisualStyleBackColor = true;
             // 
+            // pnlChucNang
+            // 
+            this.pnlChucNang.BackColor = System.Drawing.Color.White;
+            this.pnlChucNang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlChucNang.Controls.Add(this.dgvHangHoa);
+            this.pnlChucNang.Controls.Add(this.cmbMucTimKiem);
+            this.pnlChucNang.Controls.Add(this.txtTimKiem);
+            this.pnlChucNang.Controls.Add(this.btnTimKiem);
+            this.pnlChucNang.Controls.Add(this.btnReload);
+            this.pnlChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChucNang.Location = new System.Drawing.Point(3, 2);
+            this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlChucNang.Name = "pnlChucNang";
+            this.pnlChucNang.Size = new System.Drawing.Size(1541, 650);
+            this.pnlChucNang.TabIndex = 8;
+            // 
             // dgvHangHoa
             // 
             this.dgvHangHoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -409,11 +427,11 @@
             this.DonGiaNhap,
             this.NgayNhapHang,
             this.NgayHetHan});
-            this.dgvHangHoa.Location = new System.Drawing.Point(25, 194);
+            this.dgvHangHoa.Location = new System.Drawing.Point(25, 101);
             this.dgvHangHoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHangHoa.Name = "dgvHangHoa";
             this.dgvHangHoa.RowTemplate.Height = 24;
-            this.dgvHangHoa.Size = new System.Drawing.Size(1491, 359);
+            this.dgvHangHoa.Size = new System.Drawing.Size(1491, 452);
             this.dgvHangHoa.TabIndex = 1;
             // 
             // MaHH
@@ -470,21 +488,6 @@
             this.NgayHetHan.HeaderText = "Ngày hết hạn";
             this.NgayHetHan.Name = "NgayHetHan";
             // 
-            // pnlChucNang
-            // 
-            this.pnlChucNang.BackColor = System.Drawing.Color.White;
-            this.pnlChucNang.Controls.Add(this.dgvHangHoa);
-            this.pnlChucNang.Controls.Add(this.cmbMucTimKiem);
-            this.pnlChucNang.Controls.Add(this.txtTimKiem);
-            this.pnlChucNang.Controls.Add(this.btnTimKiem);
-            this.pnlChucNang.Controls.Add(this.btnReload);
-            this.pnlChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChucNang.Location = new System.Drawing.Point(3, 2);
-            this.pnlChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(1541, 650);
-            this.pnlChucNang.TabIndex = 8;
-            // 
             // cmbMucTimKiem
             // 
             this.cmbMucTimKiem.FormattingEnabled = true;
@@ -494,7 +497,7 @@
             "Đơn Vị Cung Cấp",
             "Sản Phẩm Hết Hạn",
             "Sản Phẩm Còn Hạn"});
-            this.cmbMucTimKiem.Location = new System.Drawing.Point(25, 88);
+            this.cmbMucTimKiem.Location = new System.Drawing.Point(650, 16);
             this.cmbMucTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMucTimKiem.Name = "cmbMucTimKiem";
             this.cmbMucTimKiem.Size = new System.Drawing.Size(205, 24);
@@ -503,7 +506,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(248, 88);
+            this.txtTimKiem.Location = new System.Drawing.Point(861, 16);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
@@ -517,7 +520,7 @@
             this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(149, 132);
+            this.btnTimKiem.Location = new System.Drawing.Point(806, 50);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(103, 39);
@@ -533,10 +536,10 @@
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(149, 24);
+            this.btnReload.Location = new System.Drawing.Point(366, 16);
             this.btnReload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(103, 39);
+            this.btnReload.Size = new System.Drawing.Size(194, 73);
             this.btnReload.TabIndex = 9;
             this.btnReload.Text = "LoadData";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -1038,6 +1041,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -1049,6 +1053,7 @@
             // 
             // guI_HoaDon1
             // 
+            this.guI_HoaDon1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.guI_HoaDon1.Location = new System.Drawing.Point(4, 4);
             this.guI_HoaDon1.Name = "guI_HoaDon1";
             this.guI_HoaDon1.Size = new System.Drawing.Size(1161, 665);
@@ -1073,9 +1078,9 @@
             this.tp_ThongKe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKeDoanhThu)).EndInit();
             this.tp_qlHangHoa.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.pnlChucNang.ResumeLayout(false);
             this.pnlChucNang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.tp_qlNhanVien.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="App_QLBanHangSieuThiMini.BLL.BLL_BanHang" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAEAAQAAAgAAAAAAAAAEAABAhAAAABAAAAIAAAEA=</HashCode>
+      <FileName>BLL\BLL_BanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.BLL.BLL_DangNhap" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>BLL\BLL_DangNhap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.BLL.BLL_HoaDon" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAgAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\BLL_HoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.BLL.BLL_KhachHang" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAABAAAAAAAAACAAAAAEAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>BLL\BLL_KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.BLL.BLL_ThongKeDoanhThu" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACEAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLL\BLL_ThongKeDoanhThu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.BLL.BLL_ThongTinCaNhan" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAIAABAAAAAAAAEAAAAA=</HashCode>
+      <FileName>BLL\BLL_ThongTinCaNhan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DAL_ChiTietHoaDon" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAQAAAgQAAAAAAAAAAAgAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DAL\DAL_ChiTietHoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DAL_HangHoa" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAABAgQAAAACAQAAACgEIAAAAAAAAAAAQ=</HashCode>
+      <FileName>DAL\DAL_HangHoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DAL_HoaDon" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAABAgQAAAACAAAAAAgAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DAL\DAL_HoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DAL_KhachHang" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAABAgQAAAACAAAAAAgAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DAL\DAL_KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DAL_NhanVien" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAAAAAAACAhAgQAAAACAAAAAAgAAAAAACAAAAAAQ=</HashCode>
+      <FileName>DAL\DAL_NhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DAL_ThongKeDoanhThu" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAQAAAAAEAQAAAGAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DAL_ThongKeDoanhThu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.DAL.DBConnect" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAQAAAABAAAAAAAABAA=</HashCode>
+      <FileName>DAL\DBConnect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.FormLogin" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAQECAAABAAQACABAACACAAAIBAAAAAgCBQAAA=</HashCode>
+      <FileName>GUI\FormLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.FormManager" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/AQlgijQJCYotBggcByZQM4GIUEDqKAyIEVAEU0BsZQ=</HashCode>
+      <FileName>GUI\FormManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.fNhapHang" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCgAAMQJCgQADAiABKAggAGAAQgqkAAEDSCAUgBFKM=</HashCode>
+      <FileName>GUI\QLNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.Program" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.FormNhanVien" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICgAABAECAAQBAAAACICAAGAAAAAAACAAQAAAABBAA=</HashCode>
+      <FileName>GUI\GUI_FormNhanVien\FormNhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_BanHang" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAkAAAIADAdATAAMACA1AECACAAAUAAACQIEAAQAAE=</HashCode>
+      <FileName>GUI\GUI_FormNhanVien\GUI_BanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_HoaDon" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAiCAQCBAAAACAEAEGAAAAAAAAgAAAEQAQAAA=</HashCode>
+      <FileName>GUI\GUI_FormNhanVien\GUI_HoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_KhachHang" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEgAAEACARADAAMACAwAECAFAAAEAAAAAEEBARAAE=</HashCode>
+      <FileName>GUI\GUI_FormNhanVien\GUI_KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien.GUI_ThongTinCaNhan" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>NgAAkICAACAYABAAQACAYQAGABAAAAAAACQCAABQAIA=</HashCode>
+      <FileName>GUI\GUI_FormNhanVien\GUI_ThongTinCaNhan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAABAAAABAAAAAAAAABEAAAAQAAAAAAAAAABAAAEIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.Properties.Settings" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.ValueObject.ChiTietHoaDon" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAEAA=</HashCode>
+      <FileName>ValueObject\ChiTietHoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.ValueObject.HangHoa" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAABAAAAAAAAAACAAAAAAAAAgAEIA=</HashCode>
+      <FileName>ValueObject\HangHoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.ValueObject.HoaDon" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAEAAABAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAA=</HashCode>
+      <FileName>ValueObject\HoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.ValueObject.KhachHang" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAEAAAABAAAAAAAAAAAMEA=</HashCode>
+      <FileName>ValueObject\KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="App_QLBanHangSieuThiMini.ValueObject.NhanVien" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAABAAAAgAAAAQAAIAAAEAAAAAAAAAAAAAAAAIQA=</HashCode>
+      <FileName>ValueObject\NhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

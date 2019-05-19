@@ -51,7 +51,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
                 txtSDT.Text,
                 nvCu.Luong);
             if (bll.SuaThongTin(nvMoi))
-                MessageBox.Show("Đã lưu!");
+                MessageBox.Show("Đã lưu!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button2,MessageBoxOptions.ServiceNotification);
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
@@ -61,16 +61,16 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
                 if (txtMatKhauMoi.Text.Equals(txtXacNhanMatKhau.Text))
                 {
                     bll.DoiMatKhau(_maNV, txtMatKhauMoi.Text);
-                    MessageBox.Show("Đã đổi mật khẩu! Đừng quên đấy!");
+                    MessageBox.Show("Đã đổi mật khẩu!Cảm ơn bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 }
                 else
                 {
-                    MessageBox.Show("Xác nhận mật khẩu không khớp!");
+                    MessageBox.Show("Xác nhận mật khẩu không khớp!Xin hãy nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 }
             }
             else
             {
-                MessageBox.Show("Mật khẩu không đúng!");
+                MessageBox.Show("Mật khẩu không đúng! Xin hãy nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
             txtXacNhanMatKhau.ResetText();
             txtMatKhau.ResetText();

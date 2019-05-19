@@ -85,8 +85,17 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("Tổng số tiền của quý khách là {0} VND. Xin cảm ơn quý khách đã mua hàng!", bll.TinhTongTien(Convert.ToInt32(txtMaKH.Text), hangmua)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification); ;
-            bll.MuaHang(_maNV, Convert.ToInt32(txtMaKH.Text.Trim()), DateTime.Now, hangmua);
+            try
+            {
+                MessageBox.Show(string.Format("Tổng số tiền của quý khách là {0} VND. Xin cảm ơn quý khách đã mua hàng!", bll.TinhTongTien(Convert.ToInt32(txtMaKH.Text), hangmua)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification); ;
+                bll.MuaHang(_maNV, Convert.ToInt32(txtMaKH.Text.Trim()), DateTime.Now, hangmua);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void txtMaHH_TextChanged(object sender, EventArgs e)

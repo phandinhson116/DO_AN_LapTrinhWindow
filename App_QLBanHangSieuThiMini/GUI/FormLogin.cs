@@ -92,7 +92,7 @@ namespace App_QLBanHangSieuThiMini
 
                     default:
                         {
-                            MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+                            MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3, MessageBoxOptions.ServiceNotification); ;
                             txtAccount.Focus();
                             break;
                         }
@@ -100,7 +100,7 @@ namespace App_QLBanHangSieuThiMini
             }
             catch
             {
-                MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo");
+                MessageBox.Show("Xin hãy nhập tài khoản hoặc mật khẩu !! ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button3, MessageBoxOptions.ServiceNotification);
                 txtAccount.Focus();
             }
             if (newForm != null)

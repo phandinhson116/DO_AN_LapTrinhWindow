@@ -40,6 +40,8 @@
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvHangMua = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,18 +51,16 @@
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTong = new System.Windows.Forms.TextBox();
-            this.dgvHangMua = new System.Windows.Forms.DataGridView();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.gpbHangHoa = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangMua)).BeginInit();
             this.gpbHangHoa.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvHang
@@ -93,6 +93,7 @@
             // 
             // btnSua
             // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(704, 349);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(85, 44);
@@ -103,6 +104,7 @@
             // 
             // btnMoi
             // 
+            this.btnMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoi.Location = new System.Drawing.Point(704, 421);
             this.btnMoi.Name = "btnMoi";
             this.btnMoi.Size = new System.Drawing.Size(85, 44);
@@ -113,6 +115,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(704, 276);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(85, 44);
@@ -163,6 +166,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(704, 209);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(85, 44);
@@ -192,12 +196,34 @@
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvHangMua);
+            this.groupBox2.Location = new System.Drawing.Point(9, 131);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(437, 371);
+            this.groupBox2.TabIndex = 57;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sản phẩm";
+            // 
+            // dgvHangMua
+            // 
+            this.dgvHangMua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHangMua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHangMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangMua.Location = new System.Drawing.Point(17, 39);
+            this.dgvHangMua.Name = "dgvHangMua";
+            this.dgvHangMua.RowTemplate.Height = 24;
+            this.dgvHangMua.Size = new System.Drawing.Size(379, 323);
+            this.dgvHangMua.TabIndex = 8;
+            // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(301, 549);
+            this.label11.Location = new System.Drawing.Point(301, 511);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 17);
             this.label11.TabIndex = 21;
@@ -206,12 +232,14 @@
             // btnThanhToan
             // 
             this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThanhToan.Location = new System.Drawing.Point(178, 574);
+            this.btnThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThanhToan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnThanhToan.Location = new System.Drawing.Point(158, 536);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(100, 46);
+            this.btnThanhToan.Size = new System.Drawing.Size(128, 73);
             this.btnThanhToan.TabIndex = 20;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Text = "THANH TOÁN";
+            this.btnThanhToan.UseVisualStyleBackColor = false;
             this.btnThanhToan.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3
@@ -265,7 +293,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(94, 549);
+            this.label6.Location = new System.Drawing.Point(94, 511);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 17);
             this.label6.TabIndex = 11;
@@ -275,22 +303,10 @@
             // 
             this.txtTong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTong.Enabled = false;
-            this.txtTong.Location = new System.Drawing.Point(145, 546);
+            this.txtTong.Location = new System.Drawing.Point(145, 508);
             this.txtTong.Name = "txtTong";
             this.txtTong.Size = new System.Drawing.Size(150, 22);
             this.txtTong.TabIndex = 10;
-            // 
-            // dgvHangMua
-            // 
-            this.dgvHangMua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHangMua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHangMua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHangMua.Location = new System.Drawing.Point(17, 39);
-            this.dgvHangMua.Name = "dgvHangMua";
-            this.dgvHangMua.RowTemplate.Height = 24;
-            this.dgvHangMua.Size = new System.Drawing.Size(379, 323);
-            this.dgvHangMua.TabIndex = 8;
             // 
             // dtpNgay
             // 
@@ -305,6 +321,7 @@
             // gpbHangHoa
             // 
             this.gpbHangHoa.Controls.Add(this.dgvHang);
+            this.gpbHangHoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gpbHangHoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbHangHoa.Location = new System.Drawing.Point(202, 170);
             this.gpbHangHoa.Name = "gpbHangHoa";
@@ -322,16 +339,6 @@
             this.label4.Size = new System.Drawing.Size(131, 29);
             this.label4.TabIndex = 56;
             this.label4.Text = "HÓA ĐƠN";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgvHangMua);
-            this.groupBox2.Location = new System.Drawing.Point(9, 131);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 396);
-            this.groupBox2.TabIndex = 57;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sản phẩm";
             // 
             // label8
             // 
@@ -367,9 +374,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangMua)).EndInit();
             this.gpbHangHoa.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -141,7 +141,7 @@ namespace App_QLBanHangSieuThiMini
                     //Thuc hien lenh
                     dbHH.Them(new HangHoa(0, txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
                     LoadData();
-                    MessageBox.Show("Da them vao !!");
+                    MessageBox.Show("Đã thêm vào !!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button2,MessageBoxOptions.ServiceNotification);
                 }
                 catch (Exception ex)
                 {
@@ -152,7 +152,7 @@ namespace App_QLBanHangSieuThiMini
             {
                 dbHH.Sua(new HangHoa(Convert.ToInt32(txtMaHang.Text), txtTenHang.Text, (float)Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text), txtDVCungCap.Text, dtpNgayNhapHang.Value, dtpNgayHetHan.Value));
                 LoadData();
-                MessageBox.Show("Đã sửa xong!!");
+                MessageBox.Show("Đã sửa xong!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
         }
 
@@ -163,16 +163,16 @@ namespace App_QLBanHangSieuThiMini
                 int r = dgvHangHoa.CurrentCell.RowIndex;
                 string strHangHoa = dgvHangHoa.Rows[r].Cells[0].Value.ToString();
                 DialogResult traloi;
-                traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button1,MessageBoxOptions.ServiceNotification);
                 if (traloi == DialogResult.Yes)
                 {
                     dbHH.Xoa(Convert.ToInt32(strHangHoa));
                     LoadData();
-                    MessageBox.Show("Đã xóa xong!!!");
+                    MessageBox.Show("Đã xóa xong!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 }
                 else
                 {
-                    MessageBox.Show("Không thực hiện lệnh xóa! Lệnh xóa đã bị hủy!");
+                    MessageBox.Show("Không thực hiện lệnh xóa! Lệnh xóa đã bị hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 }
             }
             catch (Exception ex)
@@ -207,14 +207,14 @@ namespace App_QLBanHangSieuThiMini
         {
             // Khai bao bien tra loi
             DialogResult traloi;
-            traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            traloi = MessageBox.Show("Chắc không?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK) this.Close();
         }
 
         private void btnTrove_Click_1(object sender, EventArgs e)
         {
             DialogResult traloi;
-            traloi = MessageBox.Show("Chac khong?", "Tra loi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            traloi = MessageBox.Show("Chắc không ?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK) this.Close();
         }
     }

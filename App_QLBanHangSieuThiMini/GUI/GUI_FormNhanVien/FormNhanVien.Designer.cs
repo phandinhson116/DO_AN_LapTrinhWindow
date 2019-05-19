@@ -46,9 +46,10 @@
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.Location = new System.Drawing.Point(798, 6);
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.Location = new System.Drawing.Point(1082, 9);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(111, 39);
+            this.btnDangXuat.Size = new System.Drawing.Size(111, 45);
             this.btnDangXuat.TabIndex = 0;
             this.btnDangXuat.Text = "Đăng Xuất";
             this.btnDangXuat.UseVisualStyleBackColor = true;
@@ -57,16 +58,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(620, 17);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(879, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 17);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Nhân Viên";
             // 
             // txtMaNV
             // 
             this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(723, 14);
+            this.txtMaNV.Location = new System.Drawing.Point(994, 20);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(69, 22);
             this.txtMaNV.TabIndex = 2;
@@ -77,6 +79,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 51);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -85,6 +88,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -106,6 +110,7 @@
             // 
             // guI_KhachHang1
             // 
+            this.guI_KhachHang1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.guI_KhachHang1.Location = new System.Drawing.Point(0, -19);
             this.guI_KhachHang1.Name = "guI_KhachHang1";
             this.guI_KhachHang1.Size = new System.Drawing.Size(1000, 800);
@@ -113,6 +118,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage3.Controls.Add(this.guI_HoaDon1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -124,19 +130,21 @@
             // 
             // guI_HoaDon1
             // 
-            this.guI_HoaDon1.Location = new System.Drawing.Point(21, -19);
+            this.guI_HoaDon1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.guI_HoaDon1.Location = new System.Drawing.Point(21, 6);
             this.guI_HoaDon1.Name = "guI_HoaDon1";
-            this.guI_HoaDon1.Size = new System.Drawing.Size(900, 580);
+            this.guI_HoaDon1.Size = new System.Drawing.Size(900, 555);
             this.guI_HoaDon1.TabIndex = 0;
             // 
             // tabPage4
             // 
+            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1251, 683);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Thông TIn Cá Nhân";
+            this.tabPage4.Text = "Thông Tin Cá Nhân";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // FormNhanVien

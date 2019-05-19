@@ -205,7 +205,7 @@ namespace App_QLBanHangSieuThiMini
                     //Thuc hien lenh
                     dbNV.Them(new NhanVien(0, txtTenNV.Text.Trim(), rdbGT, txtDiaChi.Text.Trim(), txtMatkhau.Text.Trim(), cmbChucDanh.Text.Trim(), txtSDT.Text.Trim(), Convert.ToInt32(txtLuong.Text)));
                     LoadDataNV();
-                    MessageBox.Show("Da them vao !!");
+                    MessageBox.Show("Đã thêm nhân viên vào !!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information,MessageBoxDefaultButton.Button2,MessageBoxOptions.ServiceNotification);
                 }
                 catch (Exception ex)
                 {
@@ -216,7 +216,7 @@ namespace App_QLBanHangSieuThiMini
             {
                 dbNV.Sua(new NhanVien(Convert.ToInt32(txtMaNV.Text), txtTenNV.Text.Trim(), rdbGT, txtDiaChi.Text.Trim(), txtMatkhau.Text.Trim(), cmbChucDanh.Text.Trim(), txtSDT.Text.Trim(), Convert.ToInt32(txtLuong.Text)));
                 LoadDataNV();
-                MessageBox.Show("Đã sửa xong!!");
+                MessageBox.Show("Đã sửa xong!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
             }
         }
 
@@ -227,16 +227,16 @@ namespace App_QLBanHangSieuThiMini
                 int r = dgvNhanVien.CurrentCell.RowIndex;
                 string strNhanVien = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
                 DialogResult traloi;
-                traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                traloi = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 if (traloi == DialogResult.Yes)
                 {
                     dbNV.Xoa(Convert.ToInt32(strNhanVien));
                     LoadDataNV();
-                    MessageBox.Show("Đã xóa xong!!!");
+                    MessageBox.Show("Đã xóa xong!!!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 }
                 else
                 {
-                    MessageBox.Show("Không thực hiện lệnh xóa! Lệnh xóa đã bị hủy!");
+                    MessageBox.Show("Không thực hiện lệnh xóa! Lệnh xóa đã bị hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2, MessageBoxOptions.ServiceNotification);
                 }
             }
             catch (Exception ex)
@@ -308,6 +308,31 @@ namespace App_QLBanHangSieuThiMini
 
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void btnHuyNV_Click(object sender, EventArgs e)
+        {
+
+            // Xoa trong cac doi tuong trong Panel
+            this.txtMaNV.ResetText();
+            this.txtTenNV.ResetText();
+         
+            this.rdbNam.Checked = false;
+            this.rdbNu.Checked = false;
+            this.txtDiaChi.ResetText();
+            this.txtSDT.ResetText();
+            this.txtMatkhau.ResetText();
+            this.cmbChucDanh.ResetText();
+            this.txtLuong.ResetText();
+           
+            // Cho Thao tac tren cac nut Them/ Xoa / Sua/ Thoat
+            this.btnThemNV.Enabled = true;
+            this.btnSuaNV.Enabled = true;
+          
+            //Khong cho thao tac tren cac nut Luu/ Huy/ Panel
+            this.btnLuuNV.Enabled = false;
+            this.btnHuyNV.Enabled = false;
+           
+            dgvNhanVien_CellClick(null, null);
         }
 
         #endregion QLNhanVien
@@ -462,9 +487,6 @@ namespace App_QLBanHangSieuThiMini
 
         #endregion
 
-        private void btnHuyNV_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
