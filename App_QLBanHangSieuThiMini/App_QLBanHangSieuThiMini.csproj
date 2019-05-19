@@ -60,16 +60,16 @@
     <Compile Include="DAL\DAL_NhanVien.cs" />
     <Compile Include="DAL\DAL_ThongKeDoanhThu.cs" />
     <Compile Include="DAL\DBConnect.cs" />
-    <Compile Include="FormLogin.cs">
+    <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="GUI\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManager.cs">
+    <Compile Include="GUI\FormManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManager.Designer.cs">
+    <Compile Include="GUI\FormManager.Designer.cs">
       <DependentUpon>FormManager.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUI_FormNhanVien\FormNhanVien.cs">
@@ -102,10 +102,10 @@
     <Compile Include="GUI\GUI_FormNhanVien\GUI_ThongTinCaNhan.Designer.cs">
       <DependentUpon>GUI_ThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLNhapHang.cs">
+    <Compile Include="GUI\QLNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include=".Designer.cs">
+    <Compile Include="GUI\.Designer.cs">
       <DependentUpon>QLNhapHang.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -116,10 +116,10 @@
     <Compile Include="ValueObject\HoaDon.cs" />
     <Compile Include="ValueObject\KhachHang.cs" />
     <Compile Include="ValueObject\NhanVien.cs" />
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="GUI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManager.resx">
+    <EmbeddedResource Include="GUI\FormManager.resx">
       <DependentUpon>FormManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_FormNhanVien\FormNhanVien.resx">
@@ -147,7 +147,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLNhapHang.resx">
+    <EmbeddedResource Include="GUI\QLNhapHang.resx">
       <DependentUpon>QLNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
