@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using App_QLBanHangSieuThiMini.BLL;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace App_QLBanHangSieuThiMini
 {
@@ -404,26 +405,66 @@ namespace App_QLBanHangSieuThiMini
         }
         #endregion QLHangHoa
 
-
         #region Biểu đồ
         private void btnShowChart_Click(object sender, EventArgs e)
         {
-            for (int i = Convert.ToInt32(cb1stMonth.Text); i <= Convert.ToInt32(cb2ndMonth.Text); i++)
+            try
             {
-                chart.Series["Tổng chi"].Points.AddXY(i, bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
-                chart.Series["Tổng thu"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)));
-                chart.Series["Lợi nhuận"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)) -bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
+                //Xóa các nét vẽ cũ
+                foreach (var series in chart.Series)
+                {
+                    series.Points.Clear();
+                }
+
+                for (int i = Convert.ToInt32(cb1stMonth.Text); i <= Convert.ToInt32(cb2ndMonth.Text); i++)
+                {
+                    chart.Series["Tổng chi"].Points.AddXY(i, bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
+                    chart.Series["Tổng thu"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)));
+                    chart.Series["Lợi nhuận"].Points.AddXY(i, bllTKDL.TotalRevenue(i, Convert.ToInt32(cbYear.Text)) - bllTKDL.TotalExpenditure(i, Convert.ToInt32(cbYear.Text)));
+                }
             }
+            catch 
+            {
+
+                MessageBox.Show("Bạn cần nhâp  đầy đủ thông tin !!","Thông báo");
+            }
+      
         }
         private void cb2ndMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(cb2ndMonth.Text) <= Convert.ToInt32(cb1stMonth.Text))
-                cb2ndMonth.Text = cb2ndMonth.Items[Convert.ToInt32(cb1stMonth.Text) - 1].ToString();
+            try
+            {
+                if (Convert.ToInt32(cb2ndMonth.Text) <= Convert.ToInt32(cb1stMonth.Text))
+                    cb2ndMonth.Text = cb2ndMonth.Items[Convert.ToInt32(cb1stMonth.Text) - 1].ToString();
+            }
+            catch 
+            {
+
+                MessageBox.Show("Bạn cần nhập thông tìn \"Từ tháng\" trước  !!", "Thông báo");
+            }
+           
         }
 
+        //Hiển thị các giá trị khi đưa chuột tới
+        private void chart_MouseMove(object sender, MouseEventArgs e)
+        {
+            var result = chart.HitTest(e.X, e.Y, ChartElementType.DataPoint);
+            if (result.ChartElementType == ChartElementType.DataPoint)
+            {
+                var prop = result.Object as DataPoint;
+                if (prop != null)
+                {
+                    prop.IsValueShownAsLabel = true;
+                    prop.MarkerStyle = MarkerStyle.Star10;
+                }
+            }
+        }
 
         #endregion
 
-       
+        private void btnHuyNV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
