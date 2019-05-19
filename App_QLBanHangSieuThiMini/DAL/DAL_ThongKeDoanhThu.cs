@@ -19,7 +19,7 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public DataTable Income()
         {
-            return db.ExecuteQuery("SELECT HangHoa.MaHH[Mã Hàng Hóa], TenHH[Tên Hàng], count(ChiTietHoaDon.SoLuong)[Số Lượng], ChiTietHoaDon.DonGia[Đơn Giá], count(ChiTietHoaDon.SoLuong)*ChiTietHoaDon.DonGia[Thành Tiền] FROM ChiTietHoaDon inner join HangHoa on ChiTietHoaDon.MaHH=HangHoa.MaHH group by HangHoa.MaHH, ChiTietHoaDon.DonGia, TenHH");
+            return db.ExecuteQuery("SELECT HangHoa.MaHH[Mã Hàng Hóa], TenHH[Tên Hàng], SUM(ChiTietHoaDon.SoLuong)[Số Lượng], ChiTietHoaDon.DonGia[Đơn Giá], SUM(ChiTietHoaDon.SoLuong)*ChiTietHoaDon.DonGia[Thành Tiền] FROM ChiTietHoaDon inner join HangHoa on ChiTietHoaDon.MaHH=HangHoa.MaHH group by HangHoa.MaHH, ChiTietHoaDon.DonGia, TenHH");
         }
 
         public DataTable GoodsEntered()
