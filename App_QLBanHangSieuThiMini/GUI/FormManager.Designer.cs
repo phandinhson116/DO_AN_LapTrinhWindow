@@ -1056,7 +1056,7 @@
             this.guI_HoaDon1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.guI_HoaDon1.Location = new System.Drawing.Point(4, 4);
             this.guI_HoaDon1.Name = "guI_HoaDon1";
-            this.guI_HoaDon1.Size = new System.Drawing.Size(1161, 665);
+            this.guI_HoaDon1.Size = new System.Drawing.Size(1383, 665);
             this.guI_HoaDon1.TabIndex = 0;
             // 
             // FormManager

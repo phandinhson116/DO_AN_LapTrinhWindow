@@ -166,7 +166,7 @@
             this.Controls.Add(this.dgvChiTietHD);
             this.Controls.Add(this.dgvHoaDon);
             this.Name = "GUI_HoaDon";
-            this.Size = new System.Drawing.Size(900, 665);
+            this.Size = new System.Drawing.Size(1230, 665);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHD)).EndInit();
             this.ResumeLayout(false);

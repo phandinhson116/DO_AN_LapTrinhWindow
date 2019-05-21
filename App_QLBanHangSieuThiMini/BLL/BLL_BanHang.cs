@@ -3,6 +3,7 @@ using App_QLBanHangSieuThiMini.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace App_QLBanHangSieuThiMini.BLL
 {
@@ -106,7 +107,8 @@ namespace App_QLBanHangSieuThiMini.BLL
                 khachang.SoDiem = khachang.SoDiem + (int)tong / 100000 * 10;
                 _dalKhachHang.Sua(khachang);
 
-                System.Windows.Forms.MessageBox.Show("Giao dịch thành công!");
+                MessageBox.Show("Giao dịch thành công!");
+                
             }
             else
             {

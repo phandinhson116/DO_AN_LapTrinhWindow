@@ -41,7 +41,7 @@ namespace App_QLBanHangSieuThiMini.DAL
 
         public bool Them(HoaDon hoadon)
         {
-            string strSql = string.Format("insert into HoaDon (MaKH, MaNV, NgayLap) values({0}, {1}, '{2}')", hoadon.MaKH, hoadon.MaNV, hoadon.Ngay);
+            string strSql = string.Format("insert into HoaDon (MaKH, MaNV, NgayLap,Tong) values({0}, {1}, '{2}',{3})", hoadon.MaKH, hoadon.MaNV, hoadon.Ngay.ToString("yyyy-MM-dd"),hoadon.Tong);
             return _dbConnect.ExecuteNonQuery(strSql);
         }
 

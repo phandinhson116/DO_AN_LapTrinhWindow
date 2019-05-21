@@ -24,6 +24,7 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             InitializeComponent();
             LoadData();
             btnMoi_Click(btnMoi, null);
+          
         }
 
         private void LoadData()
@@ -45,6 +46,8 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
             {
                 hangmua[Convert.ToInt32(txtMaHH.Text)] = Convert.ToInt32(numSoLuong.Value);
                 LoadData();
+                txtMaHH.ResetText();
+                txtTenHH.ResetText();
             }
             catch (Exception ex)
             {

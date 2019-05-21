@@ -47,8 +47,17 @@ namespace App_QLBanHangSieuThiMini.GUI.GUI_FormNhanVien
 
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvChiTietHD.DataSource = bll.GetChiTietHoaDon(Convert.ToInt32(dgvHoaDon.Rows[e.RowIndex].Cells[0].Value));
-            dgvChiTietHD.AutoResizeColumns();
+            try
+            {
+                dgvChiTietHD.DataSource = bll.GetChiTietHoaDon(Convert.ToInt32(dgvHoaDon.Rows[e.RowIndex].Cells[0].Value));
+                dgvChiTietHD.AutoResizeColumns();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
